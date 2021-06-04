@@ -125,3 +125,4 @@ Received Import Request.
 Start importing Assets/Scenes/TempPlay.unity using Guid(e96d4f4d4389a5144b8fc0ba4a7111e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bb70b30126a02dd924647e3d2f41bb7') in 0.007989 seconds
   Import took 0.010236 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

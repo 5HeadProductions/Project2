@@ -10,17 +10,19 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator _animator;
 
+    public Joystick joystick;
+
     private void Awake() => _animator = GetComponent<Animator>(); // => is an expression body methood
 
     private void Update()
     {
-        AimTowardsMouse();
+        //AimTowardsMouse();
         
-        //reading Input
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        //reading Input for keyboard
+        //float horizontal = Input.GetAxis("Horizontal");
+        //float vertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(horizontal, 0f, vertical);
+        Vector3 movement = new Vector3(joystick.Horizontal, 0f, joystick.Vertical);
         
         //Moving
         if (movement.magnitude > 0)

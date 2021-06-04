@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TempPlay.unity
     guid: e96d4f4d4389a5144b8fc0ba4a7111e9
+  - enabled: 1
+    path: Assets/Scenes/TempShooting.unity
+    guid: 4c6e0f4bd66f2b640b32209fb908855b
   m_configObjects: {}

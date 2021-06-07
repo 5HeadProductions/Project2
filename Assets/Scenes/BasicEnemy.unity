@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1106725433}
-  chaseSpeed: 0
+  chaseSpeed: 1
   health: 0
   attackDamage: 0
   attackRange: 0

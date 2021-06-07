@@ -17,6 +17,8 @@ public class BasicEnemyBehavior : MonoBehaviour
     [SerializeField] private Transform target; //player ideally
     [SerializeField] private float chaseSpeed, health, attackDamage, attackRange;
     [SerializeField] private Animator animator;
+    //[SerializeField] private GameObject cube;
+    
 
     private void Awake() => animator = GetComponent<Animator>();
 
@@ -46,13 +48,17 @@ public class BasicEnemyBehavior : MonoBehaviour
     private void Chase()
     {
         Vector3 dis = Vector3.MoveTowards(gameObject.transform.position, target.position, chaseSpeed);
-
         gameObject.transform.position = dis;
+        transform.LookAt(target);
+
+
         
         float velocityZ = Vector3.Dot(dis.normalized, transform.forward);
-        float velocityX = Vector3.Dot(dis.normalized, transform.right);
-        
+        float velocityX = Vector3.Dot(dis.normalized, transform.right);   
         animator.SetFloat("VelocityZ", velocityZ, 0.1f,Time.deltaTime);
         animator.SetFloat("VelocityX", velocityX, 0.1f,Time.deltaTime);
+
+
+
     }
 }

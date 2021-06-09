@@ -109,7 +109,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7468687496069745892}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.009740617
   m_Height: 0.06690801
@@ -130,3 +130,4 @@ MonoBehaviour:
   projectileSpeed: 5
   rb: {fileID: 692062283527388158}
   projectileT: {fileID: 7849153031379867230}
+  attackDamage: 3

@@ -57,12 +57,6 @@ public class BasicEnemyBehavior : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        
-        if (other.gameObject.CompareTag("Bullet"))
-        {
-            health -= 10; //come back to replace the 10 with a field from other
-        }
-
         if (other.gameObject.CompareTag("Player"))
         {
             //update player health
@@ -114,5 +108,10 @@ public class BasicEnemyBehavior : MonoBehaviour
         float velocityX = Vector3.Dot(dis.normalized, transform.right);   
         animator.SetFloat("VelocityZ", velocityZ, 0.1f,Time.deltaTime);
         animator.SetFloat("VelocityX", velocityX, 0.1f,Time.deltaTime);
+    }
+
+
+    public void reduceHealth(float damage){
+        this.health -= damage;
     }
 }

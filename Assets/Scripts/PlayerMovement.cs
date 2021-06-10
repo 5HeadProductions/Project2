@@ -12,33 +12,15 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator _animator;
 
-    public Joystick movementJoystick, attackJoystick;
-
-  
-
-    [SerializeField] private LineRenderer LR;
-
+    public Joystick movementJoystick;
     
-
-    
-
-private void Awake() => _animator = GetComponent<Animator>(); // => is an expression body methood
+    private void Awake() => _animator = GetComponent<Animator>(); // => is an expression body methood
 
     private void Update()
     {
        // AimTowardsMouse();
 
-       if (Mathf.Abs(attackJoystick.Horizontal) > 0.5 || Mathf.Abs(attackJoystick.Vertical) > 0.5)
-       {
-           LR.SetPosition(0, transform.position);
-
-           Vector3 attackPoint = new Vector3(attackJoystick.Horizontal + transform.position.x + range, circleSpriteY,
-               attackJoystick.Vertical + transform.position.z + range);
-          
-           transform.LookAt(attackPoint);
-           
-           
-       }
+       
 
         playerMovementDirection.position = new Vector3(movementJoystick.Horizontal + transform.position.x, circleSpriteY, movementJoystick.Vertical + transform.position.z);
         
@@ -55,6 +37,8 @@ private void Awake() => _animator = GetComponent<Animator>(); // => is an expres
             movement *= _speed * Time.deltaTime;
             transform.Translate(movement, Space.World);
         }
+        
+        
 
         float velocityZ = Vector3.Dot(movement.normalized, transform.forward);
         float velocityX = Vector3.Dot(movement.normalized, transform.right);

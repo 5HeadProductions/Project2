@@ -14,6 +14,7 @@ public class Projectiles : MonoBehaviour
     public Rigidbody rb; // rigidbody of the projectile
     public Transform projectileT; // getting the transform of the porjectile in order to rotate it
     public float attackDamage = 3.0f; // should change depending on what gun the player is using
+    [SerializeField] private GameObject coinPrefab;
     
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,9 @@ public class Projectiles : MonoBehaviour
 
     public void OnCollisionEnter(Collision col){
         if(col.gameObject.CompareTag("Zombie")){
+            Vector3 hitPosition = col.gameObject.GetComponent<Transform>().position; // the animation recoding has a set position
+            GameObject coinBlood = Instantiate(coinPrefab, hitPosition, coinPrefab.GetComponent<Transform>().rotation);
+            Destroy(coinBlood, .5f);
             col.gameObject.GetComponent<BasicEnemyBehavior>().reduceHealth(attackDamage); 
             playerInstance.coins ++;
             Destroy(gameObject);

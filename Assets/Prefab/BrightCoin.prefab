@@ -39,6 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9011021106923660189}
+  - component: {fileID: 253008011622492233}
   m_Layer: 0
   m_Name: BrightCoin
   m_TagString: Untagged
@@ -54,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8522573393689262375}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 10.13, y: 5.3234816, z: -1.6161119}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2944018809999333933}
@@ -63,6 +64,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+--- !u!95 &253008011622492233
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8522573393689262375}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9e85386d975496340b8f91ec1daa3154, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8829072363349456740
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8829072363349456740}
   m_LocalRotation: {x: 0.710738, y: 0, z: 0, w: 0.7034568}
-  m_LocalPosition: {x: -0, y: 1.421, z: -0.48}
+  m_LocalPosition: {x: 0.808, y: 1.063, z: 0.774}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9011021106923660189}
@@ -107,9 +127,9 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 5.31
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 30
+  m_Range: 1.04
+  m_SpotAngle: 45.96573
+  m_InnerSpotAngle: 15.965694
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -182,8 +202,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9065277328222918902}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalPosition: {x: 0.8317, y: 0.0432, z: 0.8317}
+  m_LocalScale: {x: 16.82456, y: 16.82456, z: 16.82456}
   m_Children: []
   m_Father: {fileID: 9011021106923660189}
   m_RootOrder: 0

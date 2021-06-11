@@ -131,3 +131,4 @@ MonoBehaviour:
   rb: {fileID: 692062283527388158}
   projectileT: {fileID: 7849153031379867230}
   attackDamage: 3
+  coinPrefab: {fileID: 8522573393689262375, guid: 33a9dea2363988044a6061172163c4e1, type: 3}

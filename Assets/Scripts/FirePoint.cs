@@ -6,8 +6,10 @@ using UnityEngine;
 public class FirePoint : MonoBehaviour
 {
     public Transform firePoint; // gameobject in front of the gun where the projectile will spawn from
-    public GameObject projectile; // projectile prefab
+    public GameObject projectilePrefab; // projectile prefab
     private string shootingWith = "Fire1"; // name of the keybind the player will shoot from
+
+    [SerializeField]private float projectileForce; // projectile speed
 
     // Update is called once per frame
     void Update()
@@ -15,12 +17,16 @@ public class FirePoint : MonoBehaviour
 
      if(Input.GetButtonDown(shootingWith)) // button we are using to shoot 
      {
-        Shoot();
+       Shoot();
      }  
 
     }
 
     public void Shoot(){
-        Instantiate(projectile, firePoint.position, firePoint.rotation);
+
+       GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+       Rigidbody rb = bullet.GetComponent<Rigidbody>();
+       rb.AddForce(firePoint.forward * projectileForce, ForceMode.Impulse);
+     
     }
 }

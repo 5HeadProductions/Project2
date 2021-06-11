@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7802074211795916539
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4479605244293995658}
-  m_Layer: 0
-  m_Name: Ghost
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4479605244293995658
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7802074211795916539}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.0078755785, y: 0, z: -0.13388483}
-  m_LocalScale: {x: 38.937862, y: 38.937862, z: 38.937862}
-  m_Children: []
-  m_Father: {fileID: 9011021106923660189}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8522573393689262375
 GameObject:
   m_ObjectHideFlags: 0
@@ -39,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9011021106923660189}
+  - component: {fileID: 253008011622492233}
   m_Layer: 0
   m_Name: BrightCoin
   m_TagString: Untagged
@@ -54,15 +25,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8522573393689262375}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 10.13, y: 5.3234816, z: -1.6161119}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2944018809999333933}
-  - {fileID: 4479605244293995658}
-  - {fileID: 8829072363349456741}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+--- !u!95 &253008011622492233
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8522573393689262375}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9e85386d975496340b8f91ec1daa3154, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8829072363349456740
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,12 +75,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8829072363349456740}
-  m_LocalRotation: {x: 0.710738, y: 0, z: 0, w: 0.7034568}
-  m_LocalPosition: {x: -0, y: 1.421, z: -0.48}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.99998677, y: -0, z: -0, w: -0.0051486488}
+  m_LocalPosition: {x: -0.0014086264, y: 0.0034294804, z: 0.06061379}
+  m_LocalScale: {x: 0.05943692, y: 0.05943693, z: 0.059436914}
   m_Children: []
-  m_Father: {fileID: 9011021106923660189}
-  m_RootOrder: 2
+  m_Father: {fileID: 2944018809999333933}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90.59, y: 0, z: 0}
 --- !u!108 &8829072363349456742
 Light:
@@ -107,9 +95,9 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 5.31
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 30
+  m_Range: 1.04
+  m_SpotAngle: 45.96573
+  m_InnerSpotAngle: 15.965694
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -182,9 +170,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9065277328222918902}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
-  m_Children: []
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 16.82456, y: 16.82456, z: 16.82456}
+  m_Children:
+  - {fileID: 8829072363349456741}
   m_Father: {fileID: 9011021106923660189}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

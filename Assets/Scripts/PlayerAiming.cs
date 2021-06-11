@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,14 @@ public class PlayerAiming : MonoBehaviour
 
     [SerializeField] private Transform player;
     private RaycastHit hit;
-    // Update is called once per frame
+
+    [SerializeField] private float lineStartY, lineEndY;
+
+    private void Start()
+    {
+        Physics.IgnoreLayerCollision(6, 10);
+    }
+
     void Update()
     {
         
@@ -22,12 +30,12 @@ public class PlayerAiming : MonoBehaviour
             {
                 LR.gameObject.SetActive(true);
             }
-            transform.position = new Vector3(player.position.x, 0, player.position.z);
+            transform.position = new Vector3(player.position.x, lineStartY, player.position.z);
             
-            attackLookAtPoint.position = new Vector3(attackJoystick.Horizontal  + transform.position.x, 0f,
+            attackLookAtPoint.position = new Vector3(attackJoystick.Horizontal  + transform.position.x, lineEndY,
                 attackJoystick.Vertical + transform.position.z);
 
-            transform.LookAt(new Vector3(attackLookAtPoint.position.x, 0, attackLookAtPoint.position.z));
+            transform.LookAt(new Vector3(attackLookAtPoint.position.x, lineEndY, attackLookAtPoint.position.z));
 
             transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
 
@@ -38,8 +46,8 @@ public class PlayerAiming : MonoBehaviour
             }
             else
             {
-                LR.SetPosition(1, transform.position + transform.forward * trailDistance);
-                LR.SetPosition(1,new Vector3(LR.GetPosition(1).x, 2, LR.GetPosition(1).z));
+                LR.SetPosition(1,  transform.forward * trailDistance);
+                LR.SetPosition(1,new Vector3(LR.GetPosition(1).x, player.position.y, LR.GetPosition(1).z));
             }
         }
         else

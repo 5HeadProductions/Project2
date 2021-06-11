@@ -35,7 +35,8 @@ public class Projectiles : MonoBehaviour
         if(col.gameObject.CompareTag("Zombie")){
            // Vector3 hitPosition = col.gameObject.GetComponent<Transform>().position; // the animation recoding has a set position
             Vector3 spawnPosition = new Vector3(0f, 0f, 0f); // the animation recoding has a set position
-            
+            Debug.Log("andy sus");
+
             GameObject coinBlood = Instantiate(coinPrefab, spawnPosition, coinPrefab.GetComponent<Transform>().rotation);
            
            
@@ -47,7 +48,12 @@ public class Projectiles : MonoBehaviour
             playerInstance.coins ++;
             Destroy(gameObject);
         }
-        
+        else
+        {
+            //add particles like sparks bc it didnt hit zombie
+            Destroy(gameObject);
+        }
+
     }
 
 

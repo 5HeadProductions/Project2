@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public Transform playerMovementDirection;
 
     private Animator _animator;
+    
 
     public Joystick movementJoystick;
     
@@ -20,17 +21,11 @@ public class PlayerMovement : MonoBehaviour
         playerMovementDirection.position = new Vector3(movementJoystick.Horizontal + transform.position.x,
                 circleSpriteY, movementJoystick.Vertical + transform.position.z);
 
-            transform.LookAt(new Vector3(playerMovementDirection.position.x, 0, playerMovementDirection.position.z));
-
             
-
-            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-
-           
-        
-
+            
         Vector3 movement = new Vector3(movementJoystick.Horizontal, 0f, movementJoystick.Vertical);
 
+        
         
         //Moving
         if (movement.magnitude > 0)
@@ -39,6 +34,10 @@ public class PlayerMovement : MonoBehaviour
             movement *= _speed * Time.deltaTime;
             transform.Translate(movement, Space.World);
             _animator.SetBool("moving", true);
+            
+            transform.LookAt(new Vector3(playerMovementDirection.position.x, 0, playerMovementDirection.position.z));
+
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
         }
         else
         {

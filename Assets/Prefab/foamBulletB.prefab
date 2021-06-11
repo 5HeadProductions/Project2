@@ -62,8 +62,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5354028657143720620, guid: de831fdef14ec9c4d936f154700834c8, type: 3}
-  - {fileID: 4875329586141879171, guid: de831fdef14ec9c4d936f154700834c8, type: 3}
+  - {fileID: 2100000, guid: 0cfc5bdbc25eba44cbfc04ad892b676b, type: 2}
+  - {fileID: 2100000, guid: 2e0a0bc4a2d0ca64f833944fc8dff54a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -132,3 +132,4 @@ MonoBehaviour:
   projectileT: {fileID: 7849153031379867230}
   attackDamage: 3
   coinPrefab: {fileID: 8522573393689262375, guid: 33a9dea2363988044a6061172163c4e1, type: 3}
+  particles: {fileID: 5265587264606109653, guid: b491fe4980bb8e94d83cac29d9021e62, type: 3}

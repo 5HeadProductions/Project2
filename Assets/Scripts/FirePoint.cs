@@ -17,14 +17,16 @@ public class FirePoint : MonoBehaviour
 
      if(Input.GetButtonDown(shootingWith)) // button we are using to shoot 
      {
-        Shoot();
+       Shoot();
      }  
 
     }
 
     public void Shoot(){
+
        GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
        Rigidbody rb = bullet.GetComponent<Rigidbody>();
        rb.AddForce(firePoint.forward * projectileForce, ForceMode.Impulse);
+     
     }
 }

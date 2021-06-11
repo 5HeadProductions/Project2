@@ -6,7 +6,7 @@ public class PlayerAiming : MonoBehaviour
 {
     [SerializeField] private Joystick attackJoystick;
     [SerializeField] private LineRenderer LR;
-    [SerializeField] private Transform attackLookAtPoint;
+    public Transform attackLookAtPoint;
     [SerializeField] private float trailDistance = 1;
 
     [SerializeField] private Transform player;
@@ -17,6 +17,7 @@ public class PlayerAiming : MonoBehaviour
         
         if (Mathf.Abs(attackJoystick.Horizontal) > 0.5 || Mathf.Abs(attackJoystick.Vertical) > 0.5)
         {
+            
             if (LR.gameObject.activeInHierarchy == false)
             {
                 LR.gameObject.SetActive(true);
@@ -38,6 +39,7 @@ public class PlayerAiming : MonoBehaviour
             else
             {
                 LR.SetPosition(1, transform.position + transform.forward * trailDistance);
+                LR.SetPosition(1,new Vector3(LR.GetPosition(1).x, 2, LR.GetPosition(1).z));
             }
         }
         else

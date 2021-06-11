@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7802074211795916539
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4479605244293995658}
-  m_Layer: 0
-  m_Name: Ghost
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4479605244293995658
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7802074211795916539}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.0078755785, y: 0, z: -0.13388483}
-  m_LocalScale: {x: 38.937862, y: 38.937862, z: 38.937862}
-  m_Children: []
-  m_Father: {fileID: 9011021106923660189}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8522573393689262375
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,8 +29,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2944018809999333933}
-  - {fileID: 4479605244293995658}
-  - {fileID: 8829072363349456741}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
@@ -107,12 +75,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8829072363349456740}
-  m_LocalRotation: {x: 0.710738, y: 0, z: 0, w: 0.7034568}
-  m_LocalPosition: {x: 0.808, y: 1.063, z: 0.774}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.99998677, y: -0, z: -0, w: -0.0051486488}
+  m_LocalPosition: {x: -0.0014086264, y: 0.0034294804, z: 0.06061379}
+  m_LocalScale: {x: 0.05943692, y: 0.05943693, z: 0.059436914}
   m_Children: []
-  m_Father: {fileID: 9011021106923660189}
-  m_RootOrder: 2
+  m_Father: {fileID: 2944018809999333933}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90.59, y: 0, z: 0}
 --- !u!108 &8829072363349456742
 Light:
@@ -202,9 +170,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9065277328222918902}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.8317, y: 0.0432, z: 0.8317}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 16.82456, y: 16.82456, z: 16.82456}
-  m_Children: []
+  m_Children:
+  - {fileID: 8829072363349456741}
   m_Father: {fileID: 9011021106923660189}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

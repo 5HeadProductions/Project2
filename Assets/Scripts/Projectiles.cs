@@ -33,8 +33,12 @@ public class Projectiles : MonoBehaviour
 
     public void OnCollisionEnter(Collision col){
         if(col.gameObject.CompareTag("Zombie")){
-            Vector3 hitPosition = col.gameObject.GetComponent<Transform>().position; // the animation recoding has a set position
-            GameObject coinBlood = Instantiate(coinPrefab, hitPosition, coinPrefab.GetComponent<Transform>().rotation);
+           // Vector3 hitPosition = col.gameObject.GetComponent<Transform>().position; // the animation recoding has a set position
+            Vector3 spawnPosition = new Vector3(0f, 0f, 0f); // the animation recoding has a set position
+            
+            GameObject coinBlood = Instantiate(coinPrefab, spawnPosition, coinPrefab.GetComponent<Transform>().rotation);
+           
+           
             Instantiate(particles,transform.position, Quaternion.identity);
             particles.Play();
             Destroy(particles, .5f);

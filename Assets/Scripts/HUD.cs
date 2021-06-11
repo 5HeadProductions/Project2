@@ -6,7 +6,7 @@ using TMPro;
 public class HUD : MonoBehaviour
 {
 
-    [SerializeField]private TextMeshProUGUI coinTXT,healthTXT;
+    [SerializeField]private TextMeshProUGUI healthTXT;
 
     private PlayerManager playerInstance;
     // Start is called before the first frame update
@@ -20,7 +20,6 @@ public class HUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        coinTXT.text = playerInstance.coins.ToString();
-        healthTXT.text = playerInstance.health.ToString();
+        healthTXT.text = playerInstance.coins.ToString();
     }
 }

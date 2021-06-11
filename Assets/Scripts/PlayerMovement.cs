@@ -18,15 +18,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-       // AimTowardsMouse();
 
-       
+        if (Mathf.Abs(movementJoystick.Horizontal) > 0.1 || Mathf.Abs(movementJoystick.Vertical) > 0.1)
+        {
+            playerMovementDirection.position = new Vector3(movementJoystick.Horizontal + transform.position.x,
+                circleSpriteY, movementJoystick.Vertical + transform.position.z);
 
-        playerMovementDirection.position = new Vector3(movementJoystick.Horizontal + transform.position.x, circleSpriteY, movementJoystick.Vertical + transform.position.z);
-        
-        transform.LookAt(new Vector3(playerMovementDirection.position.x, 0, playerMovementDirection.position.z));
+            transform.LookAt(new Vector3(playerMovementDirection.position.x, 0, playerMovementDirection.position.z));
 
-        transform.eulerAngles = new Vector3(0,transform.eulerAngles.y,0);
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+        }
 
         Vector3 movement = new Vector3(movementJoystick.Horizontal, 0f, movementJoystick.Vertical);
         
@@ -46,16 +47,5 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetFloat("VelocityZ", velocityZ, 0.1f,Time.deltaTime);
         _animator.SetFloat("VelocityX", velocityX, 0.1f,Time.deltaTime);
     }
-
-    private void AimTowardsMouse()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, _aimLayerMask))
-        {
-            var _direction = hitInfo.point - transform.position;
-            _direction.y = 0f;
-            _direction.Normalize();
-            transform.forward = _direction;
-        }
-    }
+    
 }

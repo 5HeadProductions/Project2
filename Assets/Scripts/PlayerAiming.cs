@@ -22,6 +22,7 @@ public class PlayerAiming : MonoBehaviour
                 LR.gameObject.SetActive(true);
             }
             transform.position = new Vector3(player.position.x, 0, player.position.z);
+            
             attackLookAtPoint.position = new Vector3(attackJoystick.Horizontal  + transform.position.x, 0f,
                 attackJoystick.Vertical + transform.position.z);
 

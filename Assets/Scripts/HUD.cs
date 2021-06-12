@@ -6,11 +6,7 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-
-    [SerializeField]private TextMeshProUGUI healthTXT;
-
     private PlayerManager playerInstance;
-
     public Slider slider; //slides the health bar up and down
     public Gradient gradient; // changes the color of the slider
     public Image fill;
@@ -20,12 +16,12 @@ public class HUD : MonoBehaviour
         if(GameObject.Find("PlayerManager")!= null){
             playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         }
-        healthTXT.text = "Health";
         SetMaxHealth();
     }
 
     public void SetMaxHealth(){ // health is replenished after each level, except in hard difficulty
         slider.maxValue = playerInstance.maxHealth;
+        playerInstance.currentHealth = playerInstance.maxHealth;
         slider.value = playerInstance.maxHealth;
         fill.color = gradient.Evaluate(1f); // changing the colot and using 1f bc at max health we want to display a green color
     }

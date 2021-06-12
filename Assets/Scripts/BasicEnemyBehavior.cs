@@ -19,7 +19,8 @@ using Random = UnityEngine.Random;
 public class BasicEnemyBehavior : MonoBehaviour
 {
     [SerializeField] private Transform target; //player ideally
-    [SerializeField] private float chaseSpeed, health, attackDamage, attackRange;
+    [SerializeField] private float chaseSpeed, attackRange;
+    [SerializeField] private int  health, attackDamage;
     [SerializeField] private Animator animator;
     public NavMeshAgent agent;
     public LayerMask whatIsGround, whatIsPlayer;
@@ -33,7 +34,14 @@ public class BasicEnemyBehavior : MonoBehaviour
     public float sightRange;
     public bool playerInSightRange;
 
-
+    //attacking and doing damage
+    private PlayerManager playerInstance;
+    public HUD _hud;
+    public bool inAttackRange;
+   // [SerializeField]private GameObject attackPoint;
+   private float attackRate = 2f; // the amount of time before being able to attack
+   private float timeUntilAttack = 0; // the next time the zombie is able to attack again
+   
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -47,7 +55,11 @@ public class BasicEnemyBehavior : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
 
         if (!playerInSightRange) Patrol();
+        
+        inAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        if(inAttackRange) Attack();
     }
+
 
     //fixedUpdate is for physics since update might make the logic faulty
     private void FixedUpdate()
@@ -55,13 +67,10 @@ public class BasicEnemyBehavior : MonoBehaviour
         if(playerInSightRange) Chase();
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            //update player health
+    private void Start(){
+        if(GameObject.Find("PlayerManager")!= null){
+            playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         }
-        //if other.tag is player then other.health--
     }
 
     private void Patrol()
@@ -84,26 +93,36 @@ public class BasicEnemyBehavior : MonoBehaviour
         //Calculate random point in range
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
-
-    
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
         {
             walkPointSet = true;
         }
     }
     
-    
+    private void Attack() // attacking animation needs to be added.
+    {
+        Debug.Log("take damage");
+        if(playerInstance.currentHealth == 0) Time.timeScale = 0f; // when the player dies stop the game and queue the level end scene/canvas 
+        if(Time.time > timeUntilAttack){
+        playerInstance.currentHealth -= attackDamage;  // lowering the players current health
+        _hud.SetHealth(playerInstance.currentHealth);  // adjusting the slider to the players new health value
+        timeUntilAttack = Time.time + attackRate;
+        }
+       
+       
+    }
+
+    void OnDrawGizmosSelected(){
+       // if(attackPoint == null) return;
+        Gizmos.DrawSphere(transform.position, attackRange);
+    }
 
     private void Chase()
     {
         Vector3 dis = Vector3.MoveTowards(gameObject.transform.position, target.position, chaseSpeed);
         gameObject.transform.position = dis;
         transform.LookAt(target);
-
-
-        
         float velocityZ = Vector3.Dot(dis.normalized, transform.forward);
         float velocityX = Vector3.Dot(dis.normalized, transform.right);   
         animator.SetFloat("VelocityZ", velocityZ, 0.1f,Time.deltaTime);
@@ -111,7 +130,8 @@ public class BasicEnemyBehavior : MonoBehaviour
     }
 
 
-    public void reduceHealth(float damage){
+    public void reduceHealth(int damage){ // enemy taking damage
         this.health -= damage;
     }
+
 }

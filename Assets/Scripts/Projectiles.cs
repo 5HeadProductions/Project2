@@ -13,7 +13,7 @@ public class Projectiles : MonoBehaviour
     [SerializeField]private float projectileSpeed;
     public Rigidbody rb; // rigidbody of the projectile
     public Transform projectileT; // getting the transform of the porjectile in order to rotate it
-    public float attackDamage = 3.0f; // should change depending on what gun the player is using
+    public int attackDamage = 3; // should change depending on what gun the player is using
     [SerializeField] private GameObject coinPrefab;
     [SerializeField] private ParticleSystem particles;
     

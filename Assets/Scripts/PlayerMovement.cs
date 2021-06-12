@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     
     private void Awake() => _animator = GetComponent<Animator>(); // => is an expression body methood
 
-    private void Update()
+    private void LateUpdate()
     {
         playerMovementDirection.position = new Vector3(movementJoystick.Horizontal + transform.position.x,
                 circleSpriteY, movementJoystick.Vertical + transform.position.z);
@@ -35,9 +35,9 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(movement, Space.World);
             _animator.SetBool("moving", true);
             
-            transform.LookAt(new Vector3(playerMovementDirection.position.x, 0, playerMovementDirection.position.z));
+            //transform.LookAt(new Vector3(playerMovementDirection.position.x, 0, playerMovementDirection.position.z));
 
-            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+            //transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
         }
         else
         {

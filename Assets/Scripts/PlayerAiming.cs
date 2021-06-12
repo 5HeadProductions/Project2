@@ -35,9 +35,9 @@ public class PlayerAiming : MonoBehaviour
             attackLookAtPoint.position = new Vector3(attackJoystick.Horizontal  + transform.position.x, lineEndY,
                 attackJoystick.Vertical + transform.position.z);
 
-            transform.LookAt(new Vector3(attackLookAtPoint.position.x, lineEndY, attackLookAtPoint.position.z));
+           // transform.LookAt(new Vector3(attackLookAtPoint.position.x, lineEndY, attackLookAtPoint.position.z));
 
-            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+            //transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
 
             LR.SetPosition(0, transform.position);
             if (Physics.Raycast(transform.position, transform.forward,out hit, trailDistance))

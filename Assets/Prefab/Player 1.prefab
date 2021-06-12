@@ -289,6 +289,8 @@ MonoBehaviour:
   attackLookAtPoint: {fileID: 626017824}
   trailDistance: 1
   player: {fileID: 3311792223024975666}
+  lineStartY: 0
+  lineEndY: 0
 --- !u!1 &3311792223024681632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,10 +1175,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   circleSpriteY: 2
-  range: 0
-  _aimLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   playerMovementDirection: {fileID: 1242442455}
   movementJoystick: {fileID: 0}
 --- !u!1 &3311792223024681748

@@ -20,7 +20,7 @@ public class BasicEnemyBehavior : MonoBehaviour
 {
     [SerializeField] private Transform target; //player ideally
     [SerializeField] private float chaseSpeed, attackRange;
-    [SerializeField] private int  health, attackDamage;
+    [SerializeField] private int  health, attackDamage, currHealth;
     [SerializeField] private Animator animator;
     public NavMeshAgent agent;
     public LayerMask whatIsGround, whatIsPlayer;
@@ -38,15 +38,25 @@ public class BasicEnemyBehavior : MonoBehaviour
     private PlayerManager playerInstance;
     public HUD _hud;
     public bool inAttackRange;
-   // [SerializeField]private GameObject attackPoint;
+    [SerializeField]private Transform attackPoint;
    private float attackRate = 2f; // the amount of time before being able to attack
    private float timeUntilAttack = 0; // the next time the zombie is able to attack again
+
+   //taking damage and reducing health bar
+   public EnemyHealthBar enemyHealthBar;
    
     private void Awake()
     {
         animator = GetComponent<Animator>();
         target = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+    }
+    private void Start(){
+        if(GameObject.Find("PlayerManager")!= null){
+            playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+        }
+        currHealth = health; //the zombie starts the level with max health
+        enemyHealthBar.SetMaxHealth(health);
     }
 
     private void Update()
@@ -56,8 +66,9 @@ public class BasicEnemyBehavior : MonoBehaviour
 
         if (!playerInSightRange) Patrol();
         
-        inAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        inAttackRange = Physics.CheckSphere(attackPoint.position, attackRange, whatIsPlayer);
         if(inAttackRange) Attack();
+
     }
 
 
@@ -65,12 +76,6 @@ public class BasicEnemyBehavior : MonoBehaviour
     private void FixedUpdate()
     {
         if(playerInSightRange) Chase();
-    }
-
-    private void Start(){
-        if(GameObject.Find("PlayerManager")!= null){
-            playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
-        }
     }
 
     private void Patrol()
@@ -108,14 +113,11 @@ public class BasicEnemyBehavior : MonoBehaviour
         playerInstance.currentHealth -= attackDamage;  // lowering the players current health
         _hud.SetHealth(playerInstance.currentHealth);  // adjusting the slider to the players new health value
         timeUntilAttack = Time.time + attackRate;
-        }
-       
-       
+        }  
     }
 
     void OnDrawGizmosSelected(){
-       // if(attackPoint == null) return;
-        Gizmos.DrawSphere(transform.position, attackRange);
+        Gizmos.DrawSphere(attackPoint.position, attackRange);
     }
 
     private void Chase()
@@ -131,7 +133,11 @@ public class BasicEnemyBehavior : MonoBehaviour
 
 
     public void reduceHealth(int damage){ // enemy taking damage
-        this.health -= damage;
+        this.currHealth -= damage;
+        
+        Debug.Log("EJBJKKJHGKJHLKHKLJHLKJHKHKLJHKLJHJKHKJLHJKLH");
+        enemyHealthBar.SetHealth(currHealth);
+        Debug.Log("EJBJKKJHGKJHLKHKLJHLKJHKHKLJHKLJHJKHKJLHJKLH");
     }
 
 }

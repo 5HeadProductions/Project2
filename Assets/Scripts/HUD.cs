@@ -11,6 +11,11 @@ public class HUD : MonoBehaviour
     public Gradient gradient; // changes the color of the slider
     public Image fill;
     [SerializeField]private TextMeshProUGUI txtVal;
+    public GameObject playerDied;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +38,16 @@ public class HUD : MonoBehaviour
         slider.value = health;
         fill.color = gradient.Evaluate(slider.normalizedValue); // changing the color when the player looses health, using "slider.normalizedValue"
                                                                 // so we can use the percentages in between instead of decimals, since normally it is 0 to 1
+        if(playerInstance.currentHealth == 0) {                 // when the player dies stop the game and queue the level end scene/canvas 
+          //  Time.timeScale = 0f; 
+            gameObject.SetActive(false);
+            playerDied.SetActive(true);
+            playerDied.GetComponent<PlayerDied>().Appear();
+            
+            }
+        
+
+
     }
 
 }

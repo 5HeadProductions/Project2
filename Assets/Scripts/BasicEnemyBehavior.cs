@@ -107,12 +107,13 @@ public class BasicEnemyBehavior : MonoBehaviour
     
     private void Attack() // attacking animation needs to be added.
     {
-        Debug.Log("take damage");
-        if(playerInstance.currentHealth == 0) Time.timeScale = 0f; // when the player dies stop the game and queue the level end scene/canvas 
         if(Time.time > timeUntilAttack){
         playerInstance.currentHealth -= attackDamage;  // lowering the players current health
         _hud.SetHealth(playerInstance.currentHealth);  // adjusting the slider to the players new health value
-        timeUntilAttack = Time.time + attackRate;
+        timeUntilAttack = Time.time + attackRate;      // timeUntilAttack = the next time we are able to attack, 
+                                                       // TIME  = 3, attackeRate = 2, we should be able to attack until time reaches 5, 
+                                                       // so 5 is stored in timeUntilAttack
+
         }  
     }
 
@@ -134,10 +135,8 @@ public class BasicEnemyBehavior : MonoBehaviour
 
     public void reduceHealth(int damage){ // enemy taking damage
         this.currHealth -= damage;
-        
-        Debug.Log("EJBJKKJHGKJHLKHKLJHLKJHKHKLJHKLJHJKHKJLHJKLH");
         enemyHealthBar.SetHealth(currHealth);
-        Debug.Log("EJBJKKJHGKJHLKHKLJHLKJHKHKLJHKLJHJKHKJLHJKLH");
+        
     }
 
 }

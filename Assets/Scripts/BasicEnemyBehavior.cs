@@ -46,6 +46,9 @@ public class BasicEnemyBehavior : MonoBehaviour
         //check for sight range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
 
+        animator.SetBool("PlayerInSight", playerInSightRange);
+        
+
         if (!playerInSightRange) Patrol();
     }
 
@@ -71,6 +74,9 @@ public class BasicEnemyBehavior : MonoBehaviour
         if (walkPointSet) agent.SetDestination(walkPoint);
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
+
+       // transform.LookAt(walkPoint);
+        
         
         //WalkPoint reached
         if (distanceToWalkPoint.magnitude < 1f)

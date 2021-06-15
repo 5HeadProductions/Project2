@@ -13,25 +13,36 @@ public class FirePoint : MonoBehaviour
 
     [SerializeField]private float projectileForce; // projectile speed
 
-    [SerializeField] private Transform player;
+    [SerializeField] private GameObject player;
 
     [SerializeField] private Camera cam;
 
-    // Update is called once per frame
+    public bool firing = false;
+    private Animator animator;
+    
+
+    private void Awake() => animator = player.GetComponent<Animator>(); // => is an expression body methood
     void Update()
     {
 
      if(Input.GetButtonDown(shootingWith)) // button we are using to shoot 
      {
       // Shoot();
-     }  
+     }
+
+     //setting the bool to false so it knows to aim where the player is moving rather than firing
+         firing = false;
+         animator.SetBool("Shooting", false);
+         TouchShoot();
+         
      
-     TouchShoot();
 
     }
 
     void TouchShoot()
     {
+        
+        
         RaycastHit hit;   //stores info about the object the raycast hit
         Vector3[] touches = new Vector3[3]; //amount of touches that can be handled at a time
         
@@ -39,35 +50,22 @@ public class FirePoint : MonoBehaviour
         {
             foreach(Touch t in Input.touches) //does this action for each of the touches on screen currently
             {
-                
-                touches[t.fingerId] = Camera.main.ScreenToWorldPoint(Input.GetTouch(t.fingerId).position); //
-                
                 Ray ray = cam.ScreenPointToRay(Input.GetTouch(t.fingerId).position);//creates a ray from the touch until it hits a collider
                 
-
-               // Vector3 direction = new Vector3(touches[t.fingerId] - Camera.main.transform.position); 
-                if (Input.GetTouch(t.fingerId).phase == TouchPhase.Began)
+                if (Physics.Raycast(ray, out hit,Mathf.Infinity) && Input.GetTouch(t.fingerId).phase == TouchPhase.Began && hit.collider.gameObject.CompareTag("UI") != true)
                 {
-                    
-                    if (Physics.Raycast(ray, out hit,Mathf.Infinity))
-                    {
-
-                        
-                        Debug.Log(hit.transform.position);
-
-                        Vector3 playerLookAt = new Vector3(hit.transform.position.x,
-                            hit.transform.position.y, hit.transform.position.z);
-                        
+                    animator.SetBool("Shooting", true);
+                    firing = true;
+                        //getting the player to look at the point where the touch raycast collides with something
+                        Vector3 playerLookAt = new Vector3(hit.point.x,
+                            0f, hit.point.z);
                         player.transform.LookAt(playerLookAt);
-                        player.transform.Rotate(new Vector3(0f, 30f, 0f));
-                        
-                        
+                        player.transform.Rotate(new Vector3(0f, 35f, 0f));
                         
                         //instantiating bullet
                         GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
                         Rigidbody rb = bullet.GetComponent<Rigidbody>();
                         rb.AddForce(firePoint.forward * projectileForce, ForceMode.Impulse);
-                    }
                 }
             }
         }

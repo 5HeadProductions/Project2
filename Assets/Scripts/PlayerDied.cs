@@ -7,40 +7,40 @@ using TMPro;
 public class PlayerDied : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI coins;
-
     public Animator animator;
-    private int endCoin = 0;
-    public int growthRate = 1;
-    public bool canvasLoaded;
-
-
+    private int endCoin, growthRate = 1; // endCoin is the value for the coins that is being updated in the canvas
+    private bool canvasLoaded, doneCounting;
     private PlayerManager playerInstance;
     public void Appear(){
         animator.SetBool("isActive", true);
         
     }
     public void Start(){
-        playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
-        
+        playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>(); 
     }
 
    public void Update(){
-       coins.text = endCoin.ToString();
 
-       if(gameObject.activeInHierarchy){
+       if(!doneCounting){ // update "works" while done counting is false
+       coins.text = endCoin.ToString("0");
+       if(endCoin == playerInstance.coins) doneCounting = true; // when the values match we "stop" the update by setting doneCounting to true
+
+       if(gameObject.activeInHierarchy){ // checking the canvas appeared on the screen, this is set active in the HUD scripts
            canvasLoaded = true;
        }
        if(canvasLoaded){
-           LoadCoins();
+          StartCoroutine(LoadCoins());
+            }
        }
-
     }
+    IEnumerator LoadCoins(){
+         Debug.Log("Started Coroutine at timestamp : " + Time.time);
+        yield return new WaitForSeconds(1);
 
-
-    public void LoadCoins(){
-        if(endCoin != playerInstance.coins && playerInstance.coins > endCoin){
-            endCoin += growthRate;
+        if(playerInstance.coins > endCoin && endCoin != playerInstance.coins){ //&& endCoin != playerInstance.C in case a frame is skipped we want to keep adding to endCoin 
+            endCoin += growthRate;                                             //giving the incrasing "animation" to the coins
         }
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
 
     }
 }

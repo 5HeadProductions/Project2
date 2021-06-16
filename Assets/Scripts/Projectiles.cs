@@ -37,13 +37,13 @@ public class Projectiles : MonoBehaviour
             Vector3 spawnPosition = new Vector3(0f, 0f, 0f); // the animation recoding has a set position
             
 
-            GameObject coinBlood = Instantiate(coinPrefab, spawnPosition, coinPrefab.GetComponent<Transform>().rotation);
+          //  GameObject coinBlood = Instantiate(coinPrefab, spawnPosition, coinPrefab.GetComponent<Transform>().rotation);
            
            
             Instantiate(particles,transform.position, Quaternion.identity);
             particles.Play();
             Destroy(particles, .5f);
-            Destroy(coinBlood, .5f);
+           // Destroy(coinBlood, .5f);
             col.gameObject.GetComponent<BasicEnemyBehavior>().reduceHealth(attackDamage); 
             playerInstance.coins ++;
             Destroy(gameObject);

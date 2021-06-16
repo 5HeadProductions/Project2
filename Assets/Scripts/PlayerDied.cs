@@ -34,13 +34,10 @@ public class PlayerDied : MonoBehaviour
        }
     }
     IEnumerator LoadCoins(){
-         Debug.Log("Started Coroutine at timestamp : " + Time.time);
         yield return new WaitForSeconds(1);
 
         if(playerInstance.coins > endCoin && endCoin != playerInstance.coins){ //&& endCoin != playerInstance.C in case a frame is skipped we want to keep adding to endCoin 
             endCoin += growthRate;                                             //giving the incrasing "animation" to the coins
-        }
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
-
+        }  
     }
 }

@@ -35,16 +35,22 @@ public class PlayerMovement : MonoBehaviour
             //so the player can look at the firing position momentarily
             if (firePoint.firing == false)
             {
-                transform.LookAt(new Vector3(playerMovementDirection.position.x, 0,
-                    playerMovementDirection.position.z));
+               // transform.LookAt(new Vector3(playerMovementDirection.position.x, 0,
+                 //   playerMovementDirection.position.z));
 
-                transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+                //transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
             }
         }
         else
         {
             _animator.SetBool("moving", false);
         }
+
+        float velocityZ = Vector3.Dot(movement.normalized, transform.forward);
+        float velocityX = Vector3.Dot(movement.normalized, transform.right);
+
+        _animator.SetFloat("VelocityZ", velocityZ, 0.1f, Time.deltaTime);
+        _animator.SetFloat("VelocityX", velocityX, 0.1f, Time.deltaTime);
     }
     
 }

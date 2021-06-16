@@ -31,7 +31,7 @@ public class FirePoint : MonoBehaviour
      }
 
      //setting the bool to false so it knows to aim where the player is moving rather than firing
-         firing = false;
+         //firing = false;
          animator.SetBool("Shooting", false);
          TouchShoot();
          
@@ -60,7 +60,7 @@ public class FirePoint : MonoBehaviour
                         Vector3 playerLookAt = new Vector3(hit.point.x,
                             0f, hit.point.z);
                         player.transform.LookAt(playerLookAt);
-                        player.transform.Rotate(new Vector3(0f, 35f, 0f));
+                        player.transform.Rotate(new Vector3(0f, 0f, 0f));
                         
                         //instantiating bullet
                         GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);

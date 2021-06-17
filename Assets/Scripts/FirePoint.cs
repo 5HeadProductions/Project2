@@ -19,7 +19,7 @@ public class FirePoint : MonoBehaviour
 
     public bool firing = false;
     private Animator animator;
-    
+    [SerializeField] ParticleSystem muzzleFlash;
 
     private void Awake() => animator = player.GetComponent<Animator>(); // => is an expression body methood
     void Update()
@@ -27,7 +27,7 @@ public class FirePoint : MonoBehaviour
 
      if(Input.GetButtonDown(shootingWith)) // button we are using to shoot 
      {
-    // Shoot();
+    Shoot();
      }
 
      //setting the bool to false so it knows to aim where the player is moving rather than firing
@@ -75,6 +75,7 @@ public class FirePoint : MonoBehaviour
 
        GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        muzzleFlash.Play();
        rb.AddForce(firePoint.forward * projectileForce, ForceMode.Impulse);
      
     }

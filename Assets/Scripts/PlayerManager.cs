@@ -7,7 +7,8 @@ public class PlayerManager : MonoBehaviour
   //Singeleton to keep track of what the player needs throughout every scene
     public static PlayerManager playerInstance;
 
-    public float health;
+    public int currentHealth;
+    public int maxHealth = 100;
     public int coins;
 
     private void Awake() {

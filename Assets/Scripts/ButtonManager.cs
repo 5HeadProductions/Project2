@@ -5,9 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-
     private string playSceneName = "TempPlay";
     private string weaponScene = "TempShooting";
+    private string main = "MainMenu";
+        // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+    public void LoadMainMenu(){
+        SceneManager.LoadScene(main);
+    }
 
     public void LoadPlay(){
         SceneManager.LoadScene(playSceneName);
@@ -16,11 +24,7 @@ public class ButtonManager : MonoBehaviour
     public void LoadWeapons(){
         SceneManager.LoadScene(weaponScene);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
 
 }

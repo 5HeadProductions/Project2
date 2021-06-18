@@ -36,7 +36,7 @@ public class BasicEnemyBehavior : MonoBehaviour
 
     //attacking and doing damage
     private PlayerManager playerInstance;
-    public HUD _hud;
+    public HUD _hud; // HUD script
     public bool inAttackRange;
     [SerializeField]private Transform attackPoint;
    private float attackRate = 2f; // the amount of time before being able to attack
@@ -50,11 +50,13 @@ public class BasicEnemyBehavior : MonoBehaviour
         animator = GetComponent<Animator>();
         target = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+       
     }
     private void Start(){
         if(GameObject.Find("PlayerManager")!= null){
             playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         }
+         _hud = GameObject.Find("HealthBar").GetComponent<HUD>();
         currHealth = health; //the zombie starts the level with max health
         enemyHealthBar.SetMaxHealth(health);
     }

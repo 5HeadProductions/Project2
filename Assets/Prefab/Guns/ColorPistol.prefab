@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 2641390078606315343}
   - component: {fileID: 237825472359234437}
   m_Layer: 0
-  m_Name: blasterH
+  m_Name: ColorPistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

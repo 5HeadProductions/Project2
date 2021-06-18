@@ -201,8 +201,8 @@ Transform:
   - {fileID: 2700713143961557362}
   - {fileID: 2700713144194533778}
   - {fileID: 2700713143775519970}
-  - {fileID: 2700713144362011886}
   - {fileID: 2700713145079339446}
+  - {fileID: 2700713144362011886}
   - {fileID: 2700713144042415832}
   - {fileID: 2700713145481757638}
   - {fileID: 2700713143482398870}
@@ -655,7 +655,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b5d783c7edebbc3428cd910fa2803ae4, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b5d783c7edebbc3428cd910fa2803ae4, type: 3}
       propertyPath: m_LocalScale.x
@@ -1495,7 +1495,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b5d783c7edebbc3428cd910fa2803ae4, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b5d783c7edebbc3428cd910fa2803ae4, type: 3}
       propertyPath: m_LocalScale.x

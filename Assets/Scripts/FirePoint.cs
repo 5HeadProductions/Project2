@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine. VFX;
 
 // this script is attached to the weapons, blasterA, shoots the projectiles
 public class FirePoint : MonoBehaviour
@@ -19,7 +20,8 @@ public class FirePoint : MonoBehaviour
 
     public bool firing = false;
     private Animator animator;
-    [SerializeField] ParticleSystem muzzleFlash;
+
+    [SerializeField] private VisualEffect muzzleFlash;
 
     private void Awake() => animator = player.GetComponent<Animator>(); // => is an expression body methood
     void Update()
@@ -75,7 +77,7 @@ public class FirePoint : MonoBehaviour
 
        GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        muzzleFlash.Play();
+       muzzleFlash.Play();
        rb.AddForce(firePoint.forward * projectileForce, ForceMode.Impulse);
      
     }

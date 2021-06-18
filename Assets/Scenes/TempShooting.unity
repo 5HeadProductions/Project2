@@ -318,8 +318,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.34, y: 2.81, z: 1.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 873776300}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -374,6 +373,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1480972483053323734, guid: aaeb68a21f8b7704083a25140c1dafec, type: 3}
+      propertyPath: muzzleFlash
+      value: 
+      objectReference: {fileID: 873776302}
     - target: {fileID: 1750793536332978768, guid: aaeb68a21f8b7704083a25140c1dafec, type: 3}
       propertyPath: m_Name
       value: blasterH
@@ -844,11 +847,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873776299}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 1.566329, y: -0.503, z: -2.243104}
-  m_LocalScale: {x: 3.1395, y: 3.1395, z: 3.1395}
+  m_LocalPosition: {x: 0.22632897, y: 2.307, z: -0.40310383}
+  m_LocalScale: {x: 3.1394997, y: 3.1394997, z: 3.1394997}
   m_Children: []
-  m_Father: {fileID: 114908161}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!73398921 &873776301
 VFXRenderer:

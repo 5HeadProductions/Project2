@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Zombie
   - UI
+  - RoomSpawnPoint
+  - Rooms
   layers:
   - Default
   - TransparentFX

@@ -7,9 +7,7 @@ public class PlayerManager : MonoBehaviour
   //Singeleton to keep track of what the player needs throughout every scene
     public static PlayerManager playerInstance;
 
-    public int currentHealth;
-    public int maxHealth = 100;
-    public int coins;
+    public int currentHealth, maxHealth = 100, coins, gems;
 
     private void Awake() {
         if(playerInstance == null){ // on awake checking for this gameobject

@@ -72,7 +72,15 @@ public class BasicEnemyBehavior : MonoBehaviour
         if (!playerInSightRange) Patrol();
         
         inAttackRange = Physics.CheckSphere(attackPoint.position, attackRange, whatIsPlayer);
-        if(inAttackRange) Attack();
+        if (inAttackRange)
+        {
+            animator.SetBool("PlayerInAttackRange", true);
+            Attack();
+        }
+        else
+        {
+            animator.SetBool("PlayerInAttackRange", false);
+        }
 
     }
 
@@ -116,6 +124,7 @@ public class BasicEnemyBehavior : MonoBehaviour
     private void Attack() // attacking animation needs to be added.
     {
         if(Time.time > timeUntilAttack){
+            
         playerInstance.currentHealth -= attackDamage;  // lowering the players current health
         _hud.SetHealth(playerInstance.currentHealth);  // adjusting the slider to the players new health value
         timeUntilAttack = Time.time + attackRate;      // timeUntilAttack = the next time we are able to attack, 
@@ -134,10 +143,7 @@ public class BasicEnemyBehavior : MonoBehaviour
         Vector3 dis = Vector3.MoveTowards(gameObject.transform.position, target.position, chaseSpeed);
         gameObject.transform.position = dis;
         transform.LookAt(target);
-        float velocityZ = Vector3.Dot(dis.normalized, transform.forward);
-        float velocityX = Vector3.Dot(dis.normalized, transform.right);   
-        animator.SetFloat("VelocityZ", velocityZ, 0.1f,Time.deltaTime);
-        animator.SetFloat("VelocityX", velocityX, 0.1f,Time.deltaTime);
+        
     }
 
 

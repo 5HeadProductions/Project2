@@ -5,11 +5,11 @@ using UnityEngine;
 public class EnemySpawnPoint : MonoBehaviour
 {
     [SerializeField] private GameObject Enemy;
+    public GameObject enemyClone;
     void Start()
     {
         
-        Instantiate(Enemy,transform.position,Quaternion.identity);
-        Debug.Log("EnemySpawned");
+        enemyClone = Instantiate(Enemy,transform.position,Quaternion.identity);
     }
 
     

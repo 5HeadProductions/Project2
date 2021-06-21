@@ -40,9 +40,9 @@ public class Projectiles : MonoBehaviour
           //  GameObject coinBlood = Instantiate(coinPrefab, spawnPosition, coinPrefab.GetComponent<Transform>().rotation);
            
            
-            Instantiate(particles,transform.position, Quaternion.identity);
+           var particleClone =  Instantiate(particles,transform.position, Quaternion.identity); //storing particle Clone so we dont delete the passed in prefab
             particles.Play();
-            Destroy(particles, .5f);
+            Destroy(particleClone, .5f);
            // Destroy(coinBlood, .5f);
             col.gameObject.GetComponent<BasicEnemyBehavior>().reduceHealth(attackDamage); 
             playerInstance.coins ++;

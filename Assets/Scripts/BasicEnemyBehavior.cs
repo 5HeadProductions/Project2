@@ -64,9 +64,13 @@ public class BasicEnemyBehavior : MonoBehaviour
     private void Update()
     {
         //check for sight range
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        if (currHealth > 0)
+        {
+            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+            animator.SetBool("PlayerInSight", playerInSightRange);
+        }
 
-        animator.SetBool("PlayerInSight", playerInSightRange);
+        
         
 
         if (!playerInSightRange) Patrol();
@@ -88,7 +92,9 @@ public class BasicEnemyBehavior : MonoBehaviour
     //fixedUpdate is for physics since update might make the logic faulty
     private void FixedUpdate()
     {
-        if(playerInSightRange) Chase();
+        if(currHealth > 0){
+            if (playerInSightRange) Chase();
+        }
     }
 
     private void Patrol()
@@ -149,6 +155,15 @@ public class BasicEnemyBehavior : MonoBehaviour
 
     public void reduceHealth(int damage){ // enemy taking damage
         this.currHealth -= damage;
+        if (currHealth <= 0)
+        {
+            
+            animator.SetBool("Dead", true);
+            animator.SetBool("PlayerInSight", false);
+            animator.SetBool("PlayerInAttackRange",false);
+            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            Destroy(gameObject, .5f);
+        }
         enemyHealthBar.SetHealth(currHealth);
         
     }

@@ -9,7 +9,7 @@ public class EnemyHealthBar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
     public Animator animator;
-    public GameObject zombie;
+    public EnemySpawnPoint enemySpawnPoint;
     public void SetMaxHealth(int health){
         slider.maxValue = health;
         slider.value = health;
@@ -19,13 +19,6 @@ public class EnemyHealthBar : MonoBehaviour
     public void SetHealth(int health){
         slider.value = health;
         fill.color = gradient.Evaluate(slider.normalizedValue);
-
-        if (slider.value == 0)
-        {
-            animator.SetBool("Dead", true);
-        }
-
-        Destroy(zombie, 5f);
-
+        
     }
 }

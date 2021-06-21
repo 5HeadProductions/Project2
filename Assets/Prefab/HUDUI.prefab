@@ -87,7 +87,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247872298}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -423.53, y: -225.04231, z: 0}
+  m_LocalPosition: {x: -423.53, y: -240.33998, z: 0}
   m_LocalScale: {x: 0.67681897, y: 0.67681897, z: 0.67681897}
   m_Children:
   - {fileID: 1878534643}
@@ -470,7 +470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185328100}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -411.37, y: -225.04231, z: 0}
+  m_LocalPosition: {x: -411.37, y: -240.33998, z: 0}
   m_LocalScale: {x: 0.67681897, y: 0.67681897, z: 0.67681897}
   m_Children:
   - {fileID: 145516498}
@@ -947,7 +947,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904669808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -417.07, y: -225.04231, z: 0}
+  m_LocalPosition: {x: -417.07, y: -240.34, z: 0}
   m_LocalScale: {x: 0.67681897, y: 0.67681897, z: 0.67681897}
   m_Children:
   - {fileID: 1304742130}
@@ -2193,6 +2193,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1628873077}
     m_Modifications:
+    - target: {fileID: 305016162, guid: afe59761b0e010a4a918d3f89ff2025b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1408222453138316411, guid: afe59761b0e010a4a918d3f89ff2025b, type: 3}
       propertyPath: m_Name
       value: DefaultPistol
@@ -2264,6 +2268,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 24473973}
     m_Modifications:
+    - target: {fileID: 639699453, guid: 472ffe42ad6f02140853211034a306c3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6216385737304173262, guid: 472ffe42ad6f02140853211034a306c3, type: 3}
       propertyPath: m_Name
       value: DefaultAR

@@ -61,6 +61,7 @@ public class FirePoint : MonoBehaviour
                         //getting the player to look at the point where the touch raycast collides with something
                         Vector3 playerLookAt = new Vector3(hit.point.x,
                             0f, hit.point.z);
+                    
                         player.transform.LookAt(playerLookAt);
                         player.transform.Rotate(new Vector3(0f, 0f, 0f));
                         

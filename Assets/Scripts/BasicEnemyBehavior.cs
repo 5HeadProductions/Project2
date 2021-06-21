@@ -64,15 +64,27 @@ public class BasicEnemyBehavior : MonoBehaviour
     private void Update()
     {
         //check for sight range
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        if (currHealth > 0)
+        {
+            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+            animator.SetBool("PlayerInSight", playerInSightRange);
+        }
 
-        animator.SetBool("PlayerInSight", playerInSightRange);
+        
         
 
         if (!playerInSightRange) Patrol();
         
         inAttackRange = Physics.CheckSphere(attackPoint.position, attackRange, whatIsPlayer);
-        if(inAttackRange) Attack();
+        if (inAttackRange)
+        {
+            animator.SetBool("PlayerInAttackRange", true);
+            Attack();
+        }
+        else
+        {
+            animator.SetBool("PlayerInAttackRange", false);
+        }
 
     }
 
@@ -80,7 +92,9 @@ public class BasicEnemyBehavior : MonoBehaviour
     //fixedUpdate is for physics since update might make the logic faulty
     private void FixedUpdate()
     {
-        if(playerInSightRange) Chase();
+        if(currHealth > 0){
+            if (playerInSightRange) Chase();
+        }
     }
 
     private void Patrol()
@@ -116,6 +130,7 @@ public class BasicEnemyBehavior : MonoBehaviour
     private void Attack() // attacking animation needs to be added.
     {
         if(Time.time > timeUntilAttack){
+            
         playerInstance.currentHealth -= attackDamage;  // lowering the players current health
         _hud.SetHealth(playerInstance.currentHealth);  // adjusting the slider to the players new health value
         timeUntilAttack = Time.time + attackRate;      // timeUntilAttack = the next time we are able to attack, 
@@ -134,15 +149,21 @@ public class BasicEnemyBehavior : MonoBehaviour
         Vector3 dis = Vector3.MoveTowards(gameObject.transform.position, target.position, chaseSpeed);
         gameObject.transform.position = dis;
         transform.LookAt(target);
-        float velocityZ = Vector3.Dot(dis.normalized, transform.forward);
-        float velocityX = Vector3.Dot(dis.normalized, transform.right);   
-        animator.SetFloat("VelocityZ", velocityZ, 0.1f,Time.deltaTime);
-        animator.SetFloat("VelocityX", velocityX, 0.1f,Time.deltaTime);
+        
     }
 
 
     public void reduceHealth(int damage){ // enemy taking damage
         this.currHealth -= damage;
+        if (currHealth <= 0)
+        {
+            
+            animator.SetBool("Dead", true);
+            animator.SetBool("PlayerInSight", false);
+            animator.SetBool("PlayerInAttackRange",false);
+            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            Destroy(gameObject, .5f);
+        }
         enemyHealthBar.SetHealth(currHealth);
         
     }

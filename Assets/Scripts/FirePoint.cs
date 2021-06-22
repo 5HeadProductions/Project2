@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -23,7 +24,14 @@ public class FirePoint : MonoBehaviour
 
     [SerializeField] private VisualEffect muzzleFlash;
 
-    private void Awake() => animator = player.GetComponent<Animator>(); // => is an expression body methood
+    //private void Awake() => animator = player.GetComponent<Animator>(); // => is an expression body methood
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        cam = Camera.main;
+    }
+
     void Update()
     {
 
@@ -34,7 +42,7 @@ public class FirePoint : MonoBehaviour
 
      //setting the bool to false so it knows to aim where the player is moving rather than firing
          //firing = false;
-         animator.SetBool("Shooting", false);
+         //animator.SetBool("Shooting", false);
          TouchShoot();
          
      
@@ -56,7 +64,7 @@ public class FirePoint : MonoBehaviour
                 
                 if (Physics.Raycast(ray, out hit,Mathf.Infinity) && Input.GetTouch(t.fingerId).phase == TouchPhase.Began && hit.collider.gameObject.CompareTag("UI") != true)
                 {
-                    animator.SetBool("Shooting", true);
+                   // animator.SetBool("Shooting", true);
                     firing = true;
                         //getting the player to look at the point where the touch raycast collides with something
                         Vector3 playerLookAt = new Vector3(hit.point.x,

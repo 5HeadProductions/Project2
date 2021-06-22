@@ -8,6 +8,8 @@ TagManager:
   - UI
   - RoomSpawnPoint
   - Rooms
+  - Primary
+  - HUDUI
   layers:
   - Default
   - TransparentFX

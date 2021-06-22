@@ -9,13 +9,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _speed = 5f, circleSpriteY;
     [SerializeField] public Transform playerMovementDirection;
     [SerializeField] private FirePoint firePoint;
+    
 
     private Animator _animator;
+    
     
 
     public Joystick movementJoystick;
     
-    private void Awake() => _animator = GetComponent<Animator>(); // => is an expression body methood
+    private void Awake(){
+     _animator = GetComponent<Animator>(); // => is an expression body methood\
+     firePoint = gameObject.GetComponentInChildren<FirePoint>();
+
+    }
+    
+    
 
     private void Update()
     {
@@ -33,13 +41,7 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(movement, Space.World);
             _animator.SetBool("moving", true);
             //so the player can look at the firing position momentarily
-            if (firePoint.firing == false)
-            {
-               // transform.LookAt(new Vector3(playerMovementDirection.position.x, 0,
-                 //   playerMovementDirection.position.z));
-
-                //transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-            }
+            
         }
         else
         {

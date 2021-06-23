@@ -43,7 +43,7 @@ public class ButtonManager : MonoBehaviour
         Debug.Log(weaponHolder.player.transform.position);
         weaponClone.transform.parent = weaponHolder.player.transform; //player gets child: weapon
        
-        weaponClone.transform.position = weaponHolder.ARVector;   //assigning the newly spawned weapon The ARVector (position)
+        weaponClone.transform.position = weaponHolder.ARVector + weaponHolder.player.transform.position;   //assigning the newly spawned weapon The ARVector (position)
         
         weaponClone.GetComponentInChildren<FirePoint>().enabled = true; //firepoint is turned on bc it is off on the prefabs
         

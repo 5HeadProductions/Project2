@@ -23,8 +23,9 @@ public class Inventory : MonoBehaviour
         currentGems = playerInstance.gems;
         coin_txt.text = currentCoins.ToString();
         gem_txt.text = currentGems.ToString();
-
-
+        
+        bottomGunObject.tag = "HUDUI";
+        topGunObject.tag = "HUDUI";
 
     }
 

@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.EventSystems;
 using UnityEngine. VFX;
+using Debug = UnityEngine.Debug;
 
 // this script is attached to the weapons, blasterA, shoots the projectiles
 public class FirePoint : MonoBehaviour
@@ -23,6 +26,11 @@ public class FirePoint : MonoBehaviour
     private Animator animator;
 
     [SerializeField] private VisualEffect muzzleFlash;
+    
+    [SerializeField] private float attackRate = 2f; // the amount of time before being able to attack
+    private float timeUntilAttack = 0;
+
+    public float ammo;
 
     //private void Awake() => animator = player.GetComponent<Animator>(); // => is an expression body methood
 
@@ -43,16 +51,19 @@ public class FirePoint : MonoBehaviour
      //setting the bool to false so it knows to aim where the player is moving rather than firing
          //firing = false;
          //animator.SetBool("Shooting", false);
-         TouchShoot();
-         
-     
+
+         //if statement for the purpose of making a fire rate
+         if (Time.time > timeUntilAttack && ammo >= 1)
+         {
+             TouchShoot();
+         }
+
+
 
     }
 
     void TouchShoot()
     {
-        
-        
         RaycastHit hit;   //stores info about the object the raycast hit
         Vector3[] touches = new Vector3[3]; //amount of touches that can be handled at a time
         
@@ -80,6 +91,10 @@ public class FirePoint : MonoBehaviour
                         GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
                         Rigidbody rb = bullet.GetComponent<Rigidbody>();
                         rb.AddForce(firePoint.forward * projectileForce, ForceMode.Impulse);
+                        
+                        //adjustment for fire rate
+                        timeUntilAttack = Time.time + attackRate;
+                        ammo--;
                 }
             }
         }

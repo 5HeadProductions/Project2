@@ -37,7 +37,7 @@ public class FirePoint : MonoBehaviour
 
      if(Input.GetButtonDown(shootingWith)) // button we are using to shoot 
      {
-    Shoot();
+    //Shoot();
      }
 
      //setting the bool to false so it knows to aim where the player is moving rather than firing

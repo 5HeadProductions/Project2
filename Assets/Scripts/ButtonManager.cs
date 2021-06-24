@@ -29,7 +29,7 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene(weaponScene);
     }
 
-    public void DefaultAREquip()
+    public void DefaultAREquip() // this is for the HUDUI canvas
     {
         if (GameObject.FindGameObjectWithTag("Primary") != null)        //if there is a different primary equipped then destroy it
         {
@@ -46,9 +46,7 @@ public class ButtonManager : MonoBehaviour
         weaponClone.transform.position = weaponHolder.ARVector + weaponHolder.player.transform.position;   //assigning the newly spawned weapon The ARVector (position)
         
         weaponClone.GetComponentInChildren<FirePoint>().enabled = true; //firepoint is turned on bc it is off on the prefabs
-        
-        
-        
+ 
     }
     
     

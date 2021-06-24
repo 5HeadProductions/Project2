@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WhiteGlow
+  m_Name: BrownGlow
   m_Shader: {fileID: -6465566751694194690, guid: e48fa1d7a4b959642990de750b6ffa82, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -37,5 +37,5 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - Color_236053f9df6e40c58f058e51e853bd15: {r: 3.0672052, g: 3.0672052, b: 3.0672052, a: 0}
+    - Color_236053f9df6e40c58f058e51e853bd15: {r: 0.3018868, g: 0.097161345, b: 0.009967966, a: 0}
   m_BuildTextureStacks: []

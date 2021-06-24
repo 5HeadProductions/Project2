@@ -99,6 +99,7 @@ public class BasicEnemyBehavior : MonoBehaviour
 
     private void Patrol()
     {
+        agent.enabled = true;
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet) agent.SetDestination(walkPoint);
@@ -146,6 +147,7 @@ public class BasicEnemyBehavior : MonoBehaviour
 
     private void Chase()
     {
+        agent.enabled = false;
         Vector3 dis = Vector3.MoveTowards(gameObject.transform.position, target.position, chaseSpeed);
         gameObject.transform.position = dis;
         transform.LookAt(target);

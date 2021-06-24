@@ -16,8 +16,11 @@ public class RoomSpawner : MonoBehaviour
     private int rand;
     private bool spawned = false;
 
+    public float waitTime = 4f;
+
     private void Start()
     {
+        Destroy(gameObject, waitTime);
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         Invoke("Spawn",0.1f);
     }
@@ -30,25 +33,25 @@ public class RoomSpawner : MonoBehaviour
             {
                 //spawn room with bottom door
                 rand = Random.Range(0, templates.bottomRooms.Length);
-                Instantiate(templates.bottomRooms[rand], transform.position, Quaternion.identity);
+                Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
             }
             else if (openingDirection == 2)
             {
                 //spawn room with top door
                 rand = Random.Range(0, templates.topRooms.Length);
-                Instantiate(templates.topRooms[rand], transform.position, Quaternion.identity);
+                Instantiate(templates.topRooms[rand], transform.position, templates.topRooms[rand].transform.rotation);
             }
             else if (openingDirection == 3)
             {
                 //spawn room with left door
                 rand = Random.Range(0, templates.leftRooms.Length);
-                Instantiate(templates.leftRooms[rand], transform.position, Quaternion.identity);
+                Instantiate(templates.leftRooms[rand], transform.position, templates.leftRooms[rand].transform.rotation);
             }
             else if (openingDirection == 4)
             {
                 //spawn room with right door
                 rand = Random.Range(0, templates.rightRooms.Length);
-                Instantiate(templates.rightRooms[rand], transform.position, Quaternion.identity);
+                Instantiate(templates.rightRooms[rand], transform.position, templates.rightRooms[rand].transform.rotation);
             }
         }
 
@@ -61,7 +64,7 @@ public class RoomSpawner : MonoBehaviour
         {
             if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
             {
-                Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
+                Instantiate(templates.closedRoom, transform.position, templates.closedRoom.transform.rotation);
                 Destroy(gameObject);
             }
 

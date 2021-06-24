@@ -73,6 +73,9 @@ public class FirePoint : MonoBehaviour
                         player.transform.LookAt(playerLookAt);
                         player.transform.Rotate(new Vector3(0f, 0f, 0f));
                         
+                        //Playing audio
+                        FindObjectOfType<AudioManager>().Play("Pistol Fire");
+                        
                         //instantiating bullet
                         GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
                         Rigidbody rb = bullet.GetComponent<Rigidbody>();

@@ -95,7 +95,6 @@ public class FirePoint : MonoBehaviour
                     player.transform.Rotate(new Vector3(0f, 0f, 0f));
 
                     //Playing audio
-
                     PlaySound();
 
                     //instantiating bullet

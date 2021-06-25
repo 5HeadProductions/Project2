@@ -21,6 +21,9 @@ public class HUD : MonoBehaviour
         }
         player = GameObject.Find("Player");
 
+
+// check the new stats of the player when the level reloads to have their updated health, instead of default
+// add a function that updates the slider when the player buys health
         SetMaxHealth();
         
     }

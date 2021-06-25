@@ -16,7 +16,7 @@ public class FirePoint : MonoBehaviour
     public GameObject projectilePrefab; // projectile prefab
     private string shootingWith = "Fire1"; // name of the keybind the player will shoot from
 
-    [SerializeField]private float projectileForce; // projectile speed
+    [SerializeField] private float projectileForce; // projectile speed
 
     [SerializeField] private GameObject player;
 
@@ -26,11 +26,15 @@ public class FirePoint : MonoBehaviour
     private Animator animator;
 
     [SerializeField] private VisualEffect muzzleFlash;
-    
-    [SerializeField] private float attackRate = 2f; // the amount of time before being able to attack
+
+    [SerializeField] private float attackRate = 0.5f; // the amount of time before being able to attack
     private float timeUntilAttack = 0;
 
-    public float ammo;
+    public float ammo = 40f;
+
+    public String weaponType;
+
+    public AudioManager audioManager;
 
     //private void Awake() => animator = player.GetComponent<Animator>(); // => is an expression body methood
 
@@ -38,25 +42,28 @@ public class FirePoint : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         cam = Camera.main;
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
+
     }
 
     void Update()
     {
 
-     if(Input.GetButtonDown(shootingWith)) // button we are using to shoot 
-     {
-    //Shoot();
-     }
+        if (Input.GetButtonDown(shootingWith)) // button we are using to shoot 
+        {
+            //Shoot();
+        }
 
-     //setting the bool to false so it knows to aim where the player is moving rather than firing
-         //firing = false;
-         //animator.SetBool("Shooting", false);
+        //setting the bool to false so it knows to aim where the player is moving rather than firing
+        //firing = false;
+        //animator.SetBool("Shooting", false);
 
-         //if statement for the purpose of making a fire rate
-         if (Time.time > timeUntilAttack && ammo >= 1)
-         {
-             TouchShoot();
-         }
+        //if statement for the purpose of making a fire rate
+        if (Time.time > timeUntilAttack && ammo >= 1)
+        {
+            TouchShoot();
+        }
 
 
 
@@ -64,48 +71,69 @@ public class FirePoint : MonoBehaviour
 
     void TouchShoot()
     {
-        RaycastHit hit;   //stores info about the object the raycast hit
+        RaycastHit hit; //stores info about the object the raycast hit
         Vector3[] touches = new Vector3[3]; //amount of touches that can be handled at a time
-        
-        if(Input.touchCount > 0)
+
+        if (Input.touchCount > 0)
         {
-            foreach(Touch t in Input.touches) //does this action for each of the touches on screen currently
+            foreach (Touch t in Input.touches) //does this action for each of the touches on screen currently
             {
-                Ray ray = cam.ScreenPointToRay(Input.GetTouch(t.fingerId).position);//creates a ray from the touch until it hits a collider
-                
-                if (Physics.Raycast(ray, out hit,Mathf.Infinity) && Input.GetTouch(t.fingerId).phase == TouchPhase.Began && hit.collider.gameObject.CompareTag("UI") != true)
+                Ray ray = cam.ScreenPointToRay(Input.GetTouch(t.fingerId)
+                    .position); //creates a ray from the touch until it hits a collider
+
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity) &&
+                    Input.GetTouch(t.fingerId).phase == TouchPhase.Began &&
+                    hit.collider.gameObject.CompareTag("UI") != true)
                 {
-                   // animator.SetBool("Shooting", true);
+                    // animator.SetBool("Shooting", true);
                     firing = true;
-                        //getting the player to look at the point where the touch raycast collides with something
-                        Vector3 playerLookAt = new Vector3(hit.point.x,
-                            0f, hit.point.z);
-                    
-                        player.transform.LookAt(playerLookAt);
-                        player.transform.Rotate(new Vector3(0f, 0f, 0f));
-                        
-                        //Playing audio
-                        FindObjectOfType<AudioManager>().Play("Pistol Fire");
-                        
-                        //instantiating bullet
-                        GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-                        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-                        rb.AddForce(firePoint.forward * projectileForce, ForceMode.Impulse);
-                        
-                        //adjustment for fire rate
-                        timeUntilAttack = Time.time + attackRate;
-                        ammo--;
+                    //getting the player to look at the point where the touch raycast collides with something
+                    Vector3 playerLookAt = new Vector3(hit.point.x,
+                        0f, hit.point.z);
+
+                    player.transform.LookAt(playerLookAt);
+                    player.transform.Rotate(new Vector3(0f, 0f, 0f));
+
+                    //Playing audio
+
+                    PlaySound();
+
+                    //instantiating bullet
+                    GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+                    Rigidbody rb = bullet.GetComponent<Rigidbody>();
+                    rb.AddForce(firePoint.forward * projectileForce, ForceMode.Impulse);
+
+                    //adjustment for fire rate
+                    timeUntilAttack = Time.time + attackRate;
+                    ammo--;
+
                 }
             }
         }
     }
 
-    public void Shoot(){
+    public void Shoot()
+    {
 
-       GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-       Rigidbody rb = bullet.GetComponent<Rigidbody>();
-       muzzleFlash.Play();
-       rb.AddForce(firePoint.forward * projectileForce, ForceMode.Impulse);
-     
+        GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        muzzleFlash.Play();
+        rb.AddForce(firePoint.forward * projectileForce, ForceMode.Impulse);
+
     }
+
+    private void PlaySound()
+    {
+        if (weaponType == "pistol" || weaponType == "Pistol")
+        {
+            audioManager.Play("Pistol Fire");
+        }
+        else if (weaponType == "rifle" || weaponType == "Rifle")
+        {
+            audioManager.Play("Rifle Fire");
+        }
+    }
+    
+    
 }
+

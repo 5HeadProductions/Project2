@@ -211,6 +211,10 @@ MonoBehaviour:
   cam: {fileID: 0}
   firing: 0
   muzzleFlash: {fileID: 2634046043577142648}
+  attackRate: 0.1
+  ammo: 1000
+  weaponType: Rifle
+  audioManager: {fileID: 0}
 --- !u!1 &2904658183549088910
 GameObject:
   m_ObjectHideFlags: 0

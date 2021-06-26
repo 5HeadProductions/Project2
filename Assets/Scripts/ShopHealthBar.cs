@@ -52,7 +52,7 @@ public class ShopHealthBar : MonoBehaviour
         slider.maxValue += add;
         playerInstance.maxHealth += add;
         DisplayHealth(playerInstance.currentHealth); 
-                  
+        _hud.SetHealth(playerInstance.currentHealth);         
        // currentHealth_Txt.text = playerInstance.maxHealth.ToString() + "/" + playerInstance.maxHealth.ToString();
        // slider.maxValue = playerInstance.maxHealth; // this needs to be changed when the player buys max value health
        // playerInstance.currentHealth = playerInstance.maxHealth; // gives more max health to the player and heals them

@@ -10,6 +10,7 @@ public class EnemySpawnPoint : MonoBehaviour
     {
         
         enemyClone = Instantiate(Enemy,transform.position,Quaternion.identity);
+        Destroy(gameObject, 5f);
     }
 
     

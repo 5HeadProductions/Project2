@@ -12,6 +12,7 @@ TagManager:
   - HUDUI
   - Shop
   - Projectile
+  - RangedZombie
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - Water
   - UI
   - Terrain
-  - 
-  - 
+  - EnemyProjectile
+  - Enemy
   - 
   - LineRenderer
   - 

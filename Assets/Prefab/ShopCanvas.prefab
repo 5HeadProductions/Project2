@@ -912,7 +912,7 @@ GameObject:
   - component: {fileID: 3523204600932808349}
   - component: {fileID: 8104258540459023387}
   m_Layer: 5
-  m_Name: Buy
+  m_Name: BuyImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3992,7 +3992,7 @@ GameObject:
   - component: {fileID: 2017914623744134428}
   - component: {fileID: 4803354421869589360}
   m_Layer: 5
-  m_Name: Buy (1)
+  m_Name: Upgrade/BuyImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8039,7 +8039,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4769823401622640625}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: DefaultAREquip
+        m_MethodName: DefaultPistoEquip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8851,7 +8851,7 @@ GameObject:
   - component: {fileID: 2932766663339089631}
   - component: {fileID: 6027222561200164841}
   m_Layer: 5
-  m_Name: Upgrade
+  m_Name: UpgradeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -103,7 +103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6351221402650733565
 Transform:
   m_ObjectHideFlags: 0
@@ -138,6 +138,12 @@ MonoBehaviour:
   cam: {fileID: 0}
   firing: 0
   muzzleFlash: {fileID: 6351221403783821991}
+  attackRate: 0.5
+  bulletAmmo: 40
+  rocketAmmo: 40
+  attackDamage: 15
+  weaponType: 
+  audioManager: {fileID: 0}
 --- !u!1 &6351221403226231284
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +195,12 @@ MonoBehaviour:
   cam: {fileID: 0}
   firing: 0
   muzzleFlash: {fileID: 6351221404047056247}
+  attackRate: 0.5
+  bulletAmmo: 40
+  rocketAmmo: 40
+  attackDamage: 15
+  weaponType: 
+  audioManager: {fileID: 0}
 --- !u!1 &6351221403783822010
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,7 +280,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6351221403783822010}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

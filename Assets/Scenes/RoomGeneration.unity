@@ -337,6 +337,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8417339585078796603, guid: f7719c2a928fb3b4c815515e914f0e05, type: 3}
+      propertyPath: m_Value
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7719c2a928fb3b4c815515e914f0e05, type: 3}
 --- !u!224 &605584622 stripped
@@ -451,6 +455,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &664545408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 664545410}
+  - component: {fileID: 664545409}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &664545409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664545408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 091037633328e61419b5fb9d4407659f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds: []
+--- !u!4 &664545410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664545408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.8691423, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &721257147
 PrefabInstance:
@@ -1395,6 +1443,19 @@ MonoBehaviour:
   - {fileID: 2904658183549088910, guid: a57a7077583e7ec4f8c1d37d58ede8f9, type: 3}
   - {fileID: 3823609181762676123, guid: a9aeffe1a48ab4a429adb017636ecfab, type: 3}
   - {fileID: 4807509333339837443, guid: 36ceeb1cf76eed84daa2418863ba8449, type: 3}
+  weaponSprites:
+  - {fileID: -8464996122565669375, guid: 840c2389fed2bb140aac0fe24b50c477, type: 3}
+  - {fileID: -2311562982977915591, guid: 3a6576ae695ecc8419edff11aa584caa, type: 3}
+  - {fileID: -3452971464625011254, guid: 890e50f159705a143b5c054eb70ae460, type: 3}
+  - {fileID: -8139136701729094091, guid: ed3cf2bf2f14ba343aecddbe87c64f38, type: 3}
+  - {fileID: -6589136338746221774, guid: 9c61270b0f792e5479ddafeb36d27d7b, type: 3}
+  - {fileID: -6071094409594544423, guid: fb545794ba14c7e4ba42fb2b15fe9518, type: 3}
+  - {fileID: -8144674226563628122, guid: 5cdd48ee980a3404fae39a833de98056, type: 3}
+  - {fileID: 1088204277351148414, guid: e8fd65d51850ab64c807a065fbbcaa9f, type: 3}
+  - {fileID: 6868859604011285864, guid: 30528c202b909ff49a52edd733dc0993, type: 3}
+  - {fileID: -1451729281516379275, guid: 14aa51a91db9a6a438c0d55365b4d67f, type: 3}
+  - {fileID: -6109139993044177370, guid: 4ad00732a32da564c887737f65c14b14, type: 3}
+  - {fileID: -2666325413344423360, guid: 5f5858c32bc8f1945b596a3d3a567bec, type: 3}
   ARVector: {x: 0.24, y: 1.9847989, z: 0.68532157}
 --- !u!4 &2143798288
 Transform:

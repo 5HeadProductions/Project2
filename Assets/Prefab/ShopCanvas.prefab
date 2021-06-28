@@ -276,7 +276,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6928327098162328240}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: DefaultAREquip
+        m_MethodName: PurplePistol
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -355,6 +355,7 @@ MonoBehaviour:
   - {fileID: 1750793536332978768, guid: aaeb68a21f8b7704083a25140c1dafec, type: 3}
   - {fileID: 3823609181762676123, guid: a9aeffe1a48ab4a429adb017636ecfab, type: 3}
   - {fileID: 4807509333339837443, guid: 36ceeb1cf76eed84daa2418863ba8449, type: 3}
+  weaponSprites: []
   ARVector: {x: 0.24, y: 1.9847989, z: 0.68532157}
 --- !u!1 &415347731478616747
 GameObject:
@@ -480,7 +481,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 415347731478616745}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: DefaultAREquip
+        m_MethodName: ColorPistol
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -634,7 +635,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 020173ca2ca7adf499520807adc0b278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo_Txt: {fileID: 7188403026753794684}
+  bullet_Txt: {fileID: 7188403026753794684}
+  rocket_Txt: {fileID: 4996891272992989696}
   coin_Txt: {fileID: 5537901956975510121}
   gem_Txt: {fileID: 4928443012942220359}
   shopCanvas: {fileID: 415347731833326704}
@@ -2522,9 +2524,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 020173ca2ca7adf499520807adc0b278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo_Txt: {fileID: 0}
-  coin_Txt: {fileID: 0}
-  gem_Txt: {fileID: 0}
+  bullet_Txt: {fileID: 7188403026753794684}
+  rocket_Txt: {fileID: 4996891272992989696}
+  coin_Txt: {fileID: 5537901956975510121}
+  gem_Txt: {fileID: 4928443012942220359}
   shopCanvas: {fileID: 415347731833326704}
 --- !u!1 &2064000256940089582
 GameObject:
@@ -3431,7 +3434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade/Buy
+  m_text: Cynical
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
   m_sharedMaterial: {fileID: 7236782305257308195, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
@@ -5334,7 +5337,7 @@ GameObject:
   - component: {fileID: 3153655607188671224}
   - component: {fileID: 5364513741090508901}
   m_Layer: 5
-  m_Name: BulletImage
+  m_Name: BulletAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6569,7 +6572,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade/Buy
+  m_text: Plain
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
   m_sharedMaterial: {fileID: 7236782305257308195, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
@@ -7678,7 +7681,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade/Buy
+  m_text: 'Ludicrous
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
   m_sharedMaterial: {fileID: 7236782305257308195, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
@@ -8039,7 +8044,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4769823401622640625}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: DefaultPistoEquip
+        m_MethodName: DefaultPistol
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8642,7 +8647,7 @@ GameObject:
   - component: {fileID: 3545469740031858056}
   - component: {fileID: 7188403026753794684}
   m_Layer: 5
-  m_Name: AmmoTxt
+  m_Name: BulletTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

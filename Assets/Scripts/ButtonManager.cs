@@ -11,10 +11,13 @@ public class ButtonManager : MonoBehaviour
     private string main = "MainMenu";
 
     private WeaponHolder weaponHolder;
+
+    private Inventory inventory;
         // Start is called before the first frame update
     void Start()
     {
-        weaponHolder = GameObject.Find("Weapon Holder").GetComponent<WeaponHolder>();
+        weaponHolder = GameObject.Find("WeaponHolder").GetComponent<WeaponHolder>();
+        inventory = GameObject.Find("inventory").GetComponent<Inventory>();
     }
     
     public void LoadMainMenu(){
@@ -28,44 +31,49 @@ public class ButtonManager : MonoBehaviour
     public void LoadWeapons(){
         SceneManager.LoadScene(weaponScene);
     }
-    public void DefaultPistoEquip() // this is for the HUDUI canvas
-    {
-        if (GameObject.FindGameObjectWithTag("Primary") != null)        //if there is a different primary equipped then destroy it
-        {    
-            Destroy(GameObject.FindGameObjectWithTag("Primary"));  
+    
+    // called when the player clicks on the top gun button in game on the HUD
+    public void HUDEquip(){
+        var equippedGunSprite = inventory.ChangeWeapon();
+        for(int i = 0; i < weaponHolder.weaponSprites.Length; i++){
+            if(weaponHolder.weaponSprites[i] == equippedGunSprite){
+                Equip(i);
+                break;
+            }
         }
-        GameObject weaponClone = Instantiate(weaponHolder.Weapons[0], weaponHolder.Weapons[0].transform.position, //Instantiate a clone of wanted weapon
-                weaponHolder.Weapons[0].transform.rotation);
-        weaponClone.transform.parent = weaponHolder.player.transform; //player gets child: weapon
-       
-        weaponClone.transform.position = weaponHolder.ARVector + weaponHolder.player.transform.position;   //assigning the newly spawned weapon The ARVector (position)
-        
-        weaponClone.GetComponentInChildren<FirePoint>().enabled = true; //firepoint is turned on bc it is off on the prefabs
- 
-    }
 
-    public void DefaultAREquip() // this is for the HUDUI canvas
-    {
-        //switch statements
-      //  Equip(1);
- 
     }
     public void Equip(int num) // this is for the HUDUI canvas
     {
-        if (GameObject.FindGameObjectWithTag("Primary") != null)        //if there is a different primary equipped then destroy it
+        
+        if (GameObject.FindGameObjectWithTag("Primary") != null || "Secondary" != null)        //if there is a different primary equipped then destroy it
         {    
-            Destroy(GameObject.FindGameObjectWithTag("Primary"));  
+            Destroy(GameObject.FindGameObjectWithTag("Primary"));
+            Destroy(GameObject.FindGameObjectWithTag("Secondary"));  
         }
         GameObject weaponClone = Instantiate(weaponHolder.Weapons[num], weaponHolder.Weapons[num].transform.position, //Instantiate a clone of wanted weapon
                 weaponHolder.Weapons[num].transform.rotation);
-        weaponClone.transform.parent = weaponHolder.player.transform; //player gets child: weapon
-       
-        weaponClone.transform.position = weaponHolder.ARVector + weaponHolder.player.transform.position;   //assigning the newly spawned weapon The ARVector (position)
-        
+        weaponClone.transform.parent = weaponHolder.player.transform; //player gets child: weapon    
+        weaponClone.transform.position = weaponHolder.ARVector + weaponHolder.player.transform.position;   //assigning the newly spawned weapon The ARVector (position)  
         weaponClone.GetComponentInChildren<FirePoint>().enabled = true; //firepoint is turned on bc it is off on the prefabs
- 
     }
     
+
+    public void DefaultPistol(){
+        int index = 1; // the fixed index location of the sprite in the array
+        inventory.SetPistolUI(index);
+    }
+    public void PurplePistol(){
+        int index = 4; 
+       bool isEquipped = inventory.SetPistolUI(index);
+       if(isEquipped) Equip(index); //only if the player is holding the gun we want to spawn it in right away else just change the sprite
+    }
+    public void ColorPistol(){
+        int index = 8; 
+        inventory.SetPistolUI(index);
+        bool isEquipped = inventory.SetPistolUI(index);
+        if(isEquipped) Equip(index);
+    }
     
 
 

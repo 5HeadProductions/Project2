@@ -9,10 +9,10 @@ public class ShopAssignment : MonoBehaviour
 {
     //upgrade the weapons of the players
     //this script is attached to the ShopCanvas
-    [SerializeField]private TextMeshProUGUI ammo_Txt, coin_Txt, gem_Txt;
+    [SerializeField]private TextMeshProUGUI bullet_Txt,rocket_Txt, coin_Txt, gem_Txt;
     private PlayerManager playerInstance;
    [SerializeField] private GameObject shopCanvas;
-    private FirePoint ammo;
+    private FirePoint firePoint;
 
 
     
@@ -20,8 +20,8 @@ public class ShopAssignment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     { 
-
-        ammo = GameObject.Find("FirePoint").GetComponent<FirePoint>();
+        bullet_Txt.text = firePoint.bulletAmmo.ToString();
+        rocket_Txt.text = firePoint.rocketAmmo.ToString();
        
         coin_Txt.text = playerInstance.coins.ToString();
         gem_Txt.text = playerInstance.gems.ToString();
@@ -29,6 +29,7 @@ public class ShopAssignment : MonoBehaviour
 
     void OnEnable(){
         Pause();
+    firePoint = GameObject.Find("FirePoint").GetComponent<FirePoint>(); //FirePoint has a reference to the ammo
     if(GameObject.Find("PlayerManager")!= null){
             playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         }
@@ -41,7 +42,6 @@ public class ShopAssignment : MonoBehaviour
     } 
 
     public void Resume(){
-        Debug.Log("Button pressed");
         Time.timeScale = 1;
         shopCanvas.SetActive(false);
     }

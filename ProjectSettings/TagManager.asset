@@ -13,6 +13,7 @@ TagManager:
   - Shop
   - Projectile
   - RangedZombie
+  - Secondary
   layers:
   - Default
   - TransparentFX

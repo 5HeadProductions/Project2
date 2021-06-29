@@ -14,7 +14,7 @@ public class Projectiles : MonoBehaviour
     public Rigidbody rb; // rigidbody of the projectile
     public Transform projectileT; // getting the transform of the porjectile in order to rotate it
     public int attackDamage; // should change depending on what gun the player is using
-    [SerializeField] private GameObject coinPrefab;
+   // [SerializeField] private GameObject coinPrefab;
     [SerializeField] private ParticleSystem particles;
 
     private FirePoint firePoint;
@@ -41,12 +41,13 @@ public class Projectiles : MonoBehaviour
             Vector3 spawnPosition = new Vector3(0f, 0f, 0f); // the animation recoding has a set positio
            attackDamage = firePoint.attackDamage;
            
-           var particleClone =  Instantiate(particles,transform.position, Quaternion.identity); //storing particle Clone so we dont delete the passed in prefab
+           ParticleSystem particleClone =  Instantiate(particles,transform.position, Quaternion.identity); //storing particle Clone so we dont delete the passed in prefab
             particles.Play();
-            Destroy(particleClone, .5f);
-           // Destroy(coinBlood, .5f);
+         //   Destroy(particles, .5f);
+           
             col.gameObject.GetComponent<BasicEnemyBehavior>().reduceHealth(attackDamage); 
             playerInstance.coins ++;
+            Destroy(particleClone, .5f);
             Destroy(gameObject);
         }
         else

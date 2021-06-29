@@ -8,7 +8,7 @@ public class ShopEnabler : MonoBehaviour
     
 
     public void OnCollisionEnter(Collision col){
-        if(col.gameObject.CompareTag("Player") || col.gameObject.CompareTag("Projectile")){
+        if(col.gameObject.CompareTag("Player")){
             shopCanvas.SetActive(true); 
         }
     } 

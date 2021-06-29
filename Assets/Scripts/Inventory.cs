@@ -77,7 +77,18 @@ public class Inventory : MonoBehaviour
     return bottom_Sprite.image.sprite;
     }
 
-    public void SetPrimaryWeaponUI(int index){// used when the player buys ot upgrades a gun in the shop
+    // if a pistol is found on the top then that means we have a primary equipped so we need to change the sprite and spawn the gun
+
+    public bool SetPrimaryWeaponUI(int index){// used when the player buys or upgrades a gun in the shop
+        if(top_Sprite.image.sprite == weaponHolder.weaponSprites[0] || top_Sprite.image.sprite == weaponHolder.weaponSprites[4] || top_Sprite.image.sprite == weaponHolder.weaponSprites[8]){
+            bottom_Sprite.image.sprite = weaponHolder.weaponSprites[index]; //equipping the primary weapon
+            return true; // spawning the gun
+            }
+         else
+            {  
+                top_Sprite.image.sprite = weaponHolder.weaponSprites[index];
+                return false;
+            }
         
     }
 

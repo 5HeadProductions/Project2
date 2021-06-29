@@ -485,7 +485,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091037633328e61419b5fb9d4407659f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: Pistol Fire
+    clip: {fileID: 8300000, guid: f9a9b4d38b17a434ca8ad82ee92496ae, type: 3}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
+  - name: Rifle Fire
+    clip: {fileID: 8300000, guid: 1f95a240714ff614ea8553b1a361287a, type: 3}
+    volume: 0
+    pitch: 0
+    source: {fileID: 0}
+    loop: 0
 --- !u!4 &664545410
 Transform:
   m_ObjectHideFlags: 0
@@ -1123,7 +1135,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1

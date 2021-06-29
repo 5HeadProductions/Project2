@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed = 5f, circleSpriteY;
     [SerializeField] public Transform playerMovementDirection;
-    [SerializeField] private FirePoint firePoint;
+    [SerializeField] public FirePoint firePoint;
     
 
     private Animator _animator;

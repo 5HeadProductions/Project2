@@ -7,7 +7,9 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
 using UnityEngine. VFX;
-using Debug = UnityEngine.Debug;
+
+
+
 
 // this script is attached to the weapons, blasterA, shoots the projectiles
 public class FirePoint : MonoBehaviour
@@ -30,7 +32,7 @@ public class FirePoint : MonoBehaviour
     [SerializeField] private float attackRate = 0.5f; // the amount of time before being able to attack
     private float timeUntilAttack = 0;
 
-    public int bulletAmmo = 40, rocketAmmo = 40; // max ammo 
+    public int bulletAmmo = 0, rocketAmmo = 40; // max ammo 
     public int attackDamage = 3;
 
     public String weaponType;
@@ -39,6 +41,8 @@ public class FirePoint : MonoBehaviour
 
     private PlayerManager playerInstance;
     private Inventory inventory;
+    private ShopEnabler shopEnabler;
+    private bool on;
 
     //private void Awake() => animator = player.GetComponent<Animator>(); // => is an expression body methood
 
@@ -49,16 +53,36 @@ public class FirePoint : MonoBehaviour
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         inventory = GameObject.Find("inventory").GetComponent<Inventory>();
+        shopEnabler = GameObject.Find("Shop").GetComponent<ShopEnabler>();
         
 
     }
 
     void Update()
     {
-
+        on = shopEnabler.shopCanvas.activeInHierarchy ? true : false;
         if (Input.GetButtonDown(shootingWith)) // button we are using to shoot 
         {
-            Shoot();
+            if(on){
+                 if(EventSystem.current.IsPointerOverGameObject()) return;
+            }else
+            {
+           
+            if(inventory.PrimaryOn()){
+               if(playerInstance.primaryAmmo > 0){
+                   Shoot();
+                   playerInstance.primaryAmmo--;
+               }
+           }else
+           {
+               if(playerInstance.secondaryAmmo > 0){
+                   Shoot();
+                   playerInstance.secondaryAmmo--;
+               }
+           }
+            }
+
+            
         }
 
         //setting the bool to false so it knows to aim where the player is moving rather than firing

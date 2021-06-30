@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
     void Start(){
         playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         firePoint = GameObject.Find("FirePoint").GetComponent<FirePoint>();
-         weaponHolder = GameObject.Find("WeaponHolder").GetComponent<WeaponHolder>();
+        weaponHolder = GameObject.Find("WeaponHolder").GetComponent<WeaponHolder>();
         currentCoins = playerInstance.coins;
         currentGems = playerInstance.gems;
         coin_txt.text = currentCoins.ToString();
@@ -63,12 +63,7 @@ public class Inventory : MonoBehaviour
             currentRockets = firePoint.rocketAmmo;
             rocket_txt.text = currentRockets.ToString();
         }
-    //    if(primaryAmmo != firePoint.bulletAmmo){
-     //       if(firePoint.bulletAmmo >= 0){
-     //       primaryAmmo = firePoint.bulletAmmo;
-      //      bullet_txt.text = primaryAmmo.ToString();
-      //      }
-      //  }
+        // if the primary weapon is on then we want to use the primary ammo amount else use the pistol
         isPrimary = PrimaryOn();
         if(isPrimary){
             primaryAmmo = playerInstance.primaryAmmo;
@@ -81,17 +76,23 @@ public class Inventory : MonoBehaviour
         }
     }
 
+
+//finds the fire point of the gun the player bought then assigns player manager's ammo to the new guns max ammo
     public void ReloadPrimary(){
+       
         primaryAmmo = firePoint.bulletAmmo; // setting the max value of ammo
         playerInstance.primaryAmmo = primaryAmmo;// setting up how many bullets until the player runs out
 
     }
 
+//finds the fire point of the new secondary weapon and updates the ammo
     public void ReloadSecondary(){
+        
         secondaryAmmo = firePoint.bulletAmmo;
         playerInstance.secondaryAmmo = secondaryAmmo;
     }
 
+// determines if the primary weapon is currently used or not
     public bool PrimaryOn(){
         if(top_Sprite.image.sprite == weaponHolder.weaponSprites[0] || top_Sprite.image.sprite == weaponHolder.weaponSprites[4] || top_Sprite.image.sprite == weaponHolder.weaponSprites[8]){
             return true; // if the top sprite is a pistol then primary is currently being used.

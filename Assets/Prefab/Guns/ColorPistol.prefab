@@ -212,7 +212,9 @@ MonoBehaviour:
   firing: 0
   muzzleFlash: {fileID: 873776302}
   attackRate: 0.5
-  ammo: 40
+  bulletAmmo: 40
+  rocketAmmo: 40
+  attackDamage: 50
   weaponType: pistol
   audioManager: {fileID: 0}
 --- !u!1 &1750793536332978768
@@ -228,7 +230,7 @@ GameObject:
   - component: {fileID: 237825472359234437}
   m_Layer: 0
   m_Name: ColorPistol
-  m_TagString: Untagged
+  m_TagString: Secondary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

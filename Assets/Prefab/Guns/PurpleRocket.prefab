@@ -275,6 +275,12 @@ MonoBehaviour:
   cam: {fileID: 0}
   firing: 0
   muzzleFlash: {fileID: 137665117896580143}
+  attackRate: 0.5
+  bulletAmmo: 40
+  rocketAmmo: 40
+  attackDamage: 35
+  weaponType: 
+  audioManager: {fileID: 0}
 --- !u!1 &137665119054615199
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,6 +380,12 @@ MonoBehaviour:
   cam: {fileID: 0}
   firing: 0
   muzzleFlash: {fileID: 137665118166154239}
+  attackRate: 0.5
+  bulletAmmo: 40
+  rocketAmmo: 40
+  attackDamage: 35
+  weaponType: 
+  audioManager: {fileID: 0}
 --- !u!1 &948144488683554731
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,7 +30,8 @@ public class FirePoint : MonoBehaviour
     [SerializeField] private float attackRate = 0.5f; // the amount of time before being able to attack
     private float timeUntilAttack = 0;
 
-    public float ammo = 40f;
+    public int bulletAmmo = 40, rocketAmmo = 40;
+    public int attackDamage = 3;
 
     public String weaponType;
 
@@ -60,7 +61,7 @@ public class FirePoint : MonoBehaviour
         //animator.SetBool("Shooting", false);
 
         //if statement for the purpose of making a fire rate
-        if (Time.time > timeUntilAttack && ammo >= 1)
+        if (Time.time > timeUntilAttack && bulletAmmo >= 1)
         {
            // TouchShoot();
         }
@@ -104,7 +105,7 @@ public class FirePoint : MonoBehaviour
 
                     //adjustment for fire rate
                     timeUntilAttack = Time.time + attackRate;
-                    ammo--;
+                    bulletAmmo--;
 
                 }
             }

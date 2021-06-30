@@ -10,7 +10,6 @@ public class CameraTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("yo mom");
             Camera.main.transform.position = cameraPlacement.position;
             Camera.main.transform.rotation = cameraPlacement.rotation;
         }

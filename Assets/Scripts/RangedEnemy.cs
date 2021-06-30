@@ -43,7 +43,7 @@ public class RangedEnemy : MonoBehaviour
     public HUD _hud; // HUD script
     public bool inAttackRange;
     [SerializeField]private Transform attackPoint;
-   private float attackRate = 2f; // the amount of time before being able to attack
+   [SerializeField]private float attackRate = 2f; // the amount of time before being able to attack
    private float timeUntilAttack = 0; // the next time the zombie is able to attack again
 
    //taking damage and reducing health bar
@@ -130,19 +130,33 @@ public class RangedEnemy : MonoBehaviour
     
     private void Attack() // attacking animation needs to be added.
     {
+
+        
         if(Time.time > timeUntilAttack)
         {
+            
+            animator.SetBool("AlreadyAttacked", false);
             transform.LookAt(target);
-            GameObject Rock = Instantiate(rock, attackPoint.position, attackPoint.rotation);
-            Rigidbody rb = Rock.GetComponent<Rigidbody>();
-            rb.AddForce(attackPoint.forward * rockForce, ForceMode.Impulse);
+            StartCoroutine(ThrowRock());
         //playerInstance.currentHealth -= attackDamage;  // lowering the players current health
         //_hud.SetHealth(playerInstance.currentHealth);  // adjusting the slider to the players new health value
         timeUntilAttack = Time.time + attackRate;      // timeUntilAttack = the next time we are able to attack, 
                                                        // TIME  = 3, attackeRate = 2, we should be able to attack until time reaches 5, 
                                                        // so 5 is stored in timeUntilAttack
 
-        }  
+        }
+        else
+        {
+            animator.SetBool("AlreadyAttacked", true);
+        }
+    }
+
+    private IEnumerator ThrowRock()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GameObject Rock = Instantiate(rock, attackPoint.position, attackPoint.rotation);
+        Rigidbody rb = Rock.GetComponent<Rigidbody>();
+        rb.AddForce(attackPoint.forward * rockForce, ForceMode.Impulse);
     }
 
     void OnDrawGizmosSelected(){

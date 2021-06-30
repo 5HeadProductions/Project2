@@ -8,30 +8,35 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed = 5f, circleSpriteY;
     [SerializeField] public Transform playerMovementDirection;
-    [SerializeField] public FirePoint firePoint;
+    [SerializeField] private LayerMask _aimLayerMask;
+
+
+private Animator _animator;
+
+[SerializeField] private new Vector3 _aimOffset;
     
 
-    private Animator _animator;
-    
-    
-
-    public Joystick movementJoystick;
-    
     private void Awake(){
      _animator = GetComponent<Animator>(); // => is an expression body methood\
-     firePoint = gameObject.GetComponentInChildren<FirePoint>();
-
+     
     }
     
     
 
     private void Update()
     {
+        AimTowardsMouse();
         //moving the little sprite that should be in front of the player at all times
-        playerMovementDirection.position = new Vector3(movementJoystick.Horizontal + transform.position.x,
-                circleSpriteY, movementJoystick.Vertical + transform.position.z);
+        
+
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        
+        playerMovementDirection.position = new Vector3(horizontal + transform.position.x,
+            circleSpriteY, vertical + transform.position.z);
+        
         //getting input from the movement joystick
-        Vector3 movement = new Vector3(movementJoystick.Horizontal, 0f, movementJoystick.Vertical);
+        Vector3 movement = new Vector3(horizontal, 0f, vertical);
         
         //Moving
         if (movement.magnitude > 0)
@@ -54,5 +59,20 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetFloat("VelocityZ", velocityZ, 0.1f, Time.deltaTime);
         _animator.SetFloat("VelocityX", velocityX, 0.1f, Time.deltaTime);
     }
-    
+
+
+    void AimTowardsMouse()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, _aimLayerMask))
+        {
+            var _direction = hitInfo.point - transform.position;
+            _direction.y = 0f;
+            _direction.Normalize();
+            
+            transform.forward = _direction;
+            transform.Rotate(_aimOffset);
+        }
+    }
 }

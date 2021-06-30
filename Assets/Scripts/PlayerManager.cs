@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject primaryWeapon;      //default whenplayer script awake
 
-    public int currentHealth, maxHealth = 100, coins, gems;
+    public int currentHealth, maxHealth = 100, coins, gems, primaryAmmo, secondaryAmmo;
 
     private void Awake() {
         if(playerInstance == null){ // on awake checking for this gameobject

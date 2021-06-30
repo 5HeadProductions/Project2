@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class ButtonManager : MonoBehaviour
 {
     private string playSceneName = "RoomGeneration";
-    private string weaponScene = "WeaponShop";
+    private string weaponScene = "Boss Room";
     private string main = "MainMenu";
 
     private WeaponHolder weaponHolder;
@@ -63,6 +63,7 @@ public class ButtonManager : MonoBehaviour
         weaponClone.transform.position = weaponHolder.ARVector + weaponHolder.player.transform.position;   //assigning the newly spawned weapon The ARVector (position)  
         weaponClone.GetComponentInChildren<FirePoint>().enabled = true; //firepoint is turned on bc it is off on the prefabs
         playerMovement.firePoint = weaponClone.GetComponentInChildren<FirePoint>();
+        StartCoroutine(inventory.NewFirePoint());
     }
     
 
@@ -74,12 +75,14 @@ public class ButtonManager : MonoBehaviour
         int index = 4; 
        bool isEquipped = inventory.SetPistolUI(index);
        if(isEquipped) Equip(index); //only if the player is holding the gun we want to spawn it in right away else just change the sprite
+       inventory.ReloadSecondary();
     }
     public void ColorPistol(){
         int index = 8; 
         inventory.SetPistolUI(index);
         bool isEquipped = inventory.SetPistolUI(index);
         if(isEquipped) Equip(index);
+        inventory.ReloadSecondary();
     }
 
 
@@ -87,50 +90,59 @@ public class ButtonManager : MonoBehaviour
         int index = 1;
         bool isEquipped = inventory.SetPrimaryWeaponUI(index);
         if(isEquipped) Equip(index);
+        inventory.ReloadPrimary();
 
     }
     public void PurpleAR(){
         int index = 5;
         bool isEquipped = inventory.SetPrimaryWeaponUI(index);
         if(isEquipped) Equip(index);
+        inventory.ReloadPrimary();
 
     }
     public void ColorAR(){
         int index = 9;
         bool isEquipped = inventory.SetPrimaryWeaponUI(index);
         if(isEquipped) Equip(index);
+        inventory.ReloadPrimary();
 
     }
 
     public void DefaultSniper(){
         int index = 2;
         bool isEquipped = inventory.SetPrimaryWeaponUI(index);
-        if(isEquipped) Equip(index);    
+        if(isEquipped) Equip(index); 
+        inventory.ReloadPrimary();   
     }
     public void PurpleSniper(){
         int index = 6;
         bool isEquipped = inventory.SetPrimaryWeaponUI(index);
-        if(isEquipped) Equip(index);    
+        if(isEquipped) Equip(index);
+        inventory.ReloadPrimary();   
     }
     public void ColorSniper(){
         int index = 10;
         bool isEquipped = inventory.SetPrimaryWeaponUI(index);
-        if(isEquipped) Equip(index);    
+        if(isEquipped) Equip(index);
+        inventory.ReloadPrimary();    
     }
     public void DefaultRocket(){
         int index = 3;
         bool isEquipped = inventory.SetPrimaryWeaponUI(index);
         if(isEquipped) Equip(index);
+        inventory.ReloadPrimary();
     }
     public void PurpleRocket(){
         int index = 7;
         bool isEquipped = inventory.SetPrimaryWeaponUI(index);
         if(isEquipped) Equip(index);
+        inventory.ReloadPrimary();
     }   
     public void ColorRocket(){
         int index = 11;
         bool isEquipped = inventory.SetPrimaryWeaponUI(index);
         if(isEquipped) Equip(index);
+        inventory.ReloadPrimary();
     }
 
 

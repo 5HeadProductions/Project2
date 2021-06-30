@@ -30,12 +30,15 @@ public class FirePoint : MonoBehaviour
     [SerializeField] private float attackRate = 0.5f; // the amount of time before being able to attack
     private float timeUntilAttack = 0;
 
-    public int bulletAmmo = 40, rocketAmmo = 40;
+    public int bulletAmmo = 40, rocketAmmo = 40; // max ammo 
     public int attackDamage = 3;
 
     public String weaponType;
 
     public AudioManager audioManager;
+
+    private PlayerManager playerInstance;
+    private Inventory inventory;
 
     //private void Awake() => animator = player.GetComponent<Animator>(); // => is an expression body methood
 
@@ -44,7 +47,9 @@ public class FirePoint : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         cam = Camera.main;
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
-
+        playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+        inventory = GameObject.Find("inventory").GetComponent<Inventory>();
+        
 
     }
 
@@ -53,7 +58,19 @@ public class FirePoint : MonoBehaviour
 
         if (Input.GetButtonDown(shootingWith)) // button we are using to shoot 
         {
-            //Shoot();
+            if(inventory.PrimaryOn()){
+                if(playerInstance.primaryAmmo > 0){
+                Shoot();
+                playerInstance.primaryAmmo--;
+             }
+            }else
+            {
+                if(playerInstance.secondaryAmmo > 0){
+                    Shoot();
+                    playerInstance.secondaryAmmo--;
+                }  
+            }
+
         }
 
         //setting the bool to false so it knows to aim where the player is moving rather than firing
@@ -63,7 +80,7 @@ public class FirePoint : MonoBehaviour
         //if statement for the purpose of making a fire rate
         if (Time.time > timeUntilAttack && bulletAmmo >= 1)
         {
-            TouchShoot();
+        //    TouchShoot();
         }
 
 

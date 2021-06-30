@@ -7,22 +7,20 @@ using TMPro;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI coin_txt, gem_txt,rocket_txt, bullet_txt;
-    [SerializeField]private int currentCoins, currentGems, currentBullets, currentRockets;
-
-    [SerializeField]private GameObject bottomGunObject, topGunObject; // used to display the current gun equiped.
-
-    [SerializeField]private RawImage bottomGunImage, topGunImage;
-    private Texture  holderG;
+    [SerializeField]private int currentCoins, currentGems, primaryAmmo, secondaryAmmo, currentRockets;
 
     [SerializeField]private Button top_Sprite, bottom_Sprite;
     private Sprite temp;
     private FirePoint firePoint;
-      private WeaponHolder weaponHolder;
+    private WeaponHolder weaponHolder;
 
-    //private GameObject[] gunInLevel = new GameObject[2];
+    private bool rocketEquipped;
 
- //   public Dictionary<string, GameObject> guns = new Dictionary<string, GameObject>();// store all the guns in the game
     private PlayerManager playerInstance;
+
+
+    private bool isPrimary;
+//    private  Dictionary<Sprite, int> currAmmo = new Dictionary<Sprite, int>();
     void Start(){
         playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         firePoint = GameObject.Find("FirePoint").GetComponent<FirePoint>();
@@ -31,13 +29,21 @@ public class Inventory : MonoBehaviour
         currentGems = playerInstance.gems;
         coin_txt.text = currentCoins.ToString();
         gem_txt.text = currentGems.ToString();
-        currentBullets = firePoint.bulletAmmo;
-        currentRockets = firePoint.rocketAmmo;
-        rocket_txt.text = currentRockets.ToString();
-        bullet_txt.text = currentBullets.ToString();
+        ReloadPrimary();
+        ReloadSecondary();
 
-        bottomGunObject.tag = "HUDUI";
-        topGunObject.tag = "HUDUI";
+
+        currentRockets = firePoint.rocketAmmo;
+        if(!rocketEquipped) { // not displaying the rockets until the buy it
+            rocket_txt.text = "0";
+        }
+         else
+        {
+            rocket_txt.text = currentRockets.ToString();
+        }
+        bullet_txt.text = primaryAmmo.ToString();
+
+    
 
     }
 
@@ -57,12 +63,43 @@ public class Inventory : MonoBehaviour
             currentRockets = firePoint.rocketAmmo;
             rocket_txt.text = currentRockets.ToString();
         }
-        if(currentBullets != firePoint.bulletAmmo){
-            currentBullets = firePoint.bulletAmmo;
-            bullet_txt.text = currentBullets.ToString();
+    //    if(primaryAmmo != firePoint.bulletAmmo){
+     //       if(firePoint.bulletAmmo >= 0){
+     //       primaryAmmo = firePoint.bulletAmmo;
+      //      bullet_txt.text = primaryAmmo.ToString();
+      //      }
+      //  }
+        isPrimary = PrimaryOn();
+        if(isPrimary){
+            primaryAmmo = playerInstance.primaryAmmo;
+            bullet_txt.text = primaryAmmo.ToString();
         }
-        
-        
+        else
+        {
+            secondaryAmmo = playerInstance.secondaryAmmo;
+            bullet_txt.text = secondaryAmmo.ToString();
+        }
+    }
+
+    public void ReloadPrimary(){
+        primaryAmmo = firePoint.bulletAmmo; // setting the max value of ammo
+        playerInstance.primaryAmmo = primaryAmmo;// setting up how many bullets until the player runs out
+
+    }
+
+    public void ReloadSecondary(){
+        secondaryAmmo = firePoint.bulletAmmo;
+        playerInstance.secondaryAmmo = secondaryAmmo;
+    }
+
+    public bool PrimaryOn(){
+        if(top_Sprite.image.sprite == weaponHolder.weaponSprites[0] || top_Sprite.image.sprite == weaponHolder.weaponSprites[4] || top_Sprite.image.sprite == weaponHolder.weaponSprites[8]){
+            return true; // if the top sprite is a pistol then primary is currently being used.
+            }
+            else
+            {
+                return false;
+            }
     }
 
 
@@ -108,6 +145,11 @@ public class Inventory : MonoBehaviour
             return true;
         }
 
+    }
+
+    public IEnumerator NewFirePoint(){
+        yield return new WaitForSeconds(.1f);
+        firePoint = GameObject.Find("FirePoint").GetComponent<FirePoint>();
     }
 
 }

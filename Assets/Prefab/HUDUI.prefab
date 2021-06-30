@@ -251,7 +251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1539085749
 Transform:
   m_ObjectHideFlags: 0
@@ -278,8 +278,8 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.97254896, g: 1, b: 0, a: 1}
-  m_Intensity: 1000
-  m_Range: 32
+  m_Intensity: 10000
+  m_Range: 7.2704005
   m_SpotAngle: 18.84211
   m_InnerSpotAngle: 10.644188
   m_CookieSize: 10
@@ -315,9 +315,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 16384
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -2370,6 +2370,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1358612860}
     m_Modifications:
+    - target: {fileID: -8698281318067790720, guid: 2bf21840a93a1e9419b82eb1a3080f25, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2bf21840a93a1e9419b82eb1a3080f25, type: 3}
       propertyPath: m_RootOrder
       value: 0

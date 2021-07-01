@@ -1327,6 +1327,10 @@ PrefabInstance:
       propertyPath: openingDirection
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2735725753731580518, guid: fc4519622f9897e4db289e8787b108b9, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2881993164679118547, guid: fc4519622f9897e4db289e8787b108b9, type: 3}
       propertyPath: m_RootOrder
       value: 13

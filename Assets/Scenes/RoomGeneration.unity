@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -442,6 +442,8 @@ MonoBehaviour:
   maxHealth: 100
   coins: 0
   gems: 0
+  primaryAmmo: 0
+  secondaryAmmo: 0
 --- !u!4 &645341657
 Transform:
   m_ObjectHideFlags: 0
@@ -985,7 +987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1581885143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1595,6 +1597,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8847123429003662488, guid: 58645a649b8f0874ab4eca27dc688b34, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58645a649b8f0874ab4eca27dc688b34, type: 3}
 --- !u!1 &3311792221632318754 stripped
@@ -1918,6 +1924,10 @@ PrefabInstance:
       propertyPath: movementJoystick
       value: 
       objectReference: {fileID: 605584623}
+    - target: {fileID: 3880096799399351972, guid: 4192e5ba4ce53ee44bafd5054e9a70aa, type: 3}
+      propertyPath: _aimLayerMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 3880096800031501378, guid: 4192e5ba4ce53ee44bafd5054e9a70aa, type: 3}
       propertyPath: m_Layer
       value: 3

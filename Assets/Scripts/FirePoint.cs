@@ -67,9 +67,8 @@ public class FirePoint : MonoBehaviour
                  if(EventSystem.current.IsPointerOverGameObject()) return;
             }else
             {
-           
-            if(inventory.PrimaryOn()){
-               if(playerInstance.primaryAmmo > 0){
+                if(inventory.PrimaryOn()){
+                    if(playerInstance.primaryAmmo > 0){
                    Shoot();
                    playerInstance.primaryAmmo--;
                }
@@ -143,7 +142,7 @@ public class FirePoint : MonoBehaviour
 
     public void Shoot()
     {
-
+        UnityEngine.Debug.Log("MADE IT");
         GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         muzzleFlash.Play();

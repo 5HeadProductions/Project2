@@ -59,6 +59,7 @@ public class ButtonManager : MonoBehaviour
         }
         GameObject weaponClone = Instantiate(weaponHolder.Weapons[num], weaponHolder.Weapons[num].transform.position, //Instantiate a clone of wanted weapon
                 weaponHolder.Weapons[num].transform.rotation);
+        //weaponClone.transform.Rotate(weaponHolder.player.transform.rotation);
         weaponClone.transform.parent = weaponHolder.player.transform; //player gets child: weapon    
         weaponClone.transform.position = weaponHolder.ARVector + weaponHolder.player.transform.position;   //assigning the newly spawned weapon The ARVector (position)  
         weaponClone.GetComponentInChildren<FirePoint>().enabled = true; //firepoint is turned on bc it is off on the prefabs

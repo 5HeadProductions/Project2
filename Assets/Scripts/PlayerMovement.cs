@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _speed = 5f, circleSpriteY;
     [SerializeField] public Transform playerMovementDirection;
     [SerializeField] private LayerMask _aimLayerMask;
+    public FirePoint firePoint;
 
 
 private Animator _animator;
@@ -18,6 +19,7 @@ private Animator _animator;
 
     private void Awake(){
      _animator = GetComponent<Animator>(); // => is an expression body methood\
+   //  firePoint = GameObject.GetComponentInChildren<FirePoint>();
      
     }
     

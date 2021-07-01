@@ -175,7 +175,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5653950017205778690}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3eded5af1c610c498cea6dd22897602, type: 3}
   m_Name: 
@@ -188,7 +188,7 @@ MonoBehaviour:
   firing: 0
   muzzleFlash: {fileID: 5653950018355439703}
   attackRate: 0.5
-  bulletAmmo: 100
+  bulletAmmo: 200
   rocketAmmo: 40
   attackDamage: 50
   weaponType: 
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5653950017831928580}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3eded5af1c610c498cea6dd22897602, type: 3}
   m_Name: 
@@ -245,7 +245,7 @@ MonoBehaviour:
   firing: 0
   muzzleFlash: {fileID: 5653950018081705863}
   attackRate: 0.5
-  bulletAmmo: 100
+  bulletAmmo: 200
   rocketAmmo: 40
   attackDamage: 50
   weaponType: 

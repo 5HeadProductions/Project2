@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+//inventory is used in the HUDUI canvas
+//this script is in charge of the gameplay UI
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI coin_txt, gem_txt,rocket_txt, bullet_txt;
@@ -20,7 +21,8 @@ public class Inventory : MonoBehaviour
 
 
     private bool isPrimary;
-//    private  Dictionary<Sprite, int> currAmmo = new Dictionary<Sprite, int>();
+    private bool isRocket;
+
     void Start(){
         playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         firePoint = GameObject.Find("FirePoint").GetComponent<FirePoint>();
@@ -31,20 +33,7 @@ public class Inventory : MonoBehaviour
         gem_txt.text = currentGems.ToString();
         ReloadPrimary();
         ReloadSecondary();
-
-
-        currentRockets = firePoint.rocketAmmo;
-        if(!rocketEquipped) { // not displaying the rockets until the buy it
-            rocket_txt.text = "0";
-        }
-         else
-        {
-            rocket_txt.text = currentRockets.ToString();
-        }
         bullet_txt.text = primaryAmmo.ToString();
-
-    
-
     }
 
     // Update is called once per frame
@@ -66,8 +55,16 @@ public class Inventory : MonoBehaviour
         // if the primary weapon is on then we want to use the primary ammo amount else use the pistol
         isPrimary = PrimaryOn();
         if(isPrimary){
+            isRocket = RocketOn();
+            if(isRocket){
+                currentRockets = playerInstance.rocketAmmo;
+                rocket_txt.text = currentRockets.ToString();
+            }
+            else
+            {
             primaryAmmo = playerInstance.primaryAmmo;
-            bullet_txt.text = primaryAmmo.ToString();
+            bullet_txt.text = primaryAmmo.ToString();   
+            }
         }
         else
         {
@@ -76,8 +73,8 @@ public class Inventory : MonoBehaviour
         }
     }
 
-
-//finds the fire point of the gun the player bought then assigns player manager's ammo to the new guns max ammo
+// each gun has a default ammo value this value is used as the "max" value of ammo the player will get when they buy the gun
+// once they buy the gun the ammo is then assigned to the player instnace so it can be displayed in HUDUI and in the shop
     public void ReloadPrimary(){
        
         primaryAmmo = firePoint.bulletAmmo; // setting the max value of ammo
@@ -92,6 +89,13 @@ public class Inventory : MonoBehaviour
         playerInstance.secondaryAmmo = secondaryAmmo;
     }
 
+    public void ReloadRockets(){
+        Debug.Log(firePoint.rocketAmmo);
+        firePoint.rocketAmmo = 40;
+        currentRockets = firePoint.rocketAmmo;
+        playerInstance.rocketAmmo = currentRockets;
+    }
+
 // determines if the primary weapon is currently used or not
     public bool PrimaryOn(){
         if(top_Sprite.image.sprite == weaponHolder.weaponSprites[0] || top_Sprite.image.sprite == weaponHolder.weaponSprites[4] || top_Sprite.image.sprite == weaponHolder.weaponSprites[8]){
@@ -102,12 +106,22 @@ public class Inventory : MonoBehaviour
                 return false;
             }
     }
+    public bool RocketOn(){
+        if(bottom_Sprite.image.sprite == weaponHolder.weaponSprites[3] || bottom_Sprite.image.sprite == weaponHolder.weaponSprites[7] || bottom_Sprite.image.sprite == weaponHolder.weaponSprites[11]){
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 
     public Sprite ChangeWeapon(){ // bottom gun is the equipped gun
      // holderG = topGunImage.texture; // the player pressed on the top gun to equip it
      // topGunImage.texture = bottomGunImage.texture; // currently equiped gun goes to the top
     //  bottomGunImage.texture = holderG; // top gun goes to the bottom
+    //  returns the sprite image
     
     temp = top_Sprite.image.sprite;
     top_Sprite.image.sprite = bottom_Sprite.image.sprite;

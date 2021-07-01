@@ -32,13 +32,10 @@ public class FirePoint : MonoBehaviour
     [SerializeField] private float attackRate = 0.5f; // the amount of time before being able to attack
     private float timeUntilAttack = 0;
 
-    public int bulletAmmo = 0, rocketAmmo = 40; // max ammo 
+    public int bulletAmmo = 0, rocketAmmo = 0; // max ammo is assigned in each gun's prefab
     public int attackDamage = 3;
-
     public String weaponType;
-
     public AudioManager audioManager;
-
     private PlayerManager playerInstance;
     private Inventory inventory;
     private ShopEnabler shopEnabler;
@@ -54,8 +51,6 @@ public class FirePoint : MonoBehaviour
         playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         inventory = GameObject.Find("inventory").GetComponent<Inventory>();
         shopEnabler = GameObject.Find("Shop").GetComponent<ShopEnabler>();
-        
-
     }
 
     void Update()
@@ -65,23 +60,28 @@ public class FirePoint : MonoBehaviour
         {
             if(on){
                  if(EventSystem.current.IsPointerOverGameObject()) return;
-            }else
-            {
-                if(inventory.PrimaryOn()){
-                    if(playerInstance.primaryAmmo > 0){
-                   Shoot();
-                   playerInstance.primaryAmmo--;
-               }
-           }else
-           {
-               if(playerInstance.secondaryAmmo > 0){
-                   Shoot();
-                   playerInstance.secondaryAmmo--;
-               }
-           }
-            }
-
-            
+                }else
+                {
+                    if(inventory.PrimaryOn()){
+                        if(inventory.RocketOn()){
+                            if(playerInstance.rocketAmmo > 0){
+                                Shoot();
+                                playerInstance.rocketAmmo--;
+                                return;
+                            }
+                        }
+                        if(playerInstance.primaryAmmo > 0){
+                        Shoot();
+                        playerInstance.primaryAmmo--;
+                        }
+                    }else
+                    {
+                     if(playerInstance.secondaryAmmo > 0){
+                        Shoot();
+                        playerInstance.secondaryAmmo--;
+                    }
+                    }
+                } 
         }
 
         //setting the bool to false so it knows to aim where the player is moving rather than firing

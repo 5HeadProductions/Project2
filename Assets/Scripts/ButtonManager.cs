@@ -13,9 +13,9 @@ public class ButtonManager : MonoBehaviour
     private WeaponHolder weaponHolder;
 
     private Inventory inventory;
-
-
     private PlayerMovement playerMovement;
+
+    private PlayerManager playerInstance;
         // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +23,7 @@ public class ButtonManager : MonoBehaviour
         weaponHolder = GameObject.Find("WeaponHolder").GetComponent<WeaponHolder>();
         inventory = GameObject.Find("inventory").GetComponent<Inventory>();
         playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         }
     }
     
@@ -37,18 +38,7 @@ public class ButtonManager : MonoBehaviour
     public void LoadWeapons(){
         SceneManager.LoadScene(weaponScene);
     }
-    
-    // called when the player clicks on the top gun button in game on the HUD
-    public void HUDEquip(){
-        var equippedGunSprite = inventory.ChangeWeapon();
-        for(int i = 0; i < weaponHolder.weaponSprites.Length; i++){
-            if(weaponHolder.weaponSprites[i] == equippedGunSprite){
-                Equip(i);
-                break;
-            }
-        }
 
-    }
     public void Equip(int num) // this is for the HUDUI canvas
     {
         
@@ -67,11 +57,26 @@ public class ButtonManager : MonoBehaviour
         StartCoroutine(inventory.NewFirePoint());
 
     }
-    
 
+// this method is called in the shop canvas when the player is click on the bullet button
+    public void PurchasedBullets(){
+        // when the player clicks on the ammo button it gives ammo to both guns
+       playerInstance.primaryAmmo += 10;
+       playerInstance.secondaryAmmo += 10;
+    }
+
+
+    public void PurchaseRockets(){
+        playerInstance.rocketAmmo += 5;
+    }
+/////    
+//The following methods are used when the player buys the gun from the in game store
+/////
     public void DefaultPistol(){
-        int index = 0; // the fixed index location of the sprite in the array
-        inventory.SetPistolUI(index);
+        int index = 0; //fixed index location of the sprite in the array
+        bool isEquipped = inventory.SetPistolUI(index); // checking if the sprite is at the bottom  = equipped
+        if(isEquipped) Equip(index); // if it is equipped then we want to spawn it by calling Equip
+        inventory.ReloadSecondary(); // giving the player max ammo after the purchase
     }
     public void PurplePistol(){
         int index = 4; 
@@ -81,35 +86,29 @@ public class ButtonManager : MonoBehaviour
     }
     public void ColorPistol(){
         int index = 8; 
-        inventory.SetPistolUI(index);
+       // inventory.SetPistolUI(index);
         bool isEquipped = inventory.SetPistolUI(index);
         if(isEquipped) Equip(index);
         inventory.ReloadSecondary();
     }
-
-
     public void DefaultAR(){
         int index = 1;
         bool isEquipped = inventory.SetPrimaryWeaponUI(index);
         if(isEquipped) Equip(index);
         inventory.ReloadPrimary();
-
     }
     public void PurpleAR(){
         int index = 5;
         bool isEquipped = inventory.SetPrimaryWeaponUI(index);
         if(isEquipped) Equip(index);
         inventory.ReloadPrimary();
-
     }
     public void ColorAR(){
         int index = 9;
         bool isEquipped = inventory.SetPrimaryWeaponUI(index);
         if(isEquipped) Equip(index);
         inventory.ReloadPrimary();
-
     }
-
     public void DefaultSniper(){
         int index = 2;
         bool isEquipped = inventory.SetPrimaryWeaponUI(index);
@@ -132,19 +131,19 @@ public class ButtonManager : MonoBehaviour
         int index = 3;
         bool isEquipped = inventory.SetPrimaryWeaponUI(index);
         if(isEquipped) Equip(index);
-        inventory.ReloadPrimary();
+        inventory.ReloadRockets();
     }
     public void PurpleRocket(){
         int index = 7;
         bool isEquipped = inventory.SetPrimaryWeaponUI(index);
         if(isEquipped) Equip(index);
-        inventory.ReloadPrimary();
+        inventory.ReloadRockets();
     }   
     public void ColorRocket(){
         int index = 11;
         bool isEquipped = inventory.SetPrimaryWeaponUI(index);
         if(isEquipped) Equip(index);
-        inventory.ReloadPrimary();
+        inventory.ReloadRockets();
     }
 
 

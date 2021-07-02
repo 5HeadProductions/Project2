@@ -7,17 +7,20 @@ public class EndOfLevel : MonoBehaviour
     GameObject boss;
     public int gemDrop;
 
-    private PlayerManager playerManager;
+    private PlayerManager playerInstance;
+   
     
     void Start(){
         boss = GameObject.Find("TmpBoss(Clone)");
-        playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+        playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+        
     }
 
     void OnCollisionEnter(Collision other){
 
         if(other.gameObject.CompareTag("Player") && boss == null){
-            playerManager.gems += gemDrop;
+            playerInstance.gems += gemDrop;     
+            
             SceneManager.LoadScene("EasyDungeon");
 
         }

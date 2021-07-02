@@ -23,10 +23,27 @@ public class Inventory : MonoBehaviour
     private bool isPrimary;
     private bool isRocket;
 
-    void Start(){
+   public void Awake(){
         playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
-        firePoint = GameObject.Find("FirePoint").GetComponent<FirePoint>();
+        playerInstance.player = GameObject.Find("Player");
         weaponHolder = GameObject.Find("WeaponHolder").GetComponent<WeaponHolder>();
+
+        playerInstance.primaryWeapon = weaponHolder.Weapons[playerInstance.primaryIndex];
+        var weaponClone = Instantiate(playerInstance.primaryWeapon,playerInstance.primaryWeapon.transform.position, playerInstance.primaryWeapon.transform.rotation);
+
+        weaponClone.transform.parent = playerInstance.player.transform;
+       
+       weaponClone.transform.position = new Vector3(0.239999995f, 1.98479891f, 0.685321569f);
+
+       weaponClone.GetComponentInChildren<FirePoint>().enabled = true;
+        UpdateWeaponOnLoad(playerInstance.primaryIndex, playerInstance.secondaryIndex);
+        
+    }
+
+    void Start(){
+        
+        firePoint = GameObject.Find("FirePoint").GetComponent<FirePoint>();
+        
         currentCoins = playerInstance.coins;
         currentGems = playerInstance.gems;
         coin_txt.text = currentCoins.ToString();
@@ -90,7 +107,7 @@ public class Inventory : MonoBehaviour
     }
 
     public void ReloadRockets(){
-        Debug.Log(firePoint.rocketAmmo);
+       
         firePoint.rocketAmmo = 40;
         currentRockets = firePoint.rocketAmmo;
         playerInstance.rocketAmmo = currentRockets;
@@ -127,6 +144,12 @@ public class Inventory : MonoBehaviour
     top_Sprite.image.sprite = bottom_Sprite.image.sprite;
     bottom_Sprite.image.sprite = temp;
     return bottom_Sprite.image.sprite;
+    }
+
+    public void UpdateWeaponOnLoad(int primary, int secondary){
+        bottom_Sprite.image.sprite = weaponHolder.weaponSprites[primary];
+        top_Sprite.image.sprite = weaponHolder.weaponSprites[secondary];
+
     }
 
     // if a pistol is found on the top then that means we have a primary equipped so we need to change the sprite and spawn the gun

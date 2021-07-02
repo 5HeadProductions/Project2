@@ -50,7 +50,7 @@ public class FirePoint : MonoBehaviour
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         inventory = GameObject.Find("inventory").GetComponent<Inventory>();
-        shopEnabler = GameObject.Find("Shop").GetComponent<ShopEnabler>();
+        shopEnabler = GameObject.Find("stallRed").GetComponent<ShopEnabler>();
     }
 
     void Update()
@@ -142,7 +142,6 @@ public class FirePoint : MonoBehaviour
 
     public void Shoot()
     {
-        UnityEngine.Debug.Log("MADE IT");
         GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         muzzleFlash.Play();

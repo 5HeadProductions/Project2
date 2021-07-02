@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-    private string playSceneName = "RoomGeneration";
+    private string playSceneName = "EasyDungeon";
+    private string playHardDungeon = "HardDungeon";
     private string weaponScene = "Boss Room";
     private string main = "MainMenu";
 
@@ -16,14 +17,17 @@ public class ButtonManager : MonoBehaviour
     private PlayerMovement playerMovement;
 
     private PlayerManager playerInstance;
+
+    private GameObject gunPlacement;
         // Start is called before the first frame update
     void Start()
     {
-        if(SceneManager.GetActiveScene().name == playSceneName){
+        if(SceneManager.GetActiveScene().name == playSceneName || SceneManager.GetActiveScene().name == playHardDungeon){
         weaponHolder = GameObject.Find("WeaponHolder").GetComponent<WeaponHolder>();
         inventory = GameObject.Find("inventory").GetComponent<Inventory>();
         playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
         playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+        gunPlacement = GameObject.Find("GunPlacement");
         }
     }
     
@@ -32,6 +36,12 @@ public class ButtonManager : MonoBehaviour
     }
 
     public void LoadPlay(){
+        SceneManager.LoadScene(playSceneName);
+    }
+
+    public void Replay(){
+        playerInstance.primaryWeapon = weaponHolder.Weapons[1];
+        playerInstance.coins = 0;
         SceneManager.LoadScene(playSceneName);
     }
 
@@ -49,9 +59,21 @@ public class ButtonManager : MonoBehaviour
         }
         GameObject weaponClone = Instantiate(weaponHolder.Weapons[num], weaponHolder.Weapons[num].transform.position, //Instantiate a clone of wanted weapon
                 weaponHolder.Weapons[num].transform.rotation);
-        //weaponClone.transform.Rotate(weaponHolder.player.transform.rotation);
+         playerInstance.primaryWeapon = weaponClone;  
+
+
+
+         playerInstance.primaryIndex = num;    
+
+
+
+
+        //weaponClone.transform.Rotate(weaponHolder.player.transform.forward);
         weaponClone.transform.parent = weaponHolder.player.transform; //player gets child: weapon    
-        weaponClone.transform.position = weaponHolder.ARVector + weaponHolder.player.transform.position;   //assigning the newly spawned weapon The ARVector (position)  
+        weaponClone.transform.position = gunPlacement.transform.position;   //assigning the newly spawned weapon The ARVector (position) 
+        weaponClone.transform.rotation = weaponHolder.player.transform.rotation; 
+        weaponClone.transform.Rotate(new Vector3(0f, 180f, 0f));
+        //weaponClone.transform.forward = weaponHolder.player.transform.forward; 
         weaponClone.GetComponentInChildren<FirePoint>().enabled = true; //firepoint is turned on bc it is off on the prefabs
       //  playerMovement.firePoint = weaponClone.GetComponentInChildren<FirePoint>();
         StartCoroutine(inventory.NewFirePoint());
@@ -89,6 +111,8 @@ public class ButtonManager : MonoBehaviour
        // inventory.SetPistolUI(index);
         bool isEquipped = inventory.SetPistolUI(index);
         if(isEquipped) Equip(index);
+      
+        else playerInstance.secondaryIndex = index;
         inventory.ReloadSecondary();
     }
     public void DefaultAR(){

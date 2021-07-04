@@ -3,42 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+//inventory is used in the HUDUI canvas
+//this script is in charge of the gameplay UI
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI coin_txt, gem_txt,rocket_txt, bullet_txt;
-    [SerializeField]private int currentCoins, currentGems, currentBullets, currentRockets;
-
-    [SerializeField]private GameObject bottomGunObject, topGunObject; // used to display the current gun equiped.
-
-    [SerializeField]private RawImage bottomGunImage, topGunImage;
-    private Texture  holderG;
+    [SerializeField]private int currentCoins, currentGems, primaryAmmo, secondaryAmmo, currentRockets;
 
     [SerializeField]private Button top_Sprite, bottom_Sprite;
     private Sprite temp;
     private FirePoint firePoint;
-      private WeaponHolder weaponHolder;
+    private WeaponHolder weaponHolder;
 
-    //private GameObject[] gunInLevel = new GameObject[2];
+    private bool rocketEquipped;
 
- //   public Dictionary<string, GameObject> guns = new Dictionary<string, GameObject>();// store all the guns in the game
     private PlayerManager playerInstance;
-    void Start(){
+
+
+    private bool isPrimary;
+    private bool isRocket;
+
+   public void Awake(){
         playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+        playerInstance.player = GameObject.Find("Player");
+        weaponHolder = GameObject.Find("WeaponHolder").GetComponent<WeaponHolder>();
+
+        playerInstance.primaryWeapon = weaponHolder.Weapons[playerInstance.primaryIndex];
+        var weaponClone = Instantiate(playerInstance.primaryWeapon,playerInstance.primaryWeapon.transform.position, playerInstance.primaryWeapon.transform.rotation);
+
+        weaponClone.transform.parent = playerInstance.player.transform;
+       
+       weaponClone.transform.position = new Vector3(0.239999995f, 1.98479891f, 0.685321569f);
+
+       weaponClone.GetComponentInChildren<FirePoint>().enabled = true;
+        UpdateWeaponOnLoad(playerInstance.primaryIndex, playerInstance.secondaryIndex);
+        
+    }
+
+    void Start(){
+        
         firePoint = GameObject.Find("FirePoint").GetComponent<FirePoint>();
-         weaponHolder = GameObject.Find("WeaponHolder").GetComponent<WeaponHolder>();
+        
         currentCoins = playerInstance.coins;
         currentGems = playerInstance.gems;
         coin_txt.text = currentCoins.ToString();
         gem_txt.text = currentGems.ToString();
-        currentBullets = firePoint.bulletAmmo;
-        currentRockets = firePoint.rocketAmmo;
-        rocket_txt.text = currentRockets.ToString();
-        bullet_txt.text = currentBullets.ToString();
-
-        bottomGunObject.tag = "HUDUI";
-        topGunObject.tag = "HUDUI";
-
+        ReloadPrimary();
+        ReloadSecondary();
+        bullet_txt.text = primaryAmmo.ToString();
     }
 
     // Update is called once per frame
@@ -57,12 +69,68 @@ public class Inventory : MonoBehaviour
             currentRockets = firePoint.rocketAmmo;
             rocket_txt.text = currentRockets.ToString();
         }
-        if(currentBullets != firePoint.bulletAmmo){
-            currentBullets = firePoint.bulletAmmo;
-            bullet_txt.text = currentBullets.ToString();
+        // if the primary weapon is on then we want to use the primary ammo amount else use the pistol
+        isPrimary = PrimaryOn();
+        if(isPrimary){
+            isRocket = RocketOn();
+            if(isRocket){
+                currentRockets = playerInstance.rocketAmmo;
+                rocket_txt.text = currentRockets.ToString();
+            }
+            else
+            {
+            primaryAmmo = playerInstance.primaryAmmo;
+            bullet_txt.text = primaryAmmo.ToString();   
+            }
         }
+        else
+        {
+            secondaryAmmo = playerInstance.secondaryAmmo;
+            bullet_txt.text = secondaryAmmo.ToString();
+        }
+    }
+
+// each gun has a default ammo value this value is used as the "max" value of ammo the player will get when they buy the gun
+// once they buy the gun the ammo is then assigned to the player instnace so it can be displayed in HUDUI and in the shop
+    public void ReloadPrimary(){
+       
+        primaryAmmo = firePoint.bulletAmmo; // setting the max value of ammo
+        playerInstance.primaryAmmo = primaryAmmo;// setting up how many bullets until the player runs out
+
+    }
+
+//finds the fire point of the new secondary weapon and updates the ammo
+    public void ReloadSecondary(){
         
-        
+        secondaryAmmo = firePoint.bulletAmmo;
+        playerInstance.secondaryAmmo = secondaryAmmo;
+    }
+
+    public void ReloadRockets(){
+       
+        firePoint.rocketAmmo = 40;
+        currentRockets = firePoint.rocketAmmo;
+        playerInstance.rocketAmmo = currentRockets;
+    }
+
+// determines if the primary weapon is currently used or not
+    public bool PrimaryOn(){
+        if(top_Sprite.image.sprite == weaponHolder.weaponSprites[0] || top_Sprite.image.sprite == weaponHolder.weaponSprites[4] || top_Sprite.image.sprite == weaponHolder.weaponSprites[8]){
+            return true; // if the top sprite is a pistol then primary is currently being used.
+            }
+            else
+            {
+                return false;
+            }
+    }
+    public bool RocketOn(){
+        if(bottom_Sprite.image.sprite == weaponHolder.weaponSprites[3] || bottom_Sprite.image.sprite == weaponHolder.weaponSprites[7] || bottom_Sprite.image.sprite == weaponHolder.weaponSprites[11]){
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 
@@ -70,11 +138,18 @@ public class Inventory : MonoBehaviour
      // holderG = topGunImage.texture; // the player pressed on the top gun to equip it
      // topGunImage.texture = bottomGunImage.texture; // currently equiped gun goes to the top
     //  bottomGunImage.texture = holderG; // top gun goes to the bottom
+    //  returns the sprite image
     
     temp = top_Sprite.image.sprite;
     top_Sprite.image.sprite = bottom_Sprite.image.sprite;
     bottom_Sprite.image.sprite = temp;
     return bottom_Sprite.image.sprite;
+    }
+
+    public void UpdateWeaponOnLoad(int primary, int secondary){
+        bottom_Sprite.image.sprite = weaponHolder.weaponSprites[primary];
+        top_Sprite.image.sprite = weaponHolder.weaponSprites[secondary];
+
     }
 
     // if a pistol is found on the top then that means we have a primary equipped so we need to change the sprite and spawn the gun
@@ -108,6 +183,11 @@ public class Inventory : MonoBehaviour
             return true;
         }
 
+    }
+
+    public IEnumerator NewFirePoint(){
+        yield return new WaitForSeconds(.1f);
+        firePoint = GameObject.Find("FirePoint").GetComponent<FirePoint>();
     }
 
 }

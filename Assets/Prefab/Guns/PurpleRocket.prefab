@@ -276,7 +276,7 @@ MonoBehaviour:
   firing: 0
   muzzleFlash: {fileID: 137665117896580143}
   attackRate: 0.5
-  bulletAmmo: 40
+  bulletAmmo: 200
   rocketAmmo: 40
   attackDamage: 35
   weaponType: 
@@ -381,7 +381,7 @@ MonoBehaviour:
   firing: 0
   muzzleFlash: {fileID: 137665118166154239}
   attackRate: 0.5
-  bulletAmmo: 40
+  bulletAmmo: 200
   rocketAmmo: 40
   attackDamage: 35
   weaponType: 

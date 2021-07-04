@@ -41,13 +41,15 @@ public class Projectiles : MonoBehaviour
             Vector3 spawnPosition = new Vector3(0f, 0f, 0f); // the animation recoding has a set positio
            attackDamage = firePoint.attackDamage;
            
-           ParticleSystem particleClone =  Instantiate(particles,transform.position, Quaternion.identity); //storing particle Clone so we dont delete the passed in prefab
-            particles.Play();
+          // ParticleSystem particleClone =  Instantiate(particles,transform.position, Quaternion.identity); //storing particle Clone so we dont delete the passed in prefab
+          Instantiate(particles,transform.position, Quaternion.identity);
+          //particles are destroyed in the PSDestroyer script
+          //  particles.Play();
          //   Destroy(particles, .5f);
            
             col.gameObject.GetComponent<BasicEnemyBehavior>().reduceHealth(attackDamage); 
             playerInstance.coins ++;
-            Destroy(particleClone, .5f);
+            //Destroy(particleClone, .5f);
             Destroy(gameObject);
         }
         else

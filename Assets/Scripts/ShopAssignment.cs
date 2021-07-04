@@ -2,45 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
-
-
 public class ShopAssignment : MonoBehaviour
 {
-    //upgrade the weapons of the players
     //this script is attached to the ShopCanvas
-    [SerializeField]private TextMeshProUGUI bullet_Txt,rocket_Txt, coin_Txt, gem_Txt;
+    [Header("Text Boxes")]
+    [SerializeField]private TextMeshProUGUI primaryAmmo_Txt, secondaryAmmo_Txt,rocket_Txt, coin_Txt, gem_Txt;
     private PlayerManager playerInstance;
    [SerializeField] private GameObject shopCanvas;
-    private FirePoint firePoint;
 
-
-    
-
-    // Start is called before the first frame update
-    void Start()
-    { 
-        bullet_Txt.text = firePoint.bulletAmmo.ToString();
-        rocket_Txt.text = firePoint.rocketAmmo.ToString();
-       
-        coin_Txt.text = playerInstance.coins.ToString();
-        gem_Txt.text = playerInstance.gems.ToString();
-    }
 
     void OnEnable(){
         Pause();
-    firePoint = GameObject.Find("FirePoint").GetComponent<FirePoint>(); //FirePoint has a reference to the ammo
-    if(GameObject.Find("PlayerManager")!= null){
-            playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
-        }
-       
+        playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+       gem_Txt.text = playerInstance.gems.ToString();
+    }
+    void Update(){
+       UpdateCanvas();
     }
 
+//updates the text fields when the player buys a gun, buys ammo, and spends coins
+    public void UpdateCanvas(){
+        primaryAmmo_Txt.text = playerInstance.primaryAmmo.ToString();
+        secondaryAmmo_Txt.text = playerInstance.secondaryAmmo.ToString();
+        rocket_Txt.text = playerInstance.rocketAmmo.ToString();
+        coin_Txt.text = playerInstance.coins.ToString();
+    }
+
+
+//pausing the game in the background
     public void Pause(){
         Time.timeScale = 0;
-
     } 
-
+//resuming when the player hits the back button, this was not places in button manager bc button manager would need to get this component only to resume the game
     public void Resume(){
         Time.timeScale = 1;
         shopCanvas.SetActive(false);

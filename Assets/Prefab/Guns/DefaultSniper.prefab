@@ -164,8 +164,8 @@ MonoBehaviour:
   firing: 0
   muzzleFlash: {fileID: 817198632}
   attackRate: 0.5
-  bulletAmmo: 40
-  rocketAmmo: 40
+  bulletAmmo: 200
+  rocketAmmo: 0
   attackDamage: 10
   weaponType: 
   audioManager: {fileID: 0}

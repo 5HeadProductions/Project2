@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
 private Animator _animator;
 
-[SerializeField] private new Vector3 _aimOffset;
+[SerializeField] private Vector3 _aimOffset;
     
 
     private void Awake(){
@@ -65,6 +65,7 @@ private Animator _animator;
 
     void AimTowardsMouse()
     {
+      
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, _aimLayerMask))

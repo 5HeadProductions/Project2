@@ -13,19 +13,20 @@ public class HUD : MonoBehaviour
     [SerializeField]private TextMeshProUGUI txtVal;
     public GameObject playerDied, player;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        if(GameObject.Find("PlayerManager")!= null){
-            playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
-        }
-        player = GameObject.Find("Player");
-      
 
 // check the new stats of the player when the level reloads to have their updated health, instead of default
 // add a function that updates the slider when the player buys health
         SetMaxHealth();
         
+    }
+
+    public void Awake(){
+         playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+         player = GameObject.Find("Player");
     }
 
     public void SetMaxHealth(){ // health is replenished after each level, except in hard difficulty
@@ -43,7 +44,8 @@ public class HUD : MonoBehaviour
         fill.color = gradient.Evaluate(slider.normalizedValue); // changing the color when the player looses health, using "slider.normalizedValue"
                                                                 // so we can use the percentages in between instead of decimals, since normally it is 0 to 1
         if(playerInstance.currentHealth <= 0) {                 // when the player dies stop the game and queue the level end scene/canvas 
-            Destroy(player);
+          //  Destroy(player);
+            player.SetActive(false);
             gameObject.SetActive(false);
             playerDied.SetActive(true);
             playerDied.GetComponent<PlayerDied>().Appear();

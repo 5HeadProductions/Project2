@@ -91,6 +91,12 @@ public class ButtonManager : MonoBehaviour
     public void PurchaseRockets(){
         playerInstance.rocketAmmo += 5;
     }
+
+
+
+    public void PurchaseSpeed(){
+        
+    }
 /////    
 //The following methods are used when the player buys the gun from the in game store
 /////

@@ -95,8 +95,11 @@ public class ButtonManager : MonoBehaviour
 
 
     public void PurchaseSpeed(){
-        
+        if(playerInstance.movementMulti <= 3) playerInstance.movementMulti ++;
     }
+
+
+
 /////    
 //The following methods are used when the player buys the gun from the in game store
 /////

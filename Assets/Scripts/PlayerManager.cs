@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour
      [SerializeField]private WeaponHolder weaponHolder;
 
     public int currentHealth, maxHealth = 100, coins, gems, primaryAmmo, secondaryAmmo, rocketAmmo,primaryIndex = 1, secondaryIndex = 0;
-
+    public int movementMulti = 0;
     private void Awake() {
 
         if(playerInstance == null){ // on awake checking for this gameobject

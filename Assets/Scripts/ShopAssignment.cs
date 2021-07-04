@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 public class ShopAssignment : MonoBehaviour
 {
     //this script is attached to the ShopCanvas
     [Header("Text Boxes")]
-    [SerializeField]private TextMeshProUGUI primaryAmmo_Txt, secondaryAmmo_Txt,rocket_Txt, coin_Txt, gem_Txt;
+    [SerializeField]private TextMeshProUGUI primaryAmmo_Txt, secondaryAmmo_Txt,rocket_Txt, coin_Txt, gem_Txt,
+    speed_Txt;
+
+    [SerializeField]private GameObject speedCost;
+    [SerializeField]private Button speedButton;
     private PlayerManager playerInstance;
    [SerializeField] private GameObject shopCanvas;
 
@@ -26,6 +31,12 @@ public class ShopAssignment : MonoBehaviour
         secondaryAmmo_Txt.text = playerInstance.secondaryAmmo.ToString();
         rocket_Txt.text = playerInstance.rocketAmmo.ToString();
         coin_Txt.text = playerInstance.coins.ToString();
+        if(playerInstance.movementMulti >= 3){
+            speed_Txt.text = "max";
+            speedCost.SetActive(false);
+            speedButton.interactable = false;
+            
+        }
     }
 
 

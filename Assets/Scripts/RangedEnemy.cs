@@ -87,8 +87,9 @@ public class RangedEnemy : MonoBehaviour
         }
         else
         {
-            if (playerInSightRange) Chase();
             animator.SetBool("PlayerInAttackRange", false);
+            if (playerInSightRange) Chase();
+            
         }
 
     }
@@ -166,6 +167,7 @@ public class RangedEnemy : MonoBehaviour
     private void Chase()
     {
         //agent.enabled = false;
+        animator.SetBool("PlayerInAttackRange", false);
         Vector3 dis = Vector3.MoveTowards(gameObject.transform.position, target.position, chaseSpeed);
         gameObject.transform.position = dis;
         transform.LookAt(target);

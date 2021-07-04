@@ -6,6 +6,7 @@ using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 
 //added to basic enemy preFab
@@ -56,9 +57,25 @@ public class BasicEnemyBehavior : MonoBehaviour
         if(GameObject.Find("PlayerManager")!= null){
             playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         }
+
+        if(SceneManager.GetActiveScene().name == "MediumDungeon"){
+
+            sightRange = 18;
+            attackRange = 1;
+            health = 20;
+            attackDamage = 15;
+            chaseSpeed = 0.07f;
+
+        }
+
+
+
          _hud = GameObject.Find("HealthBar").GetComponent<HUD>();
         currHealth = health; //the zombie starts the level with max health
         enemyHealthBar.SetMaxHealth(health);
+
+
+
     }
 
     private void Update()

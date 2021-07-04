@@ -5,16 +5,17 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawnPoint : MonoBehaviour
 {
-    [SerializeField] private GameObject Enemy;
-    public GameObject enemyClone;
+    public GameObject[] Enemies;
+ 
     void Start()
     {
 
-        int rand = Random.Range(1, 5);
+        int rand = Random.Range(1, 2);
+        int enemyRand = Random.Range(0,Enemies.Length - 1);
         
         for (int i = 0; i < rand; i++)
         {
-            Instantiate(Enemy,transform.position,Quaternion.identity);
+            Instantiate(Enemies[enemyRand],transform.position,Quaternion.identity);
         }
         
         Destroy(gameObject, 5f);

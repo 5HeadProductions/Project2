@@ -1620,12 +1620,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 1652867149119637726}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 10
+  m_Radius: 0.5
   m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 10
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1644,9 +1644,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.32103935
-  m_Height: 2.8306756
+  m_Height: 2.3151748
   m_Direction: 1
-  m_Center: {x: 0.0013060572, y: 1.2301486, z: 0.04505092}
+  m_Center: {x: 0.001306057, y: 1.487899, z: 0.04505092}
 --- !u!65 &251239721732515202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1691,7 +1691,7 @@ MonoBehaviour:
   target: {fileID: 0}
   chaseSpeed: 0.1
   attackRange: 15
-  health: 100
+  health: 10
   attackDamage: 10
   currHealth: 0
   animator: {fileID: 1652867149127039774}
@@ -1711,6 +1711,7 @@ MonoBehaviour:
   _hud: {fileID: 0}
   inAttackRange: 0
   attackPoint: {fileID: 1814517896812756164}
+  attackRate: 2
   enemyHealthBar: {fileID: 1814517895607738976}
 --- !u!1 &1652867149119637862
 GameObject:

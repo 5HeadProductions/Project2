@@ -583,8 +583,18 @@ MonoBehaviour:
   gem_Txt: {fileID: 4928443012942220359}
   speed_Txt: {fileID: 5723217227455798013}
   speedCost: {fileID: 6276806268441779928}
-  speedButton: {fileID: 6492734956562339771}
   shopCanvas: {fileID: 415347731833326704}
+  speedButton: {fileID: 6492734956562339771}
+  pPistol: {fileID: 5033277931368817723}
+  pAr: {fileID: 7880469816871562390}
+  pSniper: {fileID: 7798525296464557769}
+  pRocket: {fileID: 4604742148098541582}
+  cPistol: {fileID: 415347731478616744}
+  cAr: {fileID: 2607344779450821980}
+  cSniper: {fileID: 21397241643537488}
+  cRocket: {fileID: 2444053159643621323}
+  dPistol: {fileID: 973200520366704386}
+  dAr: {fileID: 5013733308941300449}
 --- !u!114 &4743966476768983979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2501,8 +2511,18 @@ MonoBehaviour:
   gem_Txt: {fileID: 4928443012942220359}
   speed_Txt: {fileID: 5723217227455798013}
   speedCost: {fileID: 6276806268441779928}
-  speedButton: {fileID: 6492734956562339771}
   shopCanvas: {fileID: 415347731833326704}
+  speedButton: {fileID: 6492734956562339771}
+  pPistol: {fileID: 0}
+  pAr: {fileID: 0}
+  pSniper: {fileID: 0}
+  pRocket: {fileID: 0}
+  cPistol: {fileID: 0}
+  cAr: {fileID: 0}
+  cSniper: {fileID: 0}
+  cRocket: {fileID: 0}
+  dPistol: {fileID: 0}
+  dAr: {fileID: 0}
 --- !u!1 &2064000256940089582
 GameObject:
   m_ObjectHideFlags: 0

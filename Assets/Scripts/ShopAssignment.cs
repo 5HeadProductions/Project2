@@ -10,10 +10,12 @@ public class ShopAssignment : MonoBehaviour
     [SerializeField]private TextMeshProUGUI primaryAmmo_Txt, secondaryAmmo_Txt,rocket_Txt, coin_Txt, gem_Txt,
     speed_Txt;
 
+    [Header("GameObjects")]
     [SerializeField]private GameObject speedCost;
-    [SerializeField]private Button speedButton;
+    [SerializeField] private GameObject shopCanvas;
+    [Header("Buttons")]
+    public Button speedButton, pPistol, pAr, pSniper, pRocket, cPistol, cAr, cSniper, cRocket, dPistol, dAr;
     private PlayerManager playerInstance;
-   [SerializeField] private GameObject shopCanvas;
 
 
     void OnEnable(){

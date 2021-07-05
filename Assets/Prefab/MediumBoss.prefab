@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5066020748401050197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.44, z: 1.49}
+  m_LocalPosition: {x: 0, y: 1.94, z: 1.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5300807699227683436}
@@ -1221,8 +1221,8 @@ GameObject:
   - component: {fileID: 6637457424321960720}
   - component: {fileID: 7336218590921682040}
   m_Layer: 0
-  m_Name: TmpBoss
-  m_TagString: Zombie
+  m_Name: MediumBoss
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1277,11 +1277,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  chaseSpeed: 0.05
-  attackRange: 1
-  health: 10
-  attackDamage: 20
-  currHealth: 10
+  chaseSpeed: 0.1
+  attackRange: 3
+  health: 50
+  attackDamage: 30
+  currHealth: 50
   animator: {fileID: 5300807699234669964}
   agent: {fileID: 2462487528159262379}
   whatIsGround:
@@ -1292,7 +1292,7 @@ MonoBehaviour:
     m_Bits: 8
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 10
-  sightRange: 10
+  sightRange: 20
   playerInSightRange: 0
   _hud: {fileID: 0}
   inAttackRange: 0

@@ -162,7 +162,6 @@ MonoBehaviour:
   - {fileID: 3059272838704343195, guid: ae65683df06400649ae3f005de6806f4, type: 3}
   - {fileID: 8817061889388990728, guid: 62220612412d96242aa46f95d0240f01, type: 3}
   - {fileID: 8085012305897783442, guid: a22998868e625d64e86d5da7022a7478, type: 3}
-  - {fileID: 1987495951629122346, guid: 57ade9d2e1aa73f46826a832637a337c, type: 3}
   - {fileID: 8817061889388990728, guid: 62220612412d96242aa46f95d0240f01, type: 3}
   - {fileID: 8085012305897783442, guid: a22998868e625d64e86d5da7022a7478, type: 3}
   topRooms:
@@ -1436,7 +1435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Tracked: {fileID: 0}
-  m_Size: {x: 1000, y: 15, z: 1000}
+  m_Size: {x: 2000, y: 15, z: 2000}
 --- !u!114 &2079749613
 MonoBehaviour:
   m_ObjectHideFlags: 0

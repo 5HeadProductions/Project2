@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 692062283527388158}
   - component: {fileID: 8763118096106152744}
   - component: {fileID: 7450391767856008015}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: foamBulletB
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -131,5 +131,4 @@ MonoBehaviour:
   rb: {fileID: 692062283527388158}
   projectileT: {fileID: 7849153031379867230}
   attackDamage: 3
-  coinPrefab: {fileID: 8522573393689262375, guid: 33a9dea2363988044a6061172163c4e1, type: 3}
   particles: {fileID: 5265587264606109653, guid: b491fe4980bb8e94d83cac29d9021e62, type: 3}

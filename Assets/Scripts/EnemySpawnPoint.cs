@@ -5,16 +5,18 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawnPoint : MonoBehaviour
 {
-    [SerializeField] private GameObject Enemy;
-    public GameObject enemyClone;
+    public GameObject[] Enemies;
+ 
     void Start()
     {
 
-        int rand = Random.Range(1, 5);
+        int rand = Random.Range(1, 4);      //random for amount of zombies spawned
+        int enemyRand = Random.Range(0,2);  //random # for the type of enemy in array Enemies
         
         for (int i = 0; i < rand; i++)
         {
-            Instantiate(Enemy,transform.position,Quaternion.identity);
+            Debug.Log(enemyRand);
+            Instantiate(Enemies[enemyRand],transform.position,Quaternion.identity);
         }
         
         Destroy(gameObject, 5f);

@@ -52,6 +52,22 @@ public class Projectiles : MonoBehaviour
             //Destroy(particleClone, .5f);
             Destroy(gameObject);
         }
+        else if(col.gameObject.CompareTag("RangedZombie")){
+            // Vector3 hitPosition = col.gameObject.GetComponent<Transform>().position; // the animation recoding has a set position
+            Vector3 spawnPosition = new Vector3(0f, 0f, 0f); // the animation recoding has a set positio
+           attackDamage = firePoint.attackDamage;
+           
+          // ParticleSystem particleClone =  Instantiate(particles,transform.position, Quaternion.identity); //storing particle Clone so we dont delete the passed in prefab
+          Instantiate(particles,transform.position, Quaternion.identity);
+          //particles are destroyed in the PSDestroyer script
+          //  particles.Play();
+         //   Destroy(particles, .5f);
+           
+            col.gameObject.GetComponent<RangedEnemy>().reduceHealth(attackDamage); 
+            playerInstance.coins ++;
+            //Destroy(particleClone, .5f);
+            Destroy(gameObject);
+        }
         else
         {
             //add particles like sparks bc it didnt hit zombie

@@ -60,6 +60,7 @@ public class EnemyProjectile : MonoBehaviour
         else
         {
             //add particles like sparks bc it didnt hit zombie
+            
             Destroy(gameObject);
         }
 

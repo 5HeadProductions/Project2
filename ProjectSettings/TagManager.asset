@@ -14,6 +14,7 @@ TagManager:
   - Projectile
   - RangedZombie
   - Secondary
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -24,9 +25,9 @@ TagManager:
   - Terrain
   - EnemyProjectile
   - Enemy
-  - 
+  - RangedEnemy
   - LineRenderer
-  - 
+  - PlayerBullet
   - 
   - 
   - CharacterPanel1

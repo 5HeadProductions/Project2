@@ -9,7 +9,7 @@ public class Projectiles : MonoBehaviour
 {
     private PlayerManager playerInstance;
     
-    [Range(3.0f, 20.0f)] // slider that will appear in unity
+    [Range(3.0f, 100.0f)] // slider that will appear in unity
     [SerializeField]private float projectileSpeed;
     public Rigidbody rb; // rigidbody of the projectile
     public Transform projectileT; // getting the transform of the porjectile in order to rotate it
@@ -23,6 +23,7 @@ public class Projectiles : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.forward * projectileSpeed; // "launching" the projectile forward
+        if(gameObject.CompareTag("Projectile"))
         projectileT.Rotate(90f, 0f, 0f, Space.Self);
         // rotating the image by 90 degrees so it the images fires straight, 
         // Space.Self rotates the transform relative to itself meaning just the game object this tranform

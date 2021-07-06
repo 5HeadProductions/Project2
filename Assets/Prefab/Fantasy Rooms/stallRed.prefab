@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4988838649057612246}
   - component: {fileID: 8256278738935651955}
   - component: {fileID: 6156638999823674041}
+  - component: {fileID: 5446419607249869951}
   m_Layer: 0
   m_Name: stallRed
   m_TagString: Untagged
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5446419607249869951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5652082391261498220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d576a0fe9fda56b4190a26e92f7c6a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopCanvas: {fileID: 415347731833326704, guid: f1f6494e92f7c344eb00e656e12c1218, type: 3}

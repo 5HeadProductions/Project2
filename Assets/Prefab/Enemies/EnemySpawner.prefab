@@ -43,9 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a205f7642ce6734fba3914df678002b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemies:
-  - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  easyEnemies:
   - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
+  - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  mediumEnemies:
+  - {fileID: 7816392282303579323, guid: 3ec2b4618090e5b41bae9a2545c4a7be, type: 3}
+  - {fileID: 1925183671624737530, guid: 0394b7c976a5dd146845489df5e0ab74, type: 3}
+  hardEnemies:
+  - {fileID: 1439846360373950241, guid: 8fe06120ebe5bd34cbeb81e81637cd69, type: 3}
+  - {fileID: 5387978735800730953, guid: fd39f09ba13f4b14382537cae0c4c6e8, type: 3}
 --- !u!1 &1210090831184615884
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,9 +95,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a205f7642ce6734fba3914df678002b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemies:
-  - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  easyEnemies:
   - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
+  - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  mediumEnemies:
+  - {fileID: 7816392282303579323, guid: 3ec2b4618090e5b41bae9a2545c4a7be, type: 3}
+  - {fileID: 1925183671624737530, guid: 0394b7c976a5dd146845489df5e0ab74, type: 3}
+  hardEnemies:
+  - {fileID: 1439846360373950241, guid: 8fe06120ebe5bd34cbeb81e81637cd69, type: 3}
+  - {fileID: 5387978735800730953, guid: fd39f09ba13f4b14382537cae0c4c6e8, type: 3}
 --- !u!1 &1210090831928083972
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,9 +147,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a205f7642ce6734fba3914df678002b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemies:
+  easyEnemies:
   - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
   - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  mediumEnemies:
+  - {fileID: 7816392282303579323, guid: 3ec2b4618090e5b41bae9a2545c4a7be, type: 3}
+  - {fileID: 1925183671624737530, guid: 0394b7c976a5dd146845489df5e0ab74, type: 3}
+  hardEnemies:
+  - {fileID: 1439846360373950241, guid: 8fe06120ebe5bd34cbeb81e81637cd69, type: 3}
+  - {fileID: 5387978735800730953, guid: fd39f09ba13f4b14382537cae0c4c6e8, type: 3}
 --- !u!1 &1210090832798298406
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1210090832798298407}
   m_Layer: 0
-  m_Name: EasySpawners
+  m_Name: EnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -217,9 +235,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a205f7642ce6734fba3914df678002b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemies:
-  - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  easyEnemies:
   - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
+  - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  mediumEnemies:
+  - {fileID: 7816392282303579323, guid: 3ec2b4618090e5b41bae9a2545c4a7be, type: 3}
+  - {fileID: 1925183671624737530, guid: 0394b7c976a5dd146845489df5e0ab74, type: 3}
+  hardEnemies:
+  - {fileID: 1439846360373950241, guid: 8fe06120ebe5bd34cbeb81e81637cd69, type: 3}
+  - {fileID: 5387978735800730953, guid: fd39f09ba13f4b14382537cae0c4c6e8, type: 3}
 --- !u!1 &5900186200945951068
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,9 +287,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a205f7642ce6734fba3914df678002b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemies:
-  - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  easyEnemies:
   - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
+  - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  mediumEnemies:
+  - {fileID: 7816392282303579323, guid: 3ec2b4618090e5b41bae9a2545c4a7be, type: 3}
+  - {fileID: 1925183671624737530, guid: 0394b7c976a5dd146845489df5e0ab74, type: 3}
+  hardEnemies:
+  - {fileID: 1439846360373950241, guid: 8fe06120ebe5bd34cbeb81e81637cd69, type: 3}
+  - {fileID: 5387978735800730953, guid: fd39f09ba13f4b14382537cae0c4c6e8, type: 3}
 --- !u!1 &8576051237926352112
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +339,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a205f7642ce6734fba3914df678002b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemies:
-  - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  easyEnemies:
   - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
+  - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  mediumEnemies:
+  - {fileID: 7816392282303579323, guid: 3ec2b4618090e5b41bae9a2545c4a7be, type: 3}
+  - {fileID: 1925183671624737530, guid: 0394b7c976a5dd146845489df5e0ab74, type: 3}
+  hardEnemies:
+  - {fileID: 1439846360373950241, guid: 8fe06120ebe5bd34cbeb81e81637cd69, type: 3}
+  - {fileID: 5387978735800730953, guid: fd39f09ba13f4b14382537cae0c4c6e8, type: 3}

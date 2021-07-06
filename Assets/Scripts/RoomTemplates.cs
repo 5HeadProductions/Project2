@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RoomTemplates : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class RoomTemplates : MonoBehaviour
 
     public float waitTime;
     private bool spawnedBoss;
-    public GameObject boss;
+    public GameObject[] bossPreFabs;
 
     public GameObject endDoorWay;
     public Vector3 roomOffset;
@@ -29,7 +30,8 @@ public class RoomTemplates : MonoBehaviour
             {
                 if (i == rooms.Count - 1)
                 {
-                    Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
+                    int rand = Random.Range(0,2);
+                    Instantiate(bossPreFabs[rand], rooms[i].transform.position, Quaternion.identity);
                     Instantiate(endDoorWay,rooms[i].transform.position + roomOffset, Quaternion.identity);
                     spawnedBoss = true;
                 }

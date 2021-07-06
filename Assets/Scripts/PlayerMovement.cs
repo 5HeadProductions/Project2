@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5f, circleSpriteY;
+    [SerializeField] public float _speed = 5.0f, circleSpriteY;
     [SerializeField] public Transform playerMovementDirection;
     [SerializeField] private LayerMask _aimLayerMask;
     public FirePoint firePoint;
@@ -15,11 +15,12 @@ public class PlayerMovement : MonoBehaviour
 private Animator _animator;
 
 [SerializeField] private Vector3 _aimOffset;
-    
+ private PlayerManager playerInstance;   
 
     private void Awake(){
      _animator = GetComponent<Animator>(); // => is an expression body methood\
-   //  firePoint = GameObject.GetComponentInChildren<FirePoint>();
+   //  firePoint = GameObject.GetComponentInChildren<FirePoint>();'
+    playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
      
     }
     
@@ -29,8 +30,11 @@ private Animator _animator;
     {
         AimTowardsMouse();
         //moving the little sprite that should be in front of the player at all times
-        
 
+        if(playerInstance.movementMulti <= 3){
+           
+            UpdateSpeed();
+        }
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         
@@ -77,5 +81,23 @@ private Animator _animator;
             transform.forward = _direction;
             transform.Rotate(_aimOffset);
         }
+    }
+
+
+    void UpdateSpeed(){
+        switch(playerInstance.movementMulti){   
+            case 0:
+            break;
+            case 1:
+            _speed = _speed < 6.5f ? _speed += 1.5f :  _speed += 0.0f;
+          break;
+            case 2:
+            _speed = _speed < 8.0f ? _speed += 1.5f :  _speed += 0.0f;
+            break;
+            case 3:
+            _speed = _speed < 9.5f ? _speed += 1.0f :  _speed += 0.0f;
+           break;
+        }
+
     }
 }

@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 5653950017831928583}
-  projectilePrefab: {fileID: 7468687496069745892, guid: d289e7ac4c67dfc4c880c1139294dcd9, type: 3}
+  projectilePrefab: {fileID: 6348216783318629450, guid: 87c1b546e919fdc4b93e7bc3f9b865e0, type: 3}
   projectileForce: 5
   player: {fileID: 0}
   cam: {fileID: 0}

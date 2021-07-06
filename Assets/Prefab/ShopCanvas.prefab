@@ -269,7 +269,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 7353998709945316545}
   m_OnClick:
     m_PersistentCalls:
@@ -415,7 +415,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 415347731478616751}
   m_OnClick:
     m_PersistentCalls:
@@ -581,7 +581,20 @@ MonoBehaviour:
   rocket_Txt: {fileID: 4996891272992989696}
   coin_Txt: {fileID: 5537901956975510121}
   gem_Txt: {fileID: 4928443012942220359}
+  speed_Txt: {fileID: 5723217227455798013}
+  speedCost: {fileID: 6276806268441779928}
   shopCanvas: {fileID: 415347731833326704}
+  speedButton: {fileID: 6492734956562339771}
+  pPistol: {fileID: 5033277931368817723}
+  pAr: {fileID: 7880469816871562390}
+  pSniper: {fileID: 7798525296464557769}
+  pRocket: {fileID: 4604742148098541582}
+  cPistol: {fileID: 415347731478616744}
+  cAr: {fileID: 2607344779450821980}
+  cSniper: {fileID: 21397241643537488}
+  cRocket: {fileID: 2444053159643621323}
+  dPistol: {fileID: 973200520366704386}
+  dAr: {fileID: 5013733308941300449}
 --- !u!114 &4743966476768983979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1388,7 +1401,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 3608880019855206374}
   m_OnClick:
     m_PersistentCalls:
@@ -1960,7 +1973,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5174816907637899976}
   m_OnClick:
     m_PersistentCalls:
@@ -2496,7 +2509,20 @@ MonoBehaviour:
   rocket_Txt: {fileID: 4996891272992989696}
   coin_Txt: {fileID: 5537901956975510121}
   gem_Txt: {fileID: 4928443012942220359}
+  speed_Txt: {fileID: 5723217227455798013}
+  speedCost: {fileID: 6276806268441779928}
   shopCanvas: {fileID: 415347731833326704}
+  speedButton: {fileID: 6492734956562339771}
+  pPistol: {fileID: 0}
+  pAr: {fileID: 0}
+  pSniper: {fileID: 0}
+  pRocket: {fileID: 0}
+  cPistol: {fileID: 0}
+  cAr: {fileID: 0}
+  cSniper: {fileID: 0}
+  cRocket: {fileID: 0}
+  dPistol: {fileID: 0}
+  dAr: {fileID: 0}
 --- !u!1 &2064000256940089582
 GameObject:
   m_ObjectHideFlags: 0
@@ -4564,7 +4590,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 3292242670742389791}
   m_OnClick:
     m_PersistentCalls:
@@ -4710,7 +4736,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 21664689792580620}
   m_OnClick:
     m_PersistentCalls:
@@ -5008,7 +5034,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5759682605388513024}
   m_OnClick:
     m_PersistentCalls:
@@ -6047,7 +6073,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5540370309978194856}
   m_OnClick:
     m_PersistentCalls:
@@ -6800,9 +6826,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Speed
-
-'
+  m_text: Speed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
   m_sharedMaterial: {fileID: 7236782305257308195, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
@@ -8131,7 +8155,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1511843049628860961}
   m_OnClick:
     m_PersistentCalls:
@@ -8277,7 +8301,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 3051262348167599397}
   m_OnClick:
     m_PersistentCalls:

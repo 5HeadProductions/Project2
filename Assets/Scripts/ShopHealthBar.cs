@@ -32,32 +32,36 @@ public class ShopHealthBar : MonoBehaviour
     }
 
     public void Heal(){
-        int addHealth = 5;
-        if(slider.value + addHealth <= slider.maxValue){
-            slider.value += addHealth;
-            playerInstance.currentHealth += addHealth;
-            DisplayHealth(playerInstance.currentHealth);
-            _hud.SetHealth(playerInstance.currentHealth);
+        if(playerInstance.coins >= 5){
+            if(playerInstance.currentHealth < playerInstance.maxHealth){
+                int addHealth = 5;
+                if(slider.value + addHealth <= slider.maxValue){
+                    slider.value += addHealth;
+                    playerInstance.currentHealth += addHealth;
+                    DisplayHealth(playerInstance.currentHealth);
+                    _hud.SetHealth(playerInstance.currentHealth);
+                }
+                playerInstance.coins -= 5;
+
+            }
         }
 
     }
 
     //should be called when the player buys max health
-    public void IncreaseMaxHealth(){    
-        int add = 10;
-        if(slider.maxValue + add > 250){
-            maxHealth_Txt.text = "Max Health";
-            //display they can no longer upgrade their max health
-        }else{
-        slider.maxValue += add;
-        playerInstance.maxHealth += add;
-        DisplayHealth(playerInstance.currentHealth); 
-        _hud.SetHealth(playerInstance.currentHealth);         
-       // currentHealth_Txt.text = playerInstance.maxHealth.ToString() + "/" + playerInstance.maxHealth.ToString();
-       // slider.maxValue = playerInstance.maxHealth; // this needs to be changed when the player buys max value health
-       // playerInstance.currentHealth = playerInstance.maxHealth; // gives more max health to the player and heals them
-      //  slider.value = playerInstance.maxHealth; // displays the player has max health when they buy extra health
-      //  fill.color = gradient.Evaluate(1f); // changing the color and using 1f bc at max health we want to display a green color
-        }
+    public void IncreaseMaxHealth(){
+        if(playerInstance.coins >= 100){
+            int add = 10;
+            if(slider.maxValue + add > 250){
+                maxHealth_Txt.text = "Max Health";
+                //display they can no longer upgrade their max health
+            }else{
+            slider.maxValue += add;
+            playerInstance.maxHealth += add;
+            DisplayHealth(playerInstance.currentHealth); 
+            _hud.SetHealth(playerInstance.currentHealth);         
+            }
+            playerInstance.coins -= 100;
+        }    
     }
 }

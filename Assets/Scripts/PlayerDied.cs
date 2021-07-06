@@ -22,7 +22,7 @@ public class PlayerDied : MonoBehaviour
    public void Update(){
 
        if(!doneCounting){ // update "works" while done counting is false
-       coins.text = "+" + endCoin.ToString("0");
+       coins.text = "-" + endCoin.ToString("0");
        if(endCoin == playerInstance.coins) doneCounting = true; // when the values match we "stop" the update by setting doneCounting to true
 
        if(gameObject.activeInHierarchy){ // checking the canvas appeared on the screen, this is set active in the HUD scripts

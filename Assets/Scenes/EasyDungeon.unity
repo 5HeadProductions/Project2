@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerDied
       objectReference: {fileID: 0}
+    - target: {fileID: 1322990368374202178, guid: bb062a148cc41b341bb191d37491d626, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1322990368374202183, guid: bb062a148cc41b341bb191d37491d626, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -991,6 +995,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1f6494e92f7c344eb00e656e12c1218, type: 3}
+--- !u!1 &1084769645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 415347731833326704, guid: f1f6494e92f7c344eb00e656e12c1218, type: 3}
+  m_PrefabInstance: {fileID: 1084769644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1313731370
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,6 +1092,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1530377874772008048, guid: ac8cb37d5ad2edb4dad0f3d2d7596b46, type: 3}
+      propertyPath: shopCanvas
+      value: 
+      objectReference: {fileID: 1084769645}
     - target: {fileID: 7831219547408902695, guid: ac8cb37d5ad2edb4dad0f3d2d7596b46, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -56,6 +56,9 @@ public class FirePoint : MonoBehaviour
     void Update()
     {
         on = shopEnabler.shopCanvas.activeInHierarchy ? true : false;
+        if (Time.time > timeUntilAttack && bulletAmmo >= 1)
+        {
+
         if (Input.GetButtonDown(shootingWith)) // button we are using to shoot 
         {
             if(on){
@@ -89,9 +92,8 @@ public class FirePoint : MonoBehaviour
         //animator.SetBool("Shooting", false);
 
         //if statement for the purpose of making a fire rate
-        if (Time.time > timeUntilAttack && bulletAmmo >= 1)
-        {
-           // TouchShoot();
+        
+          
         }
 
 

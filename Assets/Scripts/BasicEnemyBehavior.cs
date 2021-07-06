@@ -58,25 +58,7 @@ public class BasicEnemyBehavior : MonoBehaviour
             playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         }
 
-        // if(SceneManager.GetActiveScene().name == "MediumDungeon" && gameObject.CompareTag("Boss") == false){
-
-        //     sightRange = 18;
-        //     attackRange = 1;
-        //     health = 20;
-        //     attackDamage = 15;
-        //     chaseSpeed = 0.07f;
-
-        // }
-
-        // if(SceneManager.GetActiveScene().name == "HardDungeon" && gameObject.CompareTag("Boss") == false){
-
-        //     sightRange = 22;
-        //     attackRange = 1;
-        //     health = 40;
-        //     attackDamage = 20;
-        //     chaseSpeed = 0.1f;
-
-        // }
+        
 
 
 

@@ -6,6 +6,7 @@ using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 
 //added to basic enemy preFab
@@ -63,6 +64,8 @@ public class RangedEnemy : MonoBehaviour
          _hud = GameObject.Find("HealthBar").GetComponent<HUD>();
         currHealth = health; //the zombie starts the level with max health
         enemyHealthBar.SetMaxHealth(health);
+
+        
     }
 
     private void Update()
@@ -183,7 +186,7 @@ public class RangedEnemy : MonoBehaviour
             animator.SetBool("PlayerInSight", false);
             animator.SetBool("PlayerInAttackRange",false);
             this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            Destroy(gameObject, .5f);
+            Destroy(gameObject, 1f);
         }
         enemyHealthBar.SetHealth(currHealth);
         

@@ -1222,7 +1222,7 @@ GameObject:
   - component: {fileID: 7336218590921682040}
   m_Layer: 0
   m_Name: MediumBasicBoss
-  m_TagString: Boss
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

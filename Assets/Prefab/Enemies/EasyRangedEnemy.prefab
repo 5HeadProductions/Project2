@@ -1569,7 +1569,7 @@ GameObject:
   - component: {fileID: 5416265312159186015}
   m_Layer: 9
   m_Name: EasyRangedEnemy
-  m_TagString: Boss
+  m_TagString: RangedZombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

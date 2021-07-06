@@ -8,6 +8,11 @@ public class ButtonManager : MonoBehaviour
 {
     private string playSceneName = "EasyDungeon";
     private string playHardDungeon = "HardDungeon";
+
+    
+   private string[] playableScenes = {"EasyDungeon","MediumDungeon","HardDungeon"};
+
+   
     private string weaponScene = "Boss Room";
     private string main = "MainMenu";
     private WeaponHolder weaponHolder;
@@ -16,7 +21,11 @@ public class ButtonManager : MonoBehaviour
     private PlayerManager playerInstance;
     private GameObject gunPlacement;
     private ShopAssignment shopCanvas;
+
+    private GameObject difficultyCanvas;
         // Start is called before the first frame update
+
+        
     void Start()
     {
         if(SceneManager.GetActiveScene().name == playSceneName || SceneManager.GetActiveScene().name == playHardDungeon){
@@ -30,11 +39,13 @@ public class ButtonManager : MonoBehaviour
     }
     
     public void LoadMainMenu(){
+        playerInstance.coins = 0;
         SceneManager.LoadScene(main);
     }
 
     public void LoadPlay(){
-        SceneManager.LoadScene(playSceneName);
+        
+        SceneManager.LoadScene(playableScenes[GameObject.Find("MenuManager").GetComponent<DifficultyEnabler>().currentDungeonScene]);
     }
 
     public void Replay(){
@@ -43,8 +54,34 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene(playSceneName);
     }
 
-    public void LoadWeapons(){
-        SceneManager.LoadScene(weaponScene);
+    public void ChooseDifficultyCanvas(){
+        // SceneManager.LoadScene(weaponScene);
+
+        difficultyCanvas = GameObject.Find("MenuManager");
+        
+        GameObject.Find("Main Menu").gameObject.SetActive(false);
+
+        difficultyCanvas.GetComponent<DifficultyEnabler>().TurnOn();;
+    
+    }
+    
+    public void DifficultyBackButton(){
+        difficultyCanvas = GameObject.Find("MenuManager");
+
+        difficultyCanvas.GetComponent<DifficultyEnabler>().TurnOnMain();
+    
+    }
+
+    public void EasyDifficulty(){
+        GameObject.Find("MenuManager").GetComponent<DifficultyEnabler>().currentDungeonScene = 0;
+    }
+
+     public void MediumDifficulty(){
+        GameObject.Find("MenuManager").GetComponent<DifficultyEnabler>().currentDungeonScene = 1;
+    }
+
+     public void HardDifficulty(){
+        GameObject.Find("MenuManager").GetComponent<DifficultyEnabler>().currentDungeonScene = 2;
     }
 
     public void Equip(int num) // this is for the HUDUI canvas

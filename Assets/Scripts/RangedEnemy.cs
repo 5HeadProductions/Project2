@@ -9,12 +9,7 @@ using Random = UnityEngine.Random;
 using UnityEngine.SceneManagement;
 
 
-//added to basic enemy preFab
-//1.follow player at a pace that we can alter
-//2.health field and attack damage, attack range
-//3.animator component and animator field updates
-//4.detect collision between player and enemy / bullet and enemy as well
-//5.Patrolling until player is within detection range
+//Same thing as the basic enemy but instead in attack a rock is instantiated 
 
 
 public class RangedEnemy : MonoBehaviour
@@ -185,6 +180,7 @@ public class RangedEnemy : MonoBehaviour
             animator.SetBool("Dead", true);
             animator.SetBool("PlayerInSight", false);
             animator.SetBool("PlayerInAttackRange",false);
+            animator.SetBool("AlreadyAttacked",false);
             this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             Destroy(gameObject, 1f);
         }

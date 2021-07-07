@@ -22,10 +22,6 @@ public class EnemyProjectile : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.forward * projectileSpeed; // "launching" the projectile forward
-        projectileT.Rotate(90f, 0f, 0f, Space.Self);
-        // rotating the image by 90 degrees so it the images fires straight, 
-        // Space.Self rotates the transform relative to itself meaning just the game object this tranform
-        // is attached to
         
         if(GameObject.Find("PlayerManager")!= null){
             playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
@@ -37,7 +33,6 @@ public class EnemyProjectile : MonoBehaviour
     public void OnCollisionEnter(Collision col){
         if(col.gameObject.CompareTag("Zombie")){
             
-           // Vector3 hitPosition = col.gameObject.GetComponent<Transform>().position; // the animation recoding has a set position
             Vector3 spawnPosition = new Vector3(0f, 0f, 0f); // the animation recoding has a set position
             
 

@@ -167,7 +167,7 @@ MonoBehaviour:
   bulletAmmo: 200
   rocketAmmo: 40
   attackDamage: 35
-  weaponType: 
+  weaponType: rocket
   audioManager: {fileID: 0}
 --- !u!1 &137665119054615199
 GameObject:

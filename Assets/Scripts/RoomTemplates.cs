@@ -6,6 +6,8 @@ using Random = UnityEngine.Random;
 
 public class RoomTemplates : MonoBehaviour
 {
+    //RoomTemplates is meant to be attached to an empty game object
+    //Holds the room prefabs you want in the scene, and the boss, as well as the end doorway
     public GameObject[] bottomRooms;
     public GameObject[] topRooms;
     public GameObject[] leftRooms;

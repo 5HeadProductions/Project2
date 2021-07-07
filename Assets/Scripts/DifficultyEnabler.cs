@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DifficultyEnabler : MonoBehaviour
 {
-
+    //Script is meant to be hooked up to an empty gameObject in mainMenu that keeps track of which canvas should be enabled in the scene
     public GameObject difficultyCanvas;
 
     public int currentDungeonScene = 0;

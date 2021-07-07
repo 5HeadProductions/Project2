@@ -167,7 +167,7 @@ MonoBehaviour:
   bulletAmmo: 200
   rocketAmmo: 0
   attackDamage: 10
-  weaponType: 
+  weaponType: Sniper
   audioManager: {fileID: 0}
 --- !u!1 &3149063525874958097
 GameObject:

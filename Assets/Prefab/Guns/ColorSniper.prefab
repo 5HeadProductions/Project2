@@ -302,5 +302,5 @@ MonoBehaviour:
   bulletAmmo: 200
   rocketAmmo: 0
   attackDamage: 100
-  weaponType: 
+  weaponType: Sniper
   audioManager: {fileID: 0}

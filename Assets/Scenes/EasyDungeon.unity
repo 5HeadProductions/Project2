@@ -1353,6 +1353,18 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: Rocket Fire
+    clip: {fileID: 8300000, guid: 0a1f80626e12c5d4f94720c36a182e8b, type: 3}
+    volume: 0.1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Sniper Fire
+    clip: {fileID: 8300000, guid: df6f26e03184d4847b03fb8835ac43e8, type: 3}
+    volume: 0.1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!4 &1898887900
 Transform:
   m_ObjectHideFlags: 0

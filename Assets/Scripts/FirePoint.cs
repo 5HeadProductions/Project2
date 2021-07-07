@@ -144,6 +144,7 @@ public class FirePoint : MonoBehaviour
 
     public void Shoot()
     {
+        PlaySound();
         GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         muzzleFlash.Play();
@@ -161,6 +162,15 @@ public class FirePoint : MonoBehaviour
         {
             audioManager.Play("Rifle Fire");
         }
+        else if (weaponType == "sniper" || weaponType == "Sniper")
+        {
+            audioManager.Play("Sniper Fire");
+        }
+        else if (weaponType == "rocket" || weaponType == "Rocket")
+        {
+            audioManager.Play("Rocket Fire");
+        }
+
     }
     
     

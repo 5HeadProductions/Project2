@@ -16,12 +16,27 @@ public class ShopAssignment : MonoBehaviour
     [Header("Buttons")]
     public Button speedButton, pPistol, pAr, pSniper, pRocket, cPistol, cAr, cSniper, cRocket, dPistol, dAr;
     private PlayerManager playerInstance;
+    private UnlockedGuns _unlockedGuns;
 
 
     void OnEnable(){
         Pause();
         playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
-       gem_Txt.text = playerInstance.gems.ToString();
+        _unlockedGuns = GameObject.Find("UnlockedGuns").GetComponent<UnlockedGuns>();
+        gem_Txt.text = playerInstance.gems.ToString();
+        
+
+    }
+
+    void Start(){
+      if(pPistol != null)if(_unlockedGuns.purplePistol) pPistol.interactable = true;
+      if(pAr != null)if(_unlockedGuns.purpleAR) pAr.interactable = true;
+      if(pSniper != null)if(_unlockedGuns.purpleSniper) pSniper.interactable = true;
+      if(pRocket != null)if(_unlockedGuns.purpleRocket) pRocket.interactable = true;
+      if(cPistol != null)if(_unlockedGuns.colorPistol) cPistol.interactable = true;
+      if(cAr != null)if(_unlockedGuns.colorAR) cAr.interactable = true;
+      if(cSniper != null)if(_unlockedGuns.colorSniper) cSniper.interactable = true;
+      if(cRocket != null)if(_unlockedGuns.colorRocket) cRocket.interactable = true;   
     }
     void Update(){
        UpdateCanvas();
@@ -33,6 +48,7 @@ public class ShopAssignment : MonoBehaviour
         secondaryAmmo_Txt.text = playerInstance.secondaryAmmo.ToString();
         rocket_Txt.text = playerInstance.rocketAmmo.ToString();
         coin_Txt.text = playerInstance.coins.ToString();
+
         if(playerInstance.movementMulti >= 3){
             speed_Txt.text = "max";
             speedCost.SetActive(false);

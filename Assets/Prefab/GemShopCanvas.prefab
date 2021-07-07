@@ -525,7 +525,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 958456499255902611}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: ColorPistol
+        m_MethodName: EnableColorPistol
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -668,6 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 7330623471500748028}
+  gems_txt: {fileID: 0}
 --- !u!1 &986852542689546284
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,7 +794,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7541523169751968138}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: PurplePistol
+        m_MethodName: EnablePurplePistol
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1774,7 +1775,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6355682232074008664}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: ColorRocket
+        m_MethodName: EnableColorRocket
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1998,7 +1999,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8725273186570897131}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: PurpleRocket
+        m_MethodName: EnablePurpleRocket
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2908,7 +2909,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2243160505199084840}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: PurpleAR
+        m_MethodName: EnablePurpleAR
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3055,7 +3056,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8471447000256139271}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: PurpleSniper
+        m_MethodName: EnablePurpleSniper
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3336,7 +3337,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7263421000948118236}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: ColorSniper
+        m_MethodName: EnableColorSniper
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4793,7 +4794,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6524489622408949640}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: ColorAR
+        m_MethodName: EnableColorAR
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

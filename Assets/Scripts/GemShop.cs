@@ -7,11 +7,14 @@ using TMPro;
 
 public class GemShop : MonoBehaviour
 {
+    [Header("Background Color")]
     [SerializeField]private Image background;
+
     private float timeLeft;
     private Color targetColor;
     private PlayerManager playerInstance;
-    private TextMeshProUGUI gems_txt;
+    [Header("Text Field")]
+    [SerializeField]private TextMeshProUGUI gems_txt;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +27,11 @@ public class GemShop : MonoBehaviour
  
     void Update()
     {
-    if (timeLeft <= Time.deltaTime)
+        ChangeBGColor();
+         gems_txt.text = playerInstance.gems.ToString(); 
+    }
+    public void ChangeBGColor(){
+            if (timeLeft <= Time.deltaTime)
     {
         // transition complete
         // assign the target color
@@ -43,7 +50,7 @@ public class GemShop : MonoBehaviour
         // update the timer
         timeLeft -= Time.deltaTime;
   }
-}
+    }
  
 
 

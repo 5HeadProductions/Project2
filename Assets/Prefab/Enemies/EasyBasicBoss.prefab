@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3718147229291291208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.354, z: 1.49}
+  m_LocalPosition: {x: 0, y: 1.354, z: 0.936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4343683046217190001}
@@ -1339,11 +1339,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  chaseSpeed: 0.2
-  attackRange: 2
-  health: 50
+  chaseSpeed: 0.07
+  attackRange: 3
+  health: 60
   attackDamage: 40
-  currHealth: 50
+  currHealth: 60
   animator: {fileID: 4343683046210233745}
   agent: {fileID: 6339695462835394230}
   whatIsGround:

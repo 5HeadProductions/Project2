@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 
 public class RoomSpawner : MonoBehaviour
 {
+    //RoomSpawner is meant to be attached to to empty gameObjects with box colliders, it then uses the opening direction to determine which room it should spawn from the designated pool
     public int openingDirection;
     // 1 --> need bottom door
     // 2 --> need top door

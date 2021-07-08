@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Destroyer : MonoBehaviour
 {
+    //Destroys other Room spawn points so it does not spawn a double room
     private void OnTriggerEnter(Collider other)
     {
     if(other.CompareTag("RoomSpawnPoint")){

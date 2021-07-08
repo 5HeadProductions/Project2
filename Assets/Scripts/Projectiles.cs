@@ -49,7 +49,7 @@ public class Projectiles : MonoBehaviour
          //   Destroy(particles, .5f);
            
             col.gameObject.GetComponent<BasicEnemyBehavior>().reduceHealth(attackDamage); 
-            playerInstance.coins ++;
+            playerInstance.coins += firePoint.coinsGainedOnShoot;
             //Destroy(particleClone, .5f);
             Destroy(gameObject);
         }
@@ -65,7 +65,7 @@ public class Projectiles : MonoBehaviour
          //   Destroy(particles, .5f);
            
             col.gameObject.GetComponent<RangedEnemy>().reduceHealth(attackDamage); 
-            playerInstance.coins ++;
+            playerInstance.coins += firePoint.coinsGainedOnShoot;
             //Destroy(particleClone, .5f);
             Destroy(gameObject);
         }

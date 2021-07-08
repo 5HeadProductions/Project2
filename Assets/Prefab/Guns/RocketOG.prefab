@@ -131,17 +131,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 6351221403226231287}
-  projectilePrefab: {fileID: 7468687496069745892, guid: d289e7ac4c67dfc4c880c1139294dcd9, type: 3}
+  projectilePrefab: {fileID: 6348216783318629450, guid: 87c1b546e919fdc4b93e7bc3f9b865e0, type: 3}
   projectileForce: 5
   player: {fileID: 0}
   cam: {fileID: 0}
   firing: 0
   muzzleFlash: {fileID: 6351221404047056247}
-  attackRate: 0.5
+  attackRate: 1
+  coinsGainedOnShoot: 4
   bulletAmmo: 200
   rocketAmmo: 40
   attackDamage: 15
-  weaponType: 
+  weaponType: rocket
   audioManager: {fileID: 0}
 --- !u!1 &6351221404047056202
 GameObject:

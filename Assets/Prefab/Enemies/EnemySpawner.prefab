@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   easyEnemies:
   - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
-  - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
   mediumEnemies:
   - {fileID: 7816392282303579323, guid: 3ec2b4618090e5b41bae9a2545c4a7be, type: 3}
   - {fileID: 1925183671624737530, guid: 0394b7c976a5dd146845489df5e0ab74, type: 3}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   easyEnemies:
   - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
-  - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
   mediumEnemies:
   - {fileID: 7816392282303579323, guid: 3ec2b4618090e5b41bae9a2545c4a7be, type: 3}
   - {fileID: 1925183671624737530, guid: 0394b7c976a5dd146845489df5e0ab74, type: 3}
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   easyEnemies:
   - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
-  - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
   mediumEnemies:
   - {fileID: 7816392282303579323, guid: 3ec2b4618090e5b41bae9a2545c4a7be, type: 3}
   - {fileID: 1925183671624737530, guid: 0394b7c976a5dd146845489df5e0ab74, type: 3}
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   easyEnemies:
   - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
-  - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
   mediumEnemies:
   - {fileID: 7816392282303579323, guid: 3ec2b4618090e5b41bae9a2545c4a7be, type: 3}
   - {fileID: 1925183671624737530, guid: 0394b7c976a5dd146845489df5e0ab74, type: 3}
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   easyEnemies:
   - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
-  - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
   mediumEnemies:
   - {fileID: 7816392282303579323, guid: 3ec2b4618090e5b41bae9a2545c4a7be, type: 3}
   - {fileID: 1925183671624737530, guid: 0394b7c976a5dd146845489df5e0ab74, type: 3}
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   easyEnemies:
   - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
-  - {fileID: 1652867149119637726, guid: d9ba955d671a3564dbe0b46835e0cc09, type: 3}
+  - {fileID: 3381146740954880055, guid: 4e8c567c0f478ab498ddf97562988672, type: 3}
   mediumEnemies:
   - {fileID: 7816392282303579323, guid: 3ec2b4618090e5b41bae9a2545c4a7be, type: 3}
   - {fileID: 1925183671624737530, guid: 0394b7c976a5dd146845489df5e0ab74, type: 3}

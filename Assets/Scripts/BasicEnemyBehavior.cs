@@ -57,11 +57,6 @@ public class BasicEnemyBehavior : MonoBehaviour
         if(GameObject.Find("PlayerManager")!= null){
             playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         }
-
-        
-
-
-
          _hud = GameObject.Find("HealthBar").GetComponent<HUD>();
         currHealth = health; //the zombie starts the level with max health
         enemyHealthBar.SetMaxHealth(health);
@@ -75,16 +70,13 @@ public class BasicEnemyBehavior : MonoBehaviour
         //check for sight range
         if (currHealth > 0)
         {
-            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer); //if player is in sphere then the player is in sight
             animator.SetBool("PlayerInSight", playerInSightRange);
         }
 
+        if (!playerInSightRange) Invoke("Patrol",.2f);  //Invoked and delayed the patrol function to avoid console errors about the nav mesh agent
         
-        
-
-        if (!playerInSightRange) Patrol();
-        
-        inAttackRange = Physics.CheckSphere(attackPoint.position, attackRange, whatIsPlayer);
+        inAttackRange = Physics.CheckSphere(attackPoint.position, attackRange, whatIsPlayer); //Attacks player if player is within sphere
         if (inAttackRange)
         {
             animator.SetBool("PlayerInAttackRange", true);
@@ -102,20 +94,20 @@ public class BasicEnemyBehavior : MonoBehaviour
     private void FixedUpdate()
     {
         if(currHealth > 0){
-            if (playerInSightRange) Chase();
+            if (playerInSightRange) Chase(); //we enter chase if player is in sight and the gameobject with this script is alive
         }
     }
 
     private void Patrol()
     {
-        agent.enabled = true;
-        if (!walkPointSet) SearchWalkPoint();
+        agent.enabled = true;                   //enable navMesh agent so it will make the gameobject patrol for us
+        if (!walkPointSet) SearchWalkPoint();       //Searching and then setting the walk point
 
         if (walkPointSet) agent.SetDestination(walkPoint);
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-       // transform.LookAt(walkPoint);
+        transform.LookAt(walkPoint);
         
         
         //WalkPoint reached

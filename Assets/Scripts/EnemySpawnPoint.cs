@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemySpawnPoint : MonoBehaviour
 {
+    //Spawner takes care of which enemies should be spawned depending on the scene
     public GameObject[] easyEnemies;
     public GameObject[] mediumEnemies;
     public GameObject[] hardEnemies;

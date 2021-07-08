@@ -163,11 +163,12 @@ MonoBehaviour:
   cam: {fileID: 0}
   firing: 0
   muzzleFlash: {fileID: 137665117896580143}
-  attackRate: 0.5
+  attackRate: 1
+  coinsGainedOnShoot: 10
   bulletAmmo: 200
   rocketAmmo: 40
   attackDamage: 35
-  weaponType: 
+  weaponType: rocket
   audioManager: {fileID: 0}
 --- !u!1 &137665119054615199
 GameObject:

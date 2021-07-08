@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class WeaponHolder : MonoBehaviour
 {
+    //holds our weapons so we can call them in button manager
     public GameObject player;
     public GameObject[] Weapons;
     public Sprite[] weaponSprites;

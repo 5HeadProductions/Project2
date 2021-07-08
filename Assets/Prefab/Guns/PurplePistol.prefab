@@ -141,7 +141,7 @@ Transform:
   m_LocalScale: {x: 0.17029554, y: 0.31852207, z: 0.16702124}
   m_Children: []
   m_Father: {fileID: 3569790610997391715}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3891330910574886588
 MonoBehaviour:
@@ -190,7 +190,7 @@ Transform:
   m_Children:
   - {fileID: 2489840202702386469}
   m_Father: {fileID: 3569790610997391715}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3891330911293060191
 MonoBehaviour:
@@ -211,11 +211,12 @@ MonoBehaviour:
   cam: {fileID: 0}
   firing: 0
   muzzleFlash: {fileID: 2489840202702386471}
-  attackRate: 0.5
+  attackRate: 0.7
+  coinsGainedOnShoot: 4
   bulletAmmo: 200
   rocketAmmo: 0
   attackDamage: 25
-  weaponType: 
+  weaponType: pistol
   audioManager: {fileID: 0}
 --- !u!1 &4233842185565793241
 GameObject:
@@ -246,8 +247,8 @@ Transform:
   m_LocalPosition: {x: 1.566329, y: 2.267, z: 0.6268959}
   m_LocalScale: {x: 3.1395, y: 3.1395, z: 3.1395}
   m_Children:
-  - {fileID: 3891330911293060188}
   - {fileID: 3891330910574886591}
+  - {fileID: 3891330911293060188}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}

@@ -46,7 +46,7 @@ public class HUD : MonoBehaviour
         if(playerInstance.currentHealth <= 0) {                 // when the player dies stop the game and queue the level end scene/canvas 
           //  Destroy(player);
             player.SetActive(false);
-            gameObject.SetActive(false);
+          //  gameObject.SetActive(false);
             playerDied.SetActive(true);
             playerDied.GetComponent<PlayerDied>().Appear();
             

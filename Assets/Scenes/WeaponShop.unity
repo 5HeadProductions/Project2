@@ -196,6 +196,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 828358998781898636, guid: 0ad4db5f712f578419db1e68941c9201, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 891349718243297007, guid: 0ad4db5f712f578419db1e68941c9201, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.8535156
+      objectReference: {fileID: 0}
+    - target: {fileID: 891349718243297007, guid: 0ad4db5f712f578419db1e68941c9201, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.4360962
+      objectReference: {fileID: 0}
     - target: {fileID: 958456499576543050, guid: 0ad4db5f712f578419db1e68941c9201, type: 3}
       propertyPath: m_Name
       value: GemShopCanvas
@@ -284,13 +296,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4989462915150191329, guid: 0ad4db5f712f578419db1e68941c9201, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 3051024639943088161, guid: 0ad4db5f712f578419db1e68941c9201, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4989462915150191329, guid: 0ad4db5f712f578419db1e68941c9201, type: 3}
+    - target: {fileID: 3051024639943088161, guid: 0ad4db5f712f578419db1e68941c9201, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.4360962
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125060405761723901, guid: 0ad4db5f712f578419db1e68941c9201, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.38562
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158242292324983147, guid: 0ad4db5f712f578419db1e68941c9201, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.4787598
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582670365315905117, guid: 0ad4db5f712f578419db1e68941c9201, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 9.782349
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907890893656581751, guid: 0ad4db5f712f578419db1e68941c9201, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907890893656581751, guid: 0ad4db5f712f578419db1e68941c9201, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.4713135
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ad4db5f712f578419db1e68941c9201, type: 3}

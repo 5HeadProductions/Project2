@@ -178,10 +178,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerDied
       objectReference: {fileID: 0}
-    - target: {fileID: 1322990368374202178, guid: bb062a148cc41b341bb191d37491d626, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1322990368374202183, guid: bb062a148cc41b341bb191d37491d626, type: 3}
       propertyPath: m_Pivot.x
       value: 0

@@ -148,14 +148,14 @@ public class ButtonManager : MonoBehaviour
     }
     public void PurplePistol(){
         if(shopCanvas.pPistol.interactable){
-            if(playerInstance.coins >= 550){
+            if(playerInstance.coins >= 400){
             if(shopCanvas.dPistol.interactable == false) shopCanvas.dPistol.interactable = true; //enabling the default pistol to be purchased
             int index = 4; 
              bool isEquipped = inventory.SetPistolUI(index);
             if(isEquipped) Equip(index); //only if the player is holding the gun we want to spawn it in right away else just change the sprite
             else playerInstance.secondaryIndex = index;
             inventory.ReloadSecondary();
-            playerInstance.coins -= 550;
+            playerInstance.coins -= 400;
             }
             // else the play has it unlocked but can't afford it
         }
@@ -163,14 +163,14 @@ public class ButtonManager : MonoBehaviour
     }
     public void ColorPistol(){
         if(shopCanvas.cPistol.interactable){
-            if(playerInstance.coins >= 1000){
+            if(playerInstance.coins >= 600){
             if(shopCanvas.dPistol.interactable == false) shopCanvas.dPistol.interactable = true; //enabling the default pistol to be purchased
             int index = 8; 
             bool isEquipped = inventory.SetPistolUI(index);
             if(isEquipped) Equip(index);
             else playerInstance.secondaryIndex = index;
             inventory.ReloadSecondary();
-            playerInstance.coins -= 1000;
+            playerInstance.coins -= 600;
             }
             // else the play has it unlocked but can't afford it
         }
@@ -178,96 +178,96 @@ public class ButtonManager : MonoBehaviour
     }
     public void DefaultAR(){
         if(shopCanvas.dAr.interactable){
-            if(playerInstance.coins >= 350){
+            if(playerInstance.coins >= 300){
             int index = 1;
             bool isEquipped = inventory.SetPrimaryWeaponUI(index);
             if(isEquipped) Equip(index);
             inventory.ReloadPrimary();
-            playerInstance.coins -= 350;
+            playerInstance.coins -= 300;
             }
         }
     }
     public void PurpleAR(){
         if(shopCanvas.pAr.interactable){
-            if(playerInstance.coins >= 450){
+            if(playerInstance.coins >= 700){
                 int index = 5;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
                 if(isEquipped) Equip(index);
                 inventory.ReloadPrimary();
-                playerInstance.coins -= 450;
+                playerInstance.coins -= 700;
             }
         }
     }
     public void ColorAR(){
         if(shopCanvas.cAr.interactable){
-            if(playerInstance.coins >= 1500){
+            if(playerInstance.coins >= 1300){
                 int index = 9;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
                 if(isEquipped) Equip(index);
                 inventory.ReloadPrimary();
-                playerInstance.coins -= 1500;
+                playerInstance.coins -= 1300;
             }
         }
     }
     public void DefaultSniper(){
-        if(playerInstance.coins >= 500){
+        if(playerInstance.coins >= 300){
             int index = 2;
             bool isEquipped = inventory.SetPrimaryWeaponUI(index);
             if(isEquipped) Equip(index); 
             inventory.ReloadPrimary();   
-            playerInstance.coins -= 500;
+            playerInstance.coins -= 300;
         }
     }
     public void PurpleSniper(){
         if(shopCanvas.pSniper.interactable){
-            if(playerInstance.coins >= 690){
+            if(playerInstance.coins >= 600){
                 int index = 6;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
                 if(isEquipped) Equip(index);
                 inventory.ReloadPrimary();   
-                playerInstance.coins -= 690;
+                playerInstance.coins -= 600;
             }
         }
     }
     public void ColorSniper(){
         if(shopCanvas.cSniper.interactable){
-            if(playerInstance.coins >= 2500){
+            if(playerInstance.coins >= 1300){
                 int index = 10;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
                 if(isEquipped) Equip(index);
                 inventory.ReloadPrimary();    
-                playerInstance.coins -= 2500;
+                playerInstance.coins -= 1300;
             }
         }
     }
     public void DefaultRocket(){
-        if(playerInstance.coins >= 1000){
+        if(playerInstance.coins >= 400){
             int index = 3;
             bool isEquipped = inventory.SetPrimaryWeaponUI(index);
             if(isEquipped) Equip(index);
             inventory.ReloadRockets();
-            playerInstance.coins -= 1000;
+            playerInstance.coins -= 400;
         }
     }
     public void PurpleRocket(){
         if(shopCanvas.pRocket.interactable){
-            if(playerInstance.coins >= 2000){
+            if(playerInstance.coins >= 800){
                 int index = 7;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
                 if(isEquipped) Equip(index);
                 inventory.ReloadRockets();
-                playerInstance.coins -= 2000;
+                playerInstance.coins -= 800;
             }
         }
     }   
     public void ColorRocket(){
         if(shopCanvas.cRocket.interactable){
-            if(playerInstance.coins >= 4000){
+            if(playerInstance.coins >= 1500){
                 int index = 11;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
                 if(isEquipped) Equip(index);
                 inventory.ReloadRockets();
-                playerInstance.coins -= 4000;
+                playerInstance.coins -= 1500;
             }
         }
     }

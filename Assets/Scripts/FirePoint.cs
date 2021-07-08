@@ -30,6 +30,7 @@ public class FirePoint : MonoBehaviour
     [SerializeField] private VisualEffect muzzleFlash;
 
     [SerializeField] private float attackRate = 0.5f; // the amount of time before being able to attack
+    public int coinsGainedOnShoot;
     private float timeUntilAttack = 0;
 
     public int bulletAmmo = 0, rocketAmmo = 0; // max ammo is assigned in each gun's prefab

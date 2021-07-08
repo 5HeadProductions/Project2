@@ -350,9 +350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e74a8fb7d0446644fba24727cc2e8f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1788591482}
-  smoothSpeed: 1
-  offset: {x: 0, y: 14, z: -7.5}
 --- !u!114 &389377310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1155,11 +1152,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1742055235469596038, guid: 4192e5ba4ce53ee44bafd5054e9a70aa, type: 3}
   m_PrefabInstance: {fileID: 1998500912}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1788591482 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1742055235469298086, guid: 4192e5ba4ce53ee44bafd5054e9a70aa, type: 3}
-  m_PrefabInstance: {fileID: 1998500912}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1795569348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 606365473619992803, guid: ac8cb37d5ad2edb4dad0f3d2d7596b46, type: 3}
@@ -1311,74 +1303,6 @@ CapsuleCollider:
   m_Height: 0.99999994
   m_Direction: 1
   m_Center: {x: 0, y: 0.49999997, z: -0.0000000037252903}
---- !u!1 &1898887898
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1898887900}
-  - component: {fileID: 1898887899}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1898887899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1898887898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 091037633328e61419b5fb9d4407659f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: Pistol Fire
-    clip: {fileID: 8300000, guid: f9a9b4d38b17a434ca8ad82ee92496ae, type: 3}
-    volume: 0.1
-    pitch: 1
-    source: {fileID: 0}
-    loop: 0
-  - name: Rifle Fire
-    clip: {fileID: 8300000, guid: 1f95a240714ff614ea8553b1a361287a, type: 3}
-    volume: 0.1
-    pitch: 1
-    source: {fileID: 0}
-    loop: 0
-  - name: Rocket Fire
-    clip: {fileID: 8300000, guid: 0a1f80626e12c5d4f94720c36a182e8b, type: 3}
-    volume: 0.1
-    pitch: 1
-    source: {fileID: 0}
-    loop: 0
-  - name: Sniper Fire
-    clip: {fileID: 8300000, guid: df6f26e03184d4847b03fb8835ac43e8, type: 3}
-    volume: 0.1
-    pitch: 1
-    source: {fileID: 0}
-    loop: 0
---- !u!4 &1898887900
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1898887898}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.303173, y: 19.127405, z: -17.570675}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1998500912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1436,3 +1360,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4192e5ba4ce53ee44bafd5054e9a70aa, type: 3}
+--- !u!1001 &5755312164326395863
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.303173
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.127405
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17.570675
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227981, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}

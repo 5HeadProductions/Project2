@@ -543,7 +543,7 @@ MonoBehaviour:
   target: {fileID: 0}
   chaseSpeed: 0.05
   attackRange: 0.5
-  health: 10
+  health: 30
   attackDamage: 10
   currHealth: 10
   animator: {fileID: 3381146740962143223}

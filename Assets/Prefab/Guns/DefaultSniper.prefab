@@ -163,10 +163,11 @@ MonoBehaviour:
   cam: {fileID: 0}
   firing: 0
   muzzleFlash: {fileID: 817198632}
-  attackRate: 0.5
+  attackRate: 1.5
+  coinsGainedOnShoot: 7
   bulletAmmo: 200
   rocketAmmo: 0
-  attackDamage: 10
+  attackDamage: 15
   weaponType: Sniper
   audioManager: {fileID: 0}
 --- !u!1 &3149063525874958097

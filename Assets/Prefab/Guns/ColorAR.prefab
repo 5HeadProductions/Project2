@@ -212,6 +212,7 @@ MonoBehaviour:
   firing: 0
   muzzleFlash: {fileID: 2634046043577142648}
   attackRate: 0.1
+  coinsGainedOnShoot: 5
   bulletAmmo: 200
   rocketAmmo: 0
   attackDamage: 35

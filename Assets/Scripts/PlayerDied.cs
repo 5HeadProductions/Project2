@@ -11,12 +11,14 @@ public class PlayerDied : MonoBehaviour
     private int endCoin, growthRate = 1; // endCoin is the value for the coins that is being updated in the canvas
     private bool canvasLoaded, doneCounting;
     private PlayerManager playerInstance;
-    public void Appear(){
+    private WeaponHolder weaponHolder;
+    public void Appear(){ // the buttons slowly appear
         animator.SetBool("isActive", true);
         
     }
     public void Start(){
         playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>(); 
+        weaponHolder = GameObject.Find("WeaponHolder").GetComponent<WeaponHolder>();
     }
 
    public void Update(){

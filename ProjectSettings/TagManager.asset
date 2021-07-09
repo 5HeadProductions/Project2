@@ -15,6 +15,7 @@ TagManager:
   - RangedZombie
   - Secondary
   - Boss
+  - RocketProjectile
   layers:
   - Default
   - TransparentFX

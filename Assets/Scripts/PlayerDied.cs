@@ -50,7 +50,7 @@ public class PlayerDied : MonoBehaviour
        GemCounter();
     }
     public void GemCounter(){
-
+        PlayerPrefs.SetInt("LifeTimeGems", PlayerPrefs.GetInt("LifeTimeGems") + playerInstance.gems); // updating the players gems value by adding their previous gem count plus the ones they gained in this run
         if(!doneCountingGems){ // update "works" while done counting is false
        gems.text = "+"+ endGems.ToString("0");
        if(endGems == playerInstance.gems) doneCountingGems = true; // when the values match we "stop" the update by setting doneCounting to true

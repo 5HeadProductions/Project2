@@ -163,7 +163,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   firing: 0
   muzzleFlash: {fileID: 305016163}
-  attackRate: 0.7
+  attackRate: 1
   coinsGainedOnShoot: 3
   bulletAmmo: 200
   rocketAmmo: 0

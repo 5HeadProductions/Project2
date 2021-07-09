@@ -86,6 +86,8 @@ public class FirePoint : MonoBehaviour
                     }
                     }
                 } 
+
+                timeUntilAttack = Time.time + attackRate;
         }
 
         //setting the bool to false so it knows to aim where the player is moving rather than firing

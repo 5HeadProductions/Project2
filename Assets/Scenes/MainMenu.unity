@@ -1626,7 +1626,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -2924,6 +2924,87 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762623906}
   m_CullTransparentMesh: 1
+--- !u!1001 &1765902337
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.303173
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.127405
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17.570675
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227979, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227980, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: sounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227980, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: sounds.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6012835ea697d364abeb93788a282888, type: 3}
+    - target: {fileID: 5755312165146227980, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: sounds.Array.data[5].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227980, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: sounds.Array.data[5].name
+      value: Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227980, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: sounds.Array.data[5].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227980, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: sounds.Array.data[5].volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755312165146227981, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cf6644d7ef205842bf08838e12c3b9d, type: 3}
 --- !u!1 &1886679737
 GameObject:
   m_ObjectHideFlags: 0

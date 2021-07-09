@@ -189,7 +189,7 @@ MonoBehaviour:
   - {fileID: 4343683046217487953, guid: 211e914feeb0dec448c8a603a91a8472, type: 3}
   - {fileID: 407489942905012247, guid: 2285ada4ef104c74b960572aa019b57a, type: 3}
   endDoorWay: {fileID: 7633306706173251817, guid: 7782343bded86314dbe7cfdf5ee3aa1a, type: 3}
-  roomOffset: {x: 3, y: 0, z: 0}
+  roomOffset: {x: 17, y: 0, z: 0}
 --- !u!4 &110121823
 Transform:
   m_ObjectHideFlags: 0

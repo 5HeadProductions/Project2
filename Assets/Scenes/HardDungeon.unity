@@ -189,7 +189,7 @@ MonoBehaviour:
   - {fileID: 3498515164686436311, guid: 01c8c400c15de124fb7a067aa17a8698, type: 3}
   - {fileID: 4913954856273577521, guid: 653234e246d46ac4291b535ca5f44e95, type: 3}
   endDoorWay: {fileID: 7633306706173251817, guid: 7782343bded86314dbe7cfdf5ee3aa1a, type: 3}
-  roomOffset: {x: 3, y: 0, z: 0}
+  roomOffset: {x: 17, y: 0, z: 0}
 --- !u!4 &63023230
 Transform:
   m_ObjectHideFlags: 0
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 3502cd6a591727c45a76ab0d265f5eda, type: 2}
+  sharedProfile: {fileID: 0}
 --- !u!4 &873570547
 Transform:
   m_ObjectHideFlags: 0

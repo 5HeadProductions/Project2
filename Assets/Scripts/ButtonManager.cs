@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class ButtonManager : MonoBehaviour
 {
     private string playSceneName = "EasyDungeon";
+    private string playMediumDungeon = "MediumDungeon";
     private string playHardDungeon = "HardDungeon";
 
     
@@ -25,15 +26,20 @@ public class ButtonManager : MonoBehaviour
 
     private GameObject difficultyCanvas;
     private GameObject gemShop;
-    private int purpleCost = 10;
-    private int colorCost = 25;
+    private int purpleCost = 5;
+    private int purpleCostSR = 10;
+    private int colorCost = 20;
+    private int colorCostSR = 25;
+
+    //private LevelLoader transition;
 
 
         // Start is called before the first frame update
         
     void Start()
     {
-        if(SceneManager.GetActiveScene().name == playSceneName || SceneManager.GetActiveScene().name == playHardDungeon){
+        if(SceneManager.GetActiveScene().name == playSceneName || SceneManager.GetActiveScene().name == playHardDungeon ||
+            SceneManager.GetActiveScene().name == playMediumDungeon){
         weaponHolder = GameObject.Find("WeaponHolder").GetComponent<WeaponHolder>();
         inventory = GameObject.Find("inventory").GetComponent<Inventory>();
         playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
@@ -45,6 +51,7 @@ public class ButtonManager : MonoBehaviour
         else{
             playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
             _unlockedGuns = GameObject.Find("UnlockedGuns").GetComponent<UnlockedGuns>();
+           // transition = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
         }
     }
     
@@ -54,7 +61,7 @@ public class ButtonManager : MonoBehaviour
     }
 
     public void LoadPlay(){
-        
+      //  transition.LoadNextLevel();
         SceneManager.LoadScene(playableScenes[GameObject.Find("MenuManager").GetComponent<DifficultyEnabler>().currentDungeonScene]);
     }
 
@@ -116,24 +123,28 @@ Permenatly unlocking weapons through the gem shop
         if(playerInstance.gems >= purpleCost){
             _unlockedGuns.purplePistol = true;
             playerInstance.gems -= purpleCost;
+            PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
         }
     }
     public void EnablePurpleAR(){
         if(playerInstance.gems >= purpleCost){
             _unlockedGuns.purpleAR = true;
             playerInstance.gems -= purpleCost;
+            PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
         }
     }
     public void EnablePurpleSniper(){
-        if(playerInstance.gems >= purpleCost){
+        if(playerInstance.gems >= purpleCostSR){
             _unlockedGuns.purpleSniper = true;
-            playerInstance.gems -= purpleCost;
+            playerInstance.gems -= purpleCostSR;
+            PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
         }        
     }
     public void EnablePurpleRocket(){
-        if(playerInstance.gems >= purpleCost){
+        if(playerInstance.gems >= purpleCostSR){
         _unlockedGuns.purpleRocket = true;
-            playerInstance.gems -= purpleCost;
+            playerInstance.gems -= purpleCostSR;
+            PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
         }
     }
 
@@ -141,24 +152,28 @@ Permenatly unlocking weapons through the gem shop
         if(playerInstance.gems >= colorCost){
             _unlockedGuns.colorPistol = true;
             playerInstance.gems -= colorCost;
+            PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
         }
     }
     public void EnableColorAR(){
         if(playerInstance.gems >= colorCost){
             _unlockedGuns.colorAR = true;
             playerInstance.gems -= colorCost;
+            PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
         }
     }
     public void EnableColorSniper(){
-        if(playerInstance.gems >= colorCost){
+        if(playerInstance.gems >= colorCostSR){
             _unlockedGuns.colorSniper = true;
-            playerInstance.gems -= colorCost;
+            playerInstance.gems -= colorCostSR;
+            PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
         }
     }
     public void EnableColorRocket(){
-        if(playerInstance.gems >= colorCost){
+        if(playerInstance.gems >= colorCostSR){
             _unlockedGuns.colorRocket = true;
-            playerInstance.gems -= colorCost;
+            playerInstance.gems -= colorCostSR;
+            PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
         }
     }
 
@@ -272,6 +287,7 @@ Purchasing ammunition and speed from the in game shop
     public void PurpleAR(){
         if(shopCanvas.pAr.interactable){
             if(playerInstance.coins >= 700){
+                if(shopCanvas.dAr.interactable == false) shopCanvas.dAr.interactable = true; //enabling the default AR to be purchased
                 int index = 5;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
                 if(isEquipped) Equip(index);
@@ -283,6 +299,7 @@ Purchasing ammunition and speed from the in game shop
     public void ColorAR(){
         if(shopCanvas.cAr.interactable){
             if(playerInstance.coins >= 1300){
+                if(shopCanvas.dAr.interactable == false) shopCanvas.dAr.interactable = true; //enabling the default AR to be purchased
                 int index = 9;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
                 if(isEquipped) Equip(index);
@@ -293,6 +310,7 @@ Purchasing ammunition and speed from the in game shop
     }
     public void DefaultSniper(){
         if(playerInstance.coins >= 300){
+            if(shopCanvas.dAr.interactable == false) shopCanvas.dAr.interactable = true; //enabling the default AR to be purchased
             int index = 2;
             bool isEquipped = inventory.SetPrimaryWeaponUI(index);
             if(isEquipped) Equip(index); 
@@ -303,6 +321,7 @@ Purchasing ammunition and speed from the in game shop
     public void PurpleSniper(){
         if(shopCanvas.pSniper.interactable){
             if(playerInstance.coins >= 600){
+                if(shopCanvas.dAr.interactable == false) shopCanvas.dAr.interactable = true; //enabling the default AR to be purchased
                 int index = 6;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
                 if(isEquipped) Equip(index);
@@ -314,6 +333,7 @@ Purchasing ammunition and speed from the in game shop
     public void ColorSniper(){
         if(shopCanvas.cSniper.interactable){
             if(playerInstance.coins >= 1300){
+                if(shopCanvas.dAr.interactable == false) shopCanvas.dAr.interactable = true; //enabling the default AR to be purchased
                 int index = 10;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
                 if(isEquipped) Equip(index);
@@ -324,6 +344,7 @@ Purchasing ammunition and speed from the in game shop
     }
     public void DefaultRocket(){
         if(playerInstance.coins >= 400){
+            if(shopCanvas.dAr.interactable == false) shopCanvas.dAr.interactable = true; //enabling the default AR to be purchased
             int index = 3;
             bool isEquipped = inventory.SetPrimaryWeaponUI(index);
             if(isEquipped) Equip(index);
@@ -334,6 +355,7 @@ Purchasing ammunition and speed from the in game shop
     public void PurpleRocket(){
         if(shopCanvas.pRocket.interactable){
             if(playerInstance.coins >= 800){
+                if(shopCanvas.dAr.interactable == false) shopCanvas.dAr.interactable = true; //enabling the default AR to be purchased
                 int index = 7;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
                 if(isEquipped) Equip(index);
@@ -345,6 +367,7 @@ Purchasing ammunition and speed from the in game shop
     public void ColorRocket(){
         if(shopCanvas.cRocket.interactable){
             if(playerInstance.coins >= 1500){
+                if(shopCanvas.dAr.interactable == false) shopCanvas.dAr.interactable = true; //enabling the default AR to be purchased
                 int index = 11;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
                 if(isEquipped) Equip(index);

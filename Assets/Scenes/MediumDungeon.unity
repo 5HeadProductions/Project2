@@ -996,6 +996,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShopCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 415347731833326704, guid: f1f6494e92f7c344eb00e656e12c1218, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 415347731833326708, guid: f1f6494e92f7c344eb00e656e12c1218, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1078,6 +1082,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 415347731833326708, guid: f1f6494e92f7c344eb00e656e12c1218, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598151916780454363, guid: f1f6494e92f7c344eb00e656e12c1218, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598151916780454363, guid: f1f6494e92f7c344eb00e656e12c1218, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

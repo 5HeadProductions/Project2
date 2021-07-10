@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class EndOfLevel : MonoBehaviour
 {
     GameObject boss;
-    public int gemDrop;
+    [SerializeField] private int _easyGemDrop,_mediumGemDrop,_hardGemDrop;
 
     private PlayerManager playerInstance;
    
@@ -19,9 +19,24 @@ public class EndOfLevel : MonoBehaviour
     void OnCollisionEnter(Collision other){
 
         if(other.gameObject.CompareTag("Player") && boss == null){
-            playerInstance.gems += gemDrop;     
-            
+
+            if(SceneManager.GetActiveScene().name == "EasyDungeon"){
             SceneManager.LoadScene("EasyDungeon");
+            playerInstance.gems += _easyGemDrop;   
+            }
+
+            if(SceneManager.GetActiveScene().name == "MediumDungeon"){
+            SceneManager.LoadScene("MediumDungeon");
+            playerInstance.gems += _mediumGemDrop;   
+            }
+
+            if(SceneManager.GetActiveScene().name == "HardDungeon"){
+            SceneManager.LoadScene("HardDungeon");
+            playerInstance.gems += _hardGemDrop;   
+            }
+              
+            
+            
 
         }
 

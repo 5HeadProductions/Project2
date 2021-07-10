@@ -321,10 +321,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  chaseSpeed: 0.25
+  chaseSpeed: 0.15
   attackRange: 3
-  health: 150
-  attackDamage: 60
+  health: 300
+  attackDamage: 80
   currHealth: 150
   animator: {fileID: 4913954856281011697}
   agent: {fileID: 3426425885168076502}
@@ -336,7 +336,7 @@ MonoBehaviour:
     m_Bits: 8
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 10
-  sightRange: 25
+  sightRange: 35
   playerInSightRange: 0
   _hud: {fileID: 0}
   inAttackRange: 0

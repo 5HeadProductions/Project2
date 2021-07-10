@@ -478,9 +478,9 @@ MonoBehaviour:
   target: {fileID: 0}
   chaseSpeed: 0.05
   attackRange: 0.5
-  health: 10
-  attackDamage: 10
-  currHealth: 10
+  health: 120
+  attackDamage: 40
+  currHealth: 120
   animator: {fileID: 1439846360381326561}
   agent: {fileID: 8667071356613031878}
   whatIsGround:
@@ -491,7 +491,7 @@ MonoBehaviour:
     m_Bits: 8
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  sightRange: 10
+  sightRange: 30
   playerInSightRange: 0
   _hud: {fileID: 0}
   inAttackRange: 0

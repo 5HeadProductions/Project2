@@ -606,8 +606,8 @@ MonoBehaviour:
   target: {fileID: 0}
   chaseSpeed: 0.05
   attackRange: 0.5
-  health: 10
-  attackDamage: 10
+  health: 60
+  attackDamage: 20
   currHealth: 10
   animator: {fileID: 7816392282296170363}
   agent: {fileID: 560034626107917404}
@@ -619,7 +619,7 @@ MonoBehaviour:
     m_Bits: 8
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  sightRange: 10
+  sightRange: 25
   playerInSightRange: 0
   _hud: {fileID: 0}
   inAttackRange: 0

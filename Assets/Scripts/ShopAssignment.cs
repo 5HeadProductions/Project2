@@ -36,7 +36,8 @@ public class ShopAssignment : MonoBehaviour
       if(cPistol != null)if(_unlockedGuns.colorPistol) cPistol.interactable = true;
       if(cAr != null)if(_unlockedGuns.colorAR) cAr.interactable = true;
       if(cSniper != null)if(_unlockedGuns.colorSniper) cSniper.interactable = true;
-      if(cRocket != null)if(_unlockedGuns.colorRocket) cRocket.interactable = true;   
+      if(cRocket != null)if(_unlockedGuns.colorRocket) cRocket.interactable = true;
+      if(dAr != null)if(playerInstance.primaryIndex != 1) dAr.interactable = true;   
     }
     void Update(){
        UpdateCanvas();

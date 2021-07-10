@@ -31,7 +31,8 @@ public class ButtonManager : MonoBehaviour
     private int colorCost = 20;
     private int colorCostSR = 25;
 
-    //private LevelLoader transition;
+    private LevelLoader transition, transitionUI;
+
 
 
         // Start is called before the first frame update
@@ -51,7 +52,8 @@ public class ButtonManager : MonoBehaviour
         else{
             playerInstance = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
             _unlockedGuns = GameObject.Find("UnlockedGuns").GetComponent<UnlockedGuns>();
-           // transition = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
+           transition = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
+           transitionUI = GameObject.Find("UILoader").GetComponent<LevelLoader>();
         }
     }
     
@@ -62,8 +64,14 @@ public class ButtonManager : MonoBehaviour
     }
 
     public void LoadPlay(){
-      //  transition.LoadNextLevel();
       GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Click");
+        transition.LoadNextLevel();
+        transitionUI.LoadNextLevel();
+        StartCoroutine(WaitForTransition());
+      //  SceneManager.LoadScene(playableScenes[GameObject.Find("MenuManager").GetComponent<DifficultyEnabler>().currentDungeonScene]);
+    }
+    IEnumerator WaitForTransition(){
+        yield return new WaitForSeconds(1.2f);
         SceneManager.LoadScene(playableScenes[GameObject.Find("MenuManager").GetComponent<DifficultyEnabler>().currentDungeonScene]);
     }
 

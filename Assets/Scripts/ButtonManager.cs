@@ -56,23 +56,27 @@ public class ButtonManager : MonoBehaviour
     }
     
     public void LoadMainMenu(){
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Click");
         playerInstance.coins = 0;
         SceneManager.LoadScene(main);
     }
 
     public void LoadPlay(){
       //  transition.LoadNextLevel();
+      GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Click");
         SceneManager.LoadScene(playableScenes[GameObject.Find("MenuManager").GetComponent<DifficultyEnabler>().currentDungeonScene]);
     }
 
     public void Replay(){
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Click");
         playerInstance.primaryWeapon = weaponHolder.Weapons[1];
         playerInstance.coins = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ChooseDifficultyCanvas(){
-        // SceneManager.LoadScene(weaponScene);
+        
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Click");
 
         difficultyCanvas = GameObject.Find("MenuManager");
         
@@ -87,20 +91,25 @@ public class ButtonManager : MonoBehaviour
 
     */
     public void DifficultyBackButton(){
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Click");
+
         difficultyCanvas = GameObject.Find("MenuManager");
         difficultyCanvas.GetComponent<DifficultyEnabler>().TurnOnMain();
     
     }
 
     public void EasyDifficulty(){
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Click");
         GameObject.Find("MenuManager").GetComponent<DifficultyEnabler>().currentDungeonScene = 0;
     }
 
      public void MediumDifficulty(){
+         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Click");
         GameObject.Find("MenuManager").GetComponent<DifficultyEnabler>().currentDungeonScene = 1;
     }
 
      public void HardDifficulty(){
+         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Click");
         GameObject.Find("MenuManager").GetComponent<DifficultyEnabler>().currentDungeonScene = 2;
     }
 

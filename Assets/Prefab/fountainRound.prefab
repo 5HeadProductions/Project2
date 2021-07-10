@@ -110,4 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00e6a58839d87d4894f960b4d9591f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gemDrop: 1
+  _easyGemDrop: 2
+  _mediumGemDrop: 5
+  _hardGemDrop: 10

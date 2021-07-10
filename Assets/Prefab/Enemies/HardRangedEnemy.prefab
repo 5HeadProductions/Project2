@@ -1686,9 +1686,9 @@ MonoBehaviour:
   target: {fileID: 0}
   chaseSpeed: 0.1
   attackRange: 15
-  health: 10
+  health: 70
   attackDamage: 10
-  currHealth: 0
+  currHealth: 70
   animator: {fileID: 5387978735793452681}
   agent: {fileID: 2412013799089980846}
   whatIsGround:
@@ -1701,7 +1701,7 @@ MonoBehaviour:
   rockForce: 5
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  sightRange: 20
+  sightRange: 35
   playerInSightRange: 0
   _hud: {fileID: 0}
   inAttackRange: 0

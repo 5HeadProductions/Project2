@@ -107,7 +107,7 @@ public class BasicEnemyBehavior : MonoBehaviour
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        transform.LookAt(walkPoint);
+        transform.LookAt(walkPoint); //gameobject looks at where their walkpoint is set
         
         
         //WalkPoint reached
@@ -123,6 +123,7 @@ public class BasicEnemyBehavior : MonoBehaviour
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        //checking if the random position is within the navMesh area
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
         {
             walkPointSet = true;
@@ -135,6 +136,7 @@ public class BasicEnemyBehavior : MonoBehaviour
             
         playerInstance.currentHealth -= attackDamage;  // lowering the players current health
         _hud.SetHealth(playerInstance.currentHealth);  // adjusting the slider to the players new health value
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("EnemyDamage");
         timeUntilAttack = Time.time + attackRate;      // timeUntilAttack = the next time we are able to attack, 
                                                        // TIME  = 3, attackeRate = 2, we should be able to attack until time reaches 5, 
                                                        // so 5 is stored in timeUntilAttack
@@ -148,7 +150,8 @@ public class BasicEnemyBehavior : MonoBehaviour
 
     private void Chase()
     {
-        agent.enabled = false;
+        agent.enabled = false; //disabling agent so it does not interfere with our chase function
+        //we reduce the distance between our gameobject and its target and have it look at our target
         Vector3 dis = Vector3.MoveTowards(gameObject.transform.position, target.position, chaseSpeed);
         gameObject.transform.position = dis;
         transform.LookAt(target);
@@ -160,7 +163,7 @@ public class BasicEnemyBehavior : MonoBehaviour
         this.currHealth -= damage;
         if (currHealth <= 0)
         {
-            
+            //setting all bools equal to false except dead in order to transition to our death animation
             animator.SetBool("Dead", true);
             animator.SetBool("PlayerInSight", false);
             animator.SetBool("PlayerInAttackRange",false);

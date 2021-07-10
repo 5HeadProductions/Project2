@@ -163,11 +163,11 @@ MonoBehaviour:
   cam: {fileID: 0}
   firing: 0
   muzzleFlash: {fileID: 305016163}
-  attackRate: 1
-  coinsGainedOnShoot: 3
+  attackRate: 0.1
+  coinsGainedOnShoot: 1
   bulletAmmo: 200
   rocketAmmo: 0
-  attackDamage: 10
+  attackDamage: 3
   weaponType: pistol
   audioManager: {fileID: 0}
 --- !u!1 &1408222453138316411

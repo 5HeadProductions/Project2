@@ -47,7 +47,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: cacf22a7d5b7f3c49a5be5ec89a56fe9, type: 2}
+  sharedProfile: {fileID: 0}
 --- !u!1 &2634046043577142651
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,11 +211,11 @@ MonoBehaviour:
   cam: {fileID: 0}
   firing: 0
   muzzleFlash: {fileID: 2634046043577142648}
-  attackRate: 0.1
-  coinsGainedOnShoot: 5
+  attackRate: 0.5
+  coinsGainedOnShoot: 25
   bulletAmmo: 200
   rocketAmmo: 0
-  attackDamage: 35
+  attackDamage: 30
   weaponType: Rifle
   audioManager: {fileID: 0}
 --- !u!1 &2904658183549088910

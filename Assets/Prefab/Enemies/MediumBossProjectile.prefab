@@ -128,7 +128,7 @@ MonoBehaviour:
   projectileSpeed: 20
   rb: {fileID: 4901386814633205162}
   projectileT: {fileID: 2310481310924619609}
-  attackDamage: 30
+  attackDamage: 40
   coinPrefab: {fileID: 0}
   particles: {fileID: 0}
   _hud: {fileID: 0}

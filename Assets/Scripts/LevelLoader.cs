@@ -12,7 +12,6 @@ public class LevelLoader : MonoBehaviour
     }
 
     IEnumerator LoadLevel(){
-        Debug.Log("ENTERED");
         //play animation
         transition.SetTrigger("Start");// Start was set in the animator
         //wait

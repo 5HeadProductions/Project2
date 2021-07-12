@@ -1007,7 +1007,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -85.1, y: -23.939789}
+  m_AnchoredPosition: {x: -85.099976, y: -23.93982}
   m_SizeDelta: {x: -668.23395, y: -100.10648}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5687777448158339207
@@ -1133,6 +1133,9 @@ MonoBehaviour:
   fill: {fileID: 2124328937803524676}
   currentHealth_Txt: {fileID: 5632221539572414759}
   maxHealth_Txt: {fileID: 4709328345669803819}
+  maxHealthButton: {fileID: 0}
+  maxHealthCostImage: {fileID: 0}
+  maxHealthCoinTXT: {fileID: 0}
 --- !u!1 &916002627181679267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,6 +1749,9 @@ MonoBehaviour:
   fill: {fileID: 2124328937803524676}
   currentHealth_Txt: {fileID: 5632221539572414759}
   maxHealth_Txt: {fileID: 4709328345669803819}
+  maxHealthButton: {fileID: 2047469452375958840}
+  maxHealthCostImage: {fileID: 7863460587917702269}
+  maxHealthCoinTXT: {fileID: 597757653855294134}
 --- !u!1 &1622186865816622074
 GameObject:
   m_ObjectHideFlags: 0
@@ -5816,6 +5822,9 @@ MonoBehaviour:
   fill: {fileID: 2124328937803524676}
   currentHealth_Txt: {fileID: 5632221539572414759}
   maxHealth_Txt: {fileID: 4709328345669803819}
+  maxHealthButton: {fileID: 2047469452375958840}
+  maxHealthCostImage: {fileID: 7863460587917702269}
+  maxHealthCoinTXT: {fileID: 597757653855294134}
 --- !u!1 &4470733042812098951
 GameObject:
   m_ObjectHideFlags: 0
@@ -9992,7 +10001,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -1.2683105, y: -1.4281998}
   m_SizeDelta: {x: 8.5697, y: -0.2623}
   m_Pivot: {x: 0.5, y: 0.5}

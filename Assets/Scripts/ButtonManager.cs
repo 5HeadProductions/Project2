@@ -127,70 +127,125 @@ Permenatly unlocking weapons through the gem shop
 
 */
    public void GemShopActive(){
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Click");
         gemShop = GameObject.Find("Shop");
         GameObject.Find("Main Menu").gameObject.SetActive(false);
         gemShop.GetComponent<GemShopEnabler>().ActiveGemShop();
 
    }
    public void GemShopDeactivate(){
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Click");
         gemShop = GameObject.Find("Shop");
         gemShop.GetComponent<GemShopEnabler>().ActivateMain();
    }
     public void EnablePurplePistol(){
-        if(playerInstance.gems >= purpleCost){
-            _unlockedGuns.purplePistol = true;
-            playerInstance.gems -= purpleCost;
-            PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
+          GemShop gemCanvas = GameObject.Find("GemShopCanvas").GetComponent<GemShop>(); //finding the canvas when it is active
+        if(_unlockedGuns.purplePistol != true){
+            if(playerInstance.gems >= purpleCost){ // 5
+                _unlockedGuns.purplePistol = true;
+                playerInstance.gems -= purpleCost;
+                PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
+                gemCanvas.pP.interactable = false; // setting the button to false if the already own it
+            }    
+        }else{
+            gemCanvas.pP.interactable = false; // setting the button to false if the already own it
         }
     }
     public void EnablePurpleAR(){
-        if(playerInstance.gems >= purpleCost){
-            _unlockedGuns.purpleAR = true;
-            playerInstance.gems -= purpleCost;
-            PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
+        GemShop gemCanvas = GameObject.Find("GemShopCanvas").GetComponent<GemShop>();
+        if(_unlockedGuns.purpleAR != true){
+            if(playerInstance.gems >= purpleCost){
+             _unlockedGuns.purpleAR = true;
+                playerInstance.gems -= purpleCost;
+                PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
+                gemCanvas.pA.interactable = false;
+            }
+        }else{
+            gemCanvas.pA.interactable = false;
         }
     }
     public void EnablePurpleSniper(){
-        if(playerInstance.gems >= purpleCostSR){
-            _unlockedGuns.purpleSniper = true;
-            playerInstance.gems -= purpleCostSR;
-            PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
-        }        
+        GemShop gemCanvas = GameObject.Find("GemShopCanvas").GetComponent<GemShop>();
+            if(_unlockedGuns.purpleSniper != true){
+                if(playerInstance.gems >= purpleCostSR){
+                    _unlockedGuns.purpleSniper = true;
+                    playerInstance.gems -= purpleCostSR;
+                    PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
+                    gemCanvas.pS.interactable = false;
+                }        
+            }else{
+                gemCanvas.pS.interactable = false;
+            }
     }
     public void EnablePurpleRocket(){
+        GemShop gemCanvas = GameObject.Find("GemShopCanvas").GetComponent<GemShop>();
+        if(_unlockedGuns.purpleRocket != true){
         if(playerInstance.gems >= purpleCostSR){
         _unlockedGuns.purpleRocket = true;
             playerInstance.gems -= purpleCostSR;
             PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
+            gemCanvas.pR.interactable = false;
+            }
+        }else
+        {
+            gemCanvas.pR.interactable = false;
         }
     }
 
     public void EnableColorPistol(){
+        GemShop gemCanvas = GameObject.Find("GemShopCanvas").GetComponent<GemShop>();
+        if(_unlockedGuns.colorPistol){
         if(playerInstance.gems >= colorCost){
             _unlockedGuns.colorPistol = true;
             playerInstance.gems -= colorCost;
             PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
+            gemCanvas.cP.interactable = false;
+            }
+        }else{
+            gemCanvas.cP.interactable = false;
         }
     }
     public void EnableColorAR(){
+        GemShop gemCanvas = GameObject.Find("GemShopCanvas").GetComponent<GemShop>();
+        if(_unlockedGuns.colorAR != true){
         if(playerInstance.gems >= colorCost){
             _unlockedGuns.colorAR = true;
             playerInstance.gems -= colorCost;
             PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
+            gemCanvas.cA.interactable = false;
+        }
+
+        }else{
+            gemCanvas.cA.interactable = false;
         }
     }
     public void EnableColorSniper(){
+        GemShop gemCanvas = GameObject.Find("GemShopCanvas").GetComponent<GemShop>();
+        if(_unlockedGuns.colorSniper != true){
         if(playerInstance.gems >= colorCostSR){
             _unlockedGuns.colorSniper = true;
             playerInstance.gems -= colorCostSR;
             PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
+            gemCanvas.cS.interactable = false;
+        }
+
+        }else{
+            gemCanvas.cS.interactable = false;
         }
     }
     public void EnableColorRocket(){
+        GemShop gemCanvas = GameObject.Find("GemShopCanvas").GetComponent<GemShop>();
+        if(_unlockedGuns.colorRocket != true){
         if(playerInstance.gems >= colorCostSR){
             _unlockedGuns.colorRocket = true;
             playerInstance.gems -= colorCostSR;
             PlayerPrefs.SetInt("LifeTimeGems", playerInstance.gems);
+            gemCanvas.cR.interactable = false;
+        }
+
+        }else
+        {
+            gemCanvas.cR.interactable = false;
         }
     }
 

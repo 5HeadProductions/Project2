@@ -11,6 +11,9 @@ public class ShopHealthBar : MonoBehaviour
     public Image fill;
     private PlayerManager playerInstance;
     [SerializeField]private TextMeshProUGUI currentHealth_Txt, maxHealth_Txt;
+    public Button maxHealthButton;
+    public Image maxHealthCostImage;
+    public TextMeshProUGUI maxHealthCoinTXT;
 
     private HUD _hud;
     void OnEnable(){
@@ -54,14 +57,17 @@ public class ShopHealthBar : MonoBehaviour
             int add = 10;
             if(slider.maxValue + add > 250){
                 maxHealth_Txt.text = "Max Health";
+                maxHealthButton.interactable = false;
+                maxHealthCostImage.enabled = false;
+                maxHealthCoinTXT.text = "";
                 //display they can no longer upgrade their max health
             }else{
             slider.maxValue += add;
             playerInstance.maxHealth += add;
             DisplayHealth(playerInstance.currentHealth); 
             _hud.SetHealth(playerInstance.currentHealth);         
-            }
             playerInstance.coins -= 100;
+            }
         }    
     }
 }

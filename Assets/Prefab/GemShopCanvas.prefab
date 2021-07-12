@@ -556,6 +556,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 7330623471500748028}
   gems_txt: {fileID: 0}
+  pP: {fileID: 5573002265118195457}
+  pA: {fileID: 7337364485101664172}
+  pS: {fileID: 7257391251546631667}
+  pR: {fileID: 3992958949177611060}
+  cP: {fileID: 958456499255902610}
+  cA: {fileID: 3216033952594572902}
+  cS: {fileID: 631215578824707946}
+  cR: {fileID: 2982938703273835761}
 --- !u!1 &986852542689546284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1056,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Damage: 50'
+  m_text: 'Damage: 35'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
   m_sharedMaterial: {fileID: 7236782305257308195, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
@@ -1182,7 +1190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Damage: 20'
+  m_text: 'Damage: 15'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
   m_sharedMaterial: {fileID: 7236782305257308195, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
@@ -1316,7 +1324,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Damage: 25'
+  m_text: 'Damage: 6'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
   m_sharedMaterial: {fileID: 7236782305257308195, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
@@ -1896,7 +1904,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Damage: 35'
+  m_text: 'Damage: 30'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
   m_sharedMaterial: {fileID: 7236782305257308195, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
@@ -3686,7 +3694,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Damage: 50'
+  m_text: 'Damage: 12'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
   m_sharedMaterial: {fileID: 7236782305257308195, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
@@ -5070,7 +5078,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Damage: 150'
+  m_text: 'Damage: 80'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}
   m_sharedMaterial: {fileID: 7236782305257308195, guid: 3aa746d0a7afcb144980736d4fad7913, type: 2}

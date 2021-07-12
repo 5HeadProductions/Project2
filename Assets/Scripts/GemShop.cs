@@ -15,6 +15,8 @@ public class GemShop : MonoBehaviour
     private PlayerManager playerInstance;
     [Header("Text Field")]
     [SerializeField]private TextMeshProUGUI gems_txt;
+
+    public Button pP, pA, pS, pR, cP, cA, cS, cR;
     // Start is called before the first frame update
     void Start()
     {

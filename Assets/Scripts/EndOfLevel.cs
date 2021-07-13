@@ -20,17 +20,17 @@ public class EndOfLevel : MonoBehaviour
 
         if(other.gameObject.CompareTag("Player") && boss == null){
 
-            if(SceneManager.GetActiveScene().name == "EasyDungeon"){
+            if(SceneManager.GetActiveScene().name == "EasyDungeon" && GameObject.Find("EasyBasicBoss(Clone)") == null){
             SceneManager.LoadScene("EasyDungeon");
             playerInstance.gems += _easyGemDrop;   
             }
 
-            if(SceneManager.GetActiveScene().name == "MediumDungeon"){
+            if(SceneManager.GetActiveScene().name == "MediumDungeon" && GameObject.Find("MediumBasicBoss(Clone)") == null && GameObject.Find("MediumRangedBoss(Clone)") == null){
             SceneManager.LoadScene("MediumDungeon");
             playerInstance.gems += _mediumGemDrop;   
             }
 
-            if(SceneManager.GetActiveScene().name == "HardDungeon"){
+            if(SceneManager.GetActiveScene().name == "HardDungeon" && GameObject.Find("HardBasicBoss(Clone)") == null && GameObject.Find("HardRangedBoss(Clone)") == null){
             SceneManager.LoadScene("HardDungeon");
             playerInstance.gems += _hardGemDrop;   
             }

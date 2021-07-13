@@ -301,6 +301,11 @@ Purchasing ammunition and speed from the in game shop
         playerInstance.coins -= 350;
         }
     }
+
+    public void QuitGame(){
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Click");
+        Application.Quit();
+    }
 /*
 
 //////////////////////////////////////////////////////////////////////////////////////////    

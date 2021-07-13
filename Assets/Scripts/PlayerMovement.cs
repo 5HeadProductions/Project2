@@ -31,7 +31,7 @@ private Animator _animator;
         AimTowardsMouse();
         //moving the little sprite that should be in front of the player at all times
 
-        if(playerInstance.movementMulti <= 3){
+        if(playerInstance.movementMulti <= 3){ // keeps track of how many times the player has bought the speed item
            
             UpdateSpeed();
         }
@@ -83,16 +83,18 @@ private Animator _animator;
         }
     }
 
-
-    void UpdateSpeed(){
+// updating the player speed when the player purchases the ability in the shop
+// the player can upgrade their speed up to 3 time hence why the switch statement only goes up to 3
+// player default speed is 5
+    void UpdateSpeed(){ 
         switch(playerInstance.movementMulti){   
-            case 0:
+            case 0: // default speen used
             break;
-            case 1:
-            _speed = _speed < 6.5f ? _speed += 1.5f :  _speed += 0.0f;
+            case 1: // when the player only buys the item once then 
+            _speed = _speed < 6.5f ? _speed += 1.5f :  _speed += 0.0f;//if the player speed is less than the default + 1.5 then add 1.5 to default else don't change it 
           break;
-            case 2:
-            _speed = _speed < 8.0f ? _speed += 1.5f :  _speed += 0.0f;
+            case 2: // the second time it is bought 
+            _speed = _speed < 8.0f ? _speed += 1.5f :  _speed += 0.0f;//if the player speed is less than the previous upgrade speed + 1.5 then add them else don't change it
             break;
             case 3:
             _speed = _speed < 9.5f ? _speed += 1.0f :  _speed += 0.0f;

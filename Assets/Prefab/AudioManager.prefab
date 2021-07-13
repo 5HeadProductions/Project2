@@ -86,3 +86,9 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: Purchased
+    clip: {fileID: 8300000, guid: 5121776253e01fe49b3b47e6a000580d, type: 3}
+    volume: 0.15
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0

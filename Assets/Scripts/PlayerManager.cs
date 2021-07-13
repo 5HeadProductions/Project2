@@ -10,10 +10,10 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] public GameObject player;
      public GameObject primaryWeapon;      //default whenplayer script awake
 
-     [SerializeField]private WeaponHolder weaponHolder;
+     [SerializeField]private WeaponHolder weaponHolder; //used to keep track of what weapon the player has equipped
 
     public int currentHealth, maxHealth = 100, coins, gems, primaryAmmo, secondaryAmmo, rocketAmmo,primaryIndex = 1, secondaryIndex = 0;
-    public int movementMulti = 0;
+    public int movementMulti = 0; //used to keep track of how many times the player has purchased the movement speed 
     private void Awake() {
 
         if(playerInstance == null){ // on awake checking for this gameobject

@@ -48,8 +48,8 @@ public class Inventory : MonoBehaviour
         currentGems = playerInstance.gems;
         coin_txt.text = currentCoins.ToString();
         gem_txt.text = currentGems.ToString();
-        ReloadPrimary();
-        ReloadSecondary();
+        ReloadPrimary();  // when the player buys a primary weapon, full primary ammo is restored
+        ReloadSecondary(); // when the player buys a secondary weapon, full secondary ammo is restored
         bullet_txt.text = primaryAmmo.ToString();
     }
 
@@ -57,7 +57,8 @@ public class Inventory : MonoBehaviour
     // updating the coins and gems to match how many the player actually has
     void Update()
     {
-        if(currentCoins != playerInstance.coins){
+        // updating the textboxes to display the correct amount of ammo the player has when they spend coins, or buy ammo
+        if(currentCoins != playerInstance.coins){ 
             currentCoins = playerInstance.coins;
             coin_txt.text = currentCoins.ToString();
         }
@@ -185,6 +186,7 @@ public class Inventory : MonoBehaviour
 
     }
 
+    // delaying the time before the new fire point it assigned bc it does it too fast
     public IEnumerator NewFirePoint(){
         yield return new WaitForSeconds(.1f);
         firePoint = GameObject.Find("FirePoint").GetComponent<FirePoint>();

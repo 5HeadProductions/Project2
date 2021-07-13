@@ -139,6 +139,7 @@ Permenatly unlocking weapons through the gem shop
         gemShop.GetComponent<GemShopEnabler>().ActivateMain();
    }
     public void EnablePurplePistol(){
+          GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
           GemShop gemCanvas = GameObject.Find("GemShopCanvas").GetComponent<GemShop>(); //finding the canvas when it is active
         if(_unlockedGuns.purplePistol != true){
             if(playerInstance.gems >= purpleCost){ // 5
@@ -152,6 +153,7 @@ Permenatly unlocking weapons through the gem shop
         }
     }
     public void EnablePurpleAR(){
+          GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
         GemShop gemCanvas = GameObject.Find("GemShopCanvas").GetComponent<GemShop>();
         if(_unlockedGuns.purpleAR != true){
             if(playerInstance.gems >= purpleCost){
@@ -165,6 +167,7 @@ Permenatly unlocking weapons through the gem shop
         }
     }
     public void EnablePurpleSniper(){
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
         GemShop gemCanvas = GameObject.Find("GemShopCanvas").GetComponent<GemShop>();
             if(_unlockedGuns.purpleSniper != true){
                 if(playerInstance.gems >= purpleCostSR){
@@ -178,6 +181,7 @@ Permenatly unlocking weapons through the gem shop
             }
     }
     public void EnablePurpleRocket(){
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
         GemShop gemCanvas = GameObject.Find("GemShopCanvas").GetComponent<GemShop>();
         if(_unlockedGuns.purpleRocket != true){
         if(playerInstance.gems >= purpleCostSR){
@@ -193,8 +197,9 @@ Permenatly unlocking weapons through the gem shop
     }
 
     public void EnableColorPistol(){
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
         GemShop gemCanvas = GameObject.Find("GemShopCanvas").GetComponent<GemShop>();
-        if(_unlockedGuns.colorPistol){
+        if(_unlockedGuns.colorPistol != true){
         if(playerInstance.gems >= colorCost){
             _unlockedGuns.colorPistol = true;
             playerInstance.gems -= colorCost;
@@ -206,6 +211,7 @@ Permenatly unlocking weapons through the gem shop
         }
     }
     public void EnableColorAR(){
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
         GemShop gemCanvas = GameObject.Find("GemShopCanvas").GetComponent<GemShop>();
         if(_unlockedGuns.colorAR != true){
         if(playerInstance.gems >= colorCost){
@@ -220,6 +226,7 @@ Permenatly unlocking weapons through the gem shop
         }
     }
     public void EnableColorSniper(){
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
         GemShop gemCanvas = GameObject.Find("GemShopCanvas").GetComponent<GemShop>();
         if(_unlockedGuns.colorSniper != true){
         if(playerInstance.gems >= colorCostSR){
@@ -234,6 +241,7 @@ Permenatly unlocking weapons through the gem shop
         }
     }
     public void EnableColorRocket(){
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
         GemShop gemCanvas = GameObject.Find("GemShopCanvas").GetComponent<GemShop>();
         if(_unlockedGuns.colorRocket != true){
         if(playerInstance.gems >= colorCostSR){
@@ -323,6 +331,7 @@ Purchasing ammunition and speed from the in game shop
     public void PurplePistol(){
         if(_unlockedGuns.purplePistol){
             if(playerInstance.coins >= 550){
+                GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
             if(shopCanvas.dPistol.interactable == false) shopCanvas.dPistol.interactable = true; //enabling the default pistol to be purchased
             int index = 4; 
              bool isEquipped = inventory.SetPistolUI(index);
@@ -338,6 +347,7 @@ Purchasing ammunition and speed from the in game shop
     public void ColorPistol(){
         if(shopCanvas.cPistol.interactable){
             if(playerInstance.coins >= 600){
+                 GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
             if(shopCanvas.dPistol.interactable == false) shopCanvas.dPistol.interactable = true; //enabling the default pistol to be purchased
             int index = 8; 
             bool isEquipped = inventory.SetPistolUI(index);
@@ -353,6 +363,7 @@ Purchasing ammunition and speed from the in game shop
     public void DefaultAR(){
         if(shopCanvas.dAr.interactable){
             if(playerInstance.coins >= 300){
+                 GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
             int index = 1;
             bool isEquipped = inventory.SetPrimaryWeaponUI(index);
             if(isEquipped) Equip(index);
@@ -364,6 +375,7 @@ Purchasing ammunition and speed from the in game shop
     public void PurpleAR(){
         if(shopCanvas.pAr.interactable){
             if(playerInstance.coins >= 700){
+                 GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
                 if(shopCanvas.dAr.interactable == false) shopCanvas.dAr.interactable = true; //enabling the default AR to be purchased
                 int index = 5;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
@@ -376,6 +388,7 @@ Purchasing ammunition and speed from the in game shop
     public void ColorAR(){
         if(shopCanvas.cAr.interactable){
             if(playerInstance.coins >= 1300){
+                 GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
                 if(shopCanvas.dAr.interactable == false) shopCanvas.dAr.interactable = true; //enabling the default AR to be purchased
                 int index = 9;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
@@ -387,6 +400,7 @@ Purchasing ammunition and speed from the in game shop
     }
     public void DefaultSniper(){
         if(playerInstance.coins >= 300){
+             GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
             if(shopCanvas.dAr.interactable == false) shopCanvas.dAr.interactable = true; //enabling the default AR to be purchased
             int index = 2;
             bool isEquipped = inventory.SetPrimaryWeaponUI(index);
@@ -398,6 +412,7 @@ Purchasing ammunition and speed from the in game shop
     public void PurpleSniper(){
         if(shopCanvas.pSniper.interactable){
             if(playerInstance.coins >= 600){
+                 GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
                 if(shopCanvas.dAr.interactable == false) shopCanvas.dAr.interactable = true; //enabling the default AR to be purchased
                 int index = 6;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
@@ -410,6 +425,7 @@ Purchasing ammunition and speed from the in game shop
     public void ColorSniper(){
         if(shopCanvas.cSniper.interactable){
             if(playerInstance.coins >= 1300){
+                 GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
                 if(shopCanvas.dAr.interactable == false) shopCanvas.dAr.interactable = true; //enabling the default AR to be purchased
                 int index = 10;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
@@ -421,6 +437,7 @@ Purchasing ammunition and speed from the in game shop
     }
     public void DefaultRocket(){
         if(playerInstance.coins >= 400){
+             GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
             if(shopCanvas.dAr.interactable == false) shopCanvas.dAr.interactable = true; //enabling the default AR to be purchased
             int index = 3;
             bool isEquipped = inventory.SetPrimaryWeaponUI(index);
@@ -432,6 +449,7 @@ Purchasing ammunition and speed from the in game shop
     public void PurpleRocket(){
         if(shopCanvas.pRocket.interactable){
             if(playerInstance.coins >= 800){
+                 GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
                 if(shopCanvas.dAr.interactable == false) shopCanvas.dAr.interactable = true; //enabling the default AR to be purchased
                 int index = 7;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);
@@ -444,6 +462,7 @@ Purchasing ammunition and speed from the in game shop
     public void ColorRocket(){
         if(shopCanvas.cRocket.interactable){
             if(playerInstance.coins >= 1500){
+                 GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Purchased");
                 if(shopCanvas.dAr.interactable == false) shopCanvas.dAr.interactable = true; //enabling the default AR to be purchased
                 int index = 11;
                 bool isEquipped = inventory.SetPrimaryWeaponUI(index);

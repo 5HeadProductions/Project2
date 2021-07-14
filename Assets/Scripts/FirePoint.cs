@@ -57,6 +57,7 @@ public class FirePoint : MonoBehaviour
     void Update()
     {
         on = shopEnabler.shopCanvas.activeInHierarchy ? true : false;
+        // if(weaponType != "rocket" && weaponType != "Rocket"){
         if (Time.time > timeUntilAttack && bulletAmmo >= 1)
         {
 
@@ -73,8 +74,9 @@ public class FirePoint : MonoBehaviour
                                 playerInstance.rocketAmmo--;
                                 return;
                             }
+                            return;
                         }
-                        if(playerInstance.primaryAmmo > 0){
+                        if(playerInstance.primaryAmmo > 0 && weaponType != "rocket"){
                         Shoot();
                         playerInstance.primaryAmmo--;
                         }
@@ -89,6 +91,46 @@ public class FirePoint : MonoBehaviour
 
                 timeUntilAttack = Time.time + attackRate;
         }
+        // }
+        }
+
+        // if(weaponType == "rocket" || weaponType == "Rocket"){
+        //     if (Time.time > timeUntilAttack && rocketAmmo >= 1)
+        // {
+
+        // if (Input.GetButtonDown(shootingWith)) // button we are using to shoot 
+        // {
+        //     if(on){
+        //          if(EventSystem.current.IsPointerOverGameObject()) return;
+        //         }else
+        //         {
+        //             if(inventory.PrimaryOn()){
+        //                 if(inventory.RocketOn()){
+        //                     if(playerInstance.rocketAmmo > 0){
+        //                         Shoot();
+        //                         playerInstance.rocketAmmo--;
+        //                         return;
+        //                     }
+        //                 }
+        //                 if(playerInstance.primaryAmmo > 0){
+        //                 Shoot();
+        //                 playerInstance.primaryAmmo--;
+        //                 }
+        //             }else
+        //             {
+        //              if(playerInstance.secondaryAmmo > 0){
+        //                 Shoot();
+        //                 playerInstance.secondaryAmmo--;
+        //             }
+        //             }
+        //         } 
+
+        //         timeUntilAttack = Time.time + attackRate;
+        // }
+        // }
+
+        // }
+
 
         //setting the bool to false so it knows to aim where the player is moving rather than firing
         //firing = false;
@@ -101,7 +143,7 @@ public class FirePoint : MonoBehaviour
 
 
 
-    }
+    
 
     void TouchShoot()
     {

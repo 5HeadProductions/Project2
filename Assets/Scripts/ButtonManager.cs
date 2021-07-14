@@ -289,8 +289,8 @@ Purchasing ammunition and speed from the in game shop
     public void PurchasedBullets(){
         // when the player clicks on the ammo button it gives ammo to both guns
        if(playerInstance.coins >= 100){
-        playerInstance.primaryAmmo += 10;
-        playerInstance.secondaryAmmo += 10;
+        playerInstance.primaryAmmo += 100;
+        playerInstance.secondaryAmmo += 100;
         playerInstance.coins -= 100;
        }
        //else they can't afford it
@@ -298,7 +298,7 @@ Purchasing ammunition and speed from the in game shop
     }
     public void PurchaseRockets(){
         if(playerInstance.coins >= 250){
-            playerInstance.rocketAmmo += 5;
+            playerInstance.rocketAmmo += 20;
             playerInstance.coins -= 250;
         }
         //else they can't afford it

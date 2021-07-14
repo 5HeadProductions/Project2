@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2489840202702386469}
   - component: {fileID: 2489840202702386471}
   - component: {fileID: 2489840202702386468}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: vfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2489840202702386466}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.0047736485, y: 0.0071061915, z: 0.006225278}
+  m_LocalPosition: {x: -0.0047736485, y: 0.0071061915, z: 0.096}
   m_LocalScale: {x: 0.91800916, y: 0.91800916, z: 0.91800916}
   m_Children: []
   m_Father: {fileID: 3891330911293060188}
@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3891330910574886591}
   - component: {fileID: 3891330910574886588}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Global Volume (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3891330911293060188}
   - component: {fileID: 3891330911293060191}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3891330911293060190}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.0052, y: 0.005, z: -0.299}
+  m_LocalPosition: {x: -0.0052, y: 0.005, z: -0.142}
   m_LocalScale: {x: 1.0893136, y: 1.0893136, z: 1.0893136}
   m_Children:
   - {fileID: 2489840202702386469}
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 3569790610997391715}
   - component: {fileID: 442947265477820102}
   - component: {fileID: 2432328048148335116}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PurplePistol
   m_TagString: Secondary
   m_Icon: {fileID: 0}

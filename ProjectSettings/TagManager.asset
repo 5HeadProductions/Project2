@@ -29,7 +29,7 @@ TagManager:
   - RangedEnemy
   - LineRenderer
   - PlayerBullet
-  - 
+  - PlayerWeapon
   - 
   - CharacterPanel1
   - CharacterPanel2

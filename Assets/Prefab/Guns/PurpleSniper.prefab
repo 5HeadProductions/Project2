@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5238533443741266309}
   - component: {fileID: 9159435421812047392}
   - component: {fileID: 6410925425260514026}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PurpleSniper
   m_TagString: Primary
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4897896338727103295}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -2.7999492, y: 4.1875153, z: 0.58012795}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.1, y: 3.1, z: 3.1}
   m_Children:
   - {fileID: 5708799699749183063}
   - {fileID: 5708799701455601413}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 5708799699645194307}
   - component: {fileID: 5708799699645194305}
   - component: {fileID: 5708799699645194304}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: vfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5708799699645194306}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.0047736485, y: 0.0071061915, z: 0.006225278}
+  m_LocalPosition: {x: -0.0047736485, y: 0.0071061915, z: 0.125}
   m_LocalScale: {x: 0.91800916, y: 0.91800916, z: 0.91800916}
   m_Children: []
   m_Father: {fileID: 5708799699749183063}
@@ -209,7 +209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5708799699749183063}
   - component: {fileID: 5708799699749183060}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5708799699749183062}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.019, y: 0.04, z: -0.761}
+  m_LocalPosition: {x: 0.019, y: 0.04, z: -0.255}
   m_LocalScale: {x: 3.4199, y: 3.4199, z: 3.4199}
   m_Children:
   - {fileID: 5708799699645194307}
@@ -267,7 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5708799701455601413}
   - component: {fileID: 5708799701455601410}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Global Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
